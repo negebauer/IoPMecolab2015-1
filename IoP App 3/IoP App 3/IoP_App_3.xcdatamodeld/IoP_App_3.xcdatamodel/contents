@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7549" systemVersion="14D130a" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="ChatMessage" representedClassName="IoP_App_3.ChatMessage" syncable="YES">
+        <attribute name="createdAt" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="message" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="recipient" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="sender" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="ChatRoom" representedClassName="IoP_App_3.ChatRoom" syncable="YES">
+        <attribute name="isGroup" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="mensajes" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="updatedAt" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="users" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <relationship name="newRelationship" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Contacto" inverseName="newRelationship" inverseEntity="Contacto" syncable="YES"/>
+    </entity>
+    <entity name="Contacto" representedClassName="IoP_App_3.Contacto" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="nombre" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="numero" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="updatedAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="newRelationship" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ChatRoom" inverseName="newRelationship" inverseEntity="ChatRoom" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="ChatMessage" positionX="-1073" positionY="-466" width="128" height="133"/>
+        <element name="ChatRoom" positionX="-929" positionY="-468" width="128" height="118"/>
+        <element name="Contacto" positionX="-740" positionY="-468" width="128" height="133"/>
+    </elements>
+</model>

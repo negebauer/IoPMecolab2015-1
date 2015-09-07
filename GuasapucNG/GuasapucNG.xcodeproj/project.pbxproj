@@ -1,0 +1,589 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		030541911B0FEDD200347CF6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 030541901B0FEDD200347CF6 /* Images.xcassets */; };
+		030541931B0FEE7800347CF6 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030541921B0FEE7800347CF6 /* MapView.swift */; };
+		035B246C1B4833DF001F3709 /* SRWebClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035B246B1B4833DF001F3709 /* SRWebClient.swift */; };
+		037EA7A61AF5C9DA00883622 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037EA7A51AF5C9DA00883622 /* AppDelegate.swift */; };
+		037EA7A91AF5C9DA00883622 /* GuasapucNG.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 037EA7A71AF5C9DA00883622 /* GuasapucNG.xcdatamodeld */; };
+		037EA7AB1AF5C9DA00883622 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037EA7AA1AF5C9DA00883622 /* ViewController.swift */; };
+		037EA7AE1AF5C9DA00883622 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 037EA7AC1AF5C9DA00883622 /* Main.storyboard */; };
+		037EA7B31AF5C9DA00883622 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 037EA7B11AF5C9DA00883622 /* LaunchScreen.xib */; };
+		037EA7BF1AF5C9DA00883622 /* GuasapucNGTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037EA7BE1AF5C9DA00883622 /* GuasapucNGTests.swift */; };
+		038DB4F41AF5D25D00AFD1AC /* CeldaChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038DB4F31AF5D25D00AFD1AC /* CeldaChat.swift */; };
+		038DB4F61AF5E0BF00AFD1AC /* TablaChatsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038DB4F51AF5E0BF00AFD1AC /* TablaChatsDelegate.swift */; };
+		038DB4FC1AF6B98800AFD1AC /* ChatManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038DB4FB1AF6B98800AFD1AC /* ChatManager.swift */; };
+		038DB5061AF6C5DE00AFD1AC /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038DB5051AF6C5DE00AFD1AC /* Common.swift */; };
+		0390D8331B1EA077002F8787 /* TcpListener.m in Sources */ = {isa = PBXBuildFile; fileRef = 0390D8321B1EA077002F8787 /* TcpListener.m */; };
+		0390D83A1B1EA1E7002F8787 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0390D8391B1EA1E7002F8787 /* Client.swift */; };
+		03A9D20B1AF6CC5300108F97 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A9D20A1AF6CC5300108F97 /* User.swift */; };
+		03A9D20F1AF6CC5400108F97 /* ChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A9D20E1AF6CC5400108F97 /* ChatMessage.swift */; };
+		03A9D2111AF6CC5400108F97 /* Contacto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A9D2101AF6CC5400108F97 /* Contacto.swift */; };
+		03A9D2151AF6CE4300108F97 /* ChatRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A9D2141AF6CE4300108F97 /* ChatRoom.swift */; };
+		03AA88ED1B1260D80005C314 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AA88EC1B1260D80005C314 /* MapKit.framework */; };
+		03ACBDF61B03A4C500EE83A8 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03ACBDF51B03A4C500EE83A8 /* TabBarController.swift */; };
+		03BF90AB1B0CE387009FDD5C /* AddGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BF90AA1B0CE387009FDD5C /* AddGroupView.swift */; };
+		03BF90AD1B0CEEFF009FDD5C /* CeldaUsuarioAgregarAGrupo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BF90AC1B0CEEFF009FDD5C /* CeldaUsuarioAgregarAGrupo.swift */; };
+		03D48FA81B3CB9FD00A5E9D7 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D48FA71B3CB9FD00A5E9D7 /* Test.swift */; };
+		03DECA851B0AD3AD004642C4 /* ViewControllerGroups.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DECA841B0AD3AD004642C4 /* ViewControllerGroups.swift */; };
+		03DECA871B0AD3C4004642C4 /* TablaChatsDelegateGroups.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DECA861B0AD3C4004642C4 /* TablaChatsDelegateGroups.swift */; };
+		03EF200A1AF85B1F0064B66A /* ChatRoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EF20091AF85B1F0064B66A /* ChatRoomView.swift */; };
+		03EF200C1AF860BC0064B66A /* TablaChatRoomDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EF200B1AF860BC0064B66A /* TablaChatRoomDelegate.swift */; };
+		03EF200E1AF877AC0064B66A /* CeldaMensaje.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EF200D1AF877AC0064B66A /* CeldaMensaje.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		037EA7B91AF5C9DA00883622 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 037EA7981AF5C9DA00883622 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 037EA79F1AF5C9DA00883622;
+			remoteInfo = GuasapucNG;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		030541901B0FEDD200347CF6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		030541921B0FEE7800347CF6 /* MapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		035B246B1B4833DF001F3709 /* SRWebClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRWebClient.swift; sourceTree = "<group>"; };
+		037EA7A01AF5C9DA00883622 /* GuasapucNG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuasapucNG.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		037EA7A41AF5C9DA00883622 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		037EA7A51AF5C9DA00883622 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		037EA7A81AF5C9DA00883622 /* GuasapucNG.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GuasapucNG.xcdatamodel; sourceTree = "<group>"; };
+		037EA7AA1AF5C9DA00883622 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		037EA7AD1AF5C9DA00883622 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		037EA7B21AF5C9DA00883622 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		037EA7B81AF5C9DA00883622 /* GuasapucNGTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GuasapucNGTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		037EA7BD1AF5C9DA00883622 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		037EA7BE1AF5C9DA00883622 /* GuasapucNGTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuasapucNGTests.swift; sourceTree = "<group>"; };
+		038DB4F31AF5D25D00AFD1AC /* CeldaChat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CeldaChat.swift; sourceTree = "<group>"; };
+		038DB4F51AF5E0BF00AFD1AC /* TablaChatsDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TablaChatsDelegate.swift; sourceTree = "<group>"; };
+		038DB4FB1AF6B98800AFD1AC /* ChatManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatManager.swift; sourceTree = "<group>"; };
+		038DB5051AF6C5DE00AFD1AC /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		0390D8311B1EA077002F8787 /* TcpListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TcpListener.h; sourceTree = "<group>"; };
+		0390D8321B1EA077002F8787 /* TcpListener.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TcpListener.m; sourceTree = "<group>"; };
+		0390D8391B1EA1E7002F8787 /* Client.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
+		0397F92F1B15FFF500B73FE1 /* GuasapucNG-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GuasapucNG-Bridging-Header.h"; sourceTree = "<group>"; };
+		03A226E81B2642EB00B5576C /* TcpDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TcpDelegate.h; sourceTree = "<group>"; };
+		03A226EB1B27F49600B5576C /* Testing.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Testing.playground; sourceTree = "<group>"; };
+		03A9D20A1AF6CC5300108F97 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		03A9D20E1AF6CC5400108F97 /* ChatMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatMessage.swift; sourceTree = "<group>"; };
+		03A9D2101AF6CC5400108F97 /* Contacto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contacto.swift; sourceTree = "<group>"; };
+		03A9D2141AF6CE4300108F97 /* ChatRoom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatRoom.swift; sourceTree = "<group>"; };
+		03AA88EC1B1260D80005C314 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		03ACBDF51B03A4C500EE83A8 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		03BF90AA1B0CE387009FDD5C /* AddGroupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddGroupView.swift; sourceTree = "<group>"; };
+		03BF90AC1B0CEEFF009FDD5C /* CeldaUsuarioAgregarAGrupo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CeldaUsuarioAgregarAGrupo.swift; sourceTree = "<group>"; };
+		03D48FA71B3CB9FD00A5E9D7 /* Test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
+		03DECA841B0AD3AD004642C4 /* ViewControllerGroups.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerGroups.swift; sourceTree = "<group>"; };
+		03DECA861B0AD3C4004642C4 /* TablaChatsDelegateGroups.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TablaChatsDelegateGroups.swift; sourceTree = "<group>"; };
+		03EF20091AF85B1F0064B66A /* ChatRoomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatRoomView.swift; sourceTree = "<group>"; };
+		03EF200B1AF860BC0064B66A /* TablaChatRoomDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TablaChatRoomDelegate.swift; sourceTree = "<group>"; };
+		03EF200D1AF877AC0064B66A /* CeldaMensaje.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CeldaMensaje.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		037EA79D1AF5C9DA00883622 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				03AA88ED1B1260D80005C314 /* MapKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		037EA7B51AF5C9DA00883622 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		037EA7971AF5C9DA00883622 = {
+			isa = PBXGroup;
+			children = (
+				03AA88EC1B1260D80005C314 /* MapKit.framework */,
+				037EA7A21AF5C9DA00883622 /* GuasapucNG */,
+				037EA7BB1AF5C9DA00883622 /* GuasapucNGTests */,
+				037EA7A11AF5C9DA00883622 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		037EA7A11AF5C9DA00883622 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				037EA7A01AF5C9DA00883622 /* GuasapucNG.app */,
+				037EA7B81AF5C9DA00883622 /* GuasapucNGTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		037EA7A21AF5C9DA00883622 /* GuasapucNG */ = {
+			isa = PBXGroup;
+			children = (
+				037EA7A51AF5C9DA00883622 /* AppDelegate.swift */,
+				03EDE2191B2BBB5E00E99ACA /* ViewControllers */,
+				03EDE21A1B2BBB6C00E99ACA /* TableDelegates */,
+				03EDE21B1B2BBB7500E99ACA /* Sockets */,
+				037EA7AC1AF5C9DA00883622 /* Main.storyboard */,
+				038DB4FB1AF6B98800AFD1AC /* ChatManager.swift */,
+				038DB5051AF6C5DE00AFD1AC /* Common.swift */,
+				0397F92F1B15FFF500B73FE1 /* GuasapucNG-Bridging-Header.h */,
+				030541901B0FEDD200347CF6 /* Images.xcassets */,
+				037EA7B11AF5C9DA00883622 /* LaunchScreen.xib */,
+				037EA7A71AF5C9DA00883622 /* GuasapucNG.xcdatamodeld */,
+				03ACBDF51B03A4C500EE83A8 /* TabBarController.swift */,
+				03D48FA71B3CB9FD00A5E9D7 /* Test.swift */,
+				03A226EB1B27F49600B5576C /* Testing.playground */,
+				0390D8381B1EA18F002F8787 /* Celdas */,
+				0390D8341B1EA108002F8787 /* DatabaseObjects */,
+				037EA7A31AF5C9DA00883622 /* Supporting Files */,
+			);
+			path = GuasapucNG;
+			sourceTree = "<group>";
+		};
+		037EA7A31AF5C9DA00883622 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				035B246B1B4833DF001F3709 /* SRWebClient.swift */,
+				037EA7A41AF5C9DA00883622 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		037EA7BB1AF5C9DA00883622 /* GuasapucNGTests */ = {
+			isa = PBXGroup;
+			children = (
+				037EA7BE1AF5C9DA00883622 /* GuasapucNGTests.swift */,
+				037EA7BC1AF5C9DA00883622 /* Supporting Files */,
+			);
+			path = GuasapucNGTests;
+			sourceTree = "<group>";
+		};
+		037EA7BC1AF5C9DA00883622 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				037EA7BD1AF5C9DA00883622 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0390D8341B1EA108002F8787 /* DatabaseObjects */ = {
+			isa = PBXGroup;
+			children = (
+				03A9D20A1AF6CC5300108F97 /* User.swift */,
+				03A9D2101AF6CC5400108F97 /* Contacto.swift */,
+				03A9D2141AF6CE4300108F97 /* ChatRoom.swift */,
+				03A9D20E1AF6CC5400108F97 /* ChatMessage.swift */,
+			);
+			name = DatabaseObjects;
+			sourceTree = "<group>";
+		};
+		0390D8381B1EA18F002F8787 /* Celdas */ = {
+			isa = PBXGroup;
+			children = (
+				038DB4F31AF5D25D00AFD1AC /* CeldaChat.swift */,
+				03EF200D1AF877AC0064B66A /* CeldaMensaje.swift */,
+				03BF90AC1B0CEEFF009FDD5C /* CeldaUsuarioAgregarAGrupo.swift */,
+			);
+			name = Celdas;
+			sourceTree = "<group>";
+		};
+		03EDE2191B2BBB5E00E99ACA /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				037EA7AA1AF5C9DA00883622 /* ViewController.swift */,
+				03DECA841B0AD3AD004642C4 /* ViewControllerGroups.swift */,
+				03BF90AA1B0CE387009FDD5C /* AddGroupView.swift */,
+				03EF20091AF85B1F0064B66A /* ChatRoomView.swift */,
+				030541921B0FEE7800347CF6 /* MapView.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		03EDE21A1B2BBB6C00E99ACA /* TableDelegates */ = {
+			isa = PBXGroup;
+			children = (
+				038DB4F51AF5E0BF00AFD1AC /* TablaChatsDelegate.swift */,
+				03DECA861B0AD3C4004642C4 /* TablaChatsDelegateGroups.swift */,
+				03EF200B1AF860BC0064B66A /* TablaChatRoomDelegate.swift */,
+			);
+			name = TableDelegates;
+			sourceTree = "<group>";
+		};
+		03EDE21B1B2BBB7500E99ACA /* Sockets */ = {
+			isa = PBXGroup;
+			children = (
+				0390D8391B1EA1E7002F8787 /* Client.swift */,
+				03A226E81B2642EB00B5576C /* TcpDelegate.h */,
+				0390D8311B1EA077002F8787 /* TcpListener.h */,
+				0390D8321B1EA077002F8787 /* TcpListener.m */,
+			);
+			name = Sockets;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		037EA79F1AF5C9DA00883622 /* GuasapucNG */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 037EA7C21AF5C9DA00883622 /* Build configuration list for PBXNativeTarget "GuasapucNG" */;
+			buildPhases = (
+				037EA79C1AF5C9DA00883622 /* Sources */,
+				037EA79D1AF5C9DA00883622 /* Frameworks */,
+				037EA79E1AF5C9DA00883622 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GuasapucNG;
+			productName = GuasapucNG;
+			productReference = 037EA7A01AF5C9DA00883622 /* GuasapucNG.app */;
+			productType = "com.apple.product-type.application";
+		};
+		037EA7B71AF5C9DA00883622 /* GuasapucNGTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 037EA7C51AF5C9DA00883622 /* Build configuration list for PBXNativeTarget "GuasapucNGTests" */;
+			buildPhases = (
+				037EA7B41AF5C9DA00883622 /* Sources */,
+				037EA7B51AF5C9DA00883622 /* Frameworks */,
+				037EA7B61AF5C9DA00883622 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				037EA7BA1AF5C9DA00883622 /* PBXTargetDependency */,
+			);
+			name = GuasapucNGTests;
+			productName = GuasapucNGTests;
+			productReference = 037EA7B81AF5C9DA00883622 /* GuasapucNGTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		037EA7981AF5C9DA00883622 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = "Nicolás Gebauer";
+				TargetAttributes = {
+					037EA79F1AF5C9DA00883622 = {
+						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = E3Y2R8Q9AN;
+					};
+					037EA7B71AF5C9DA00883622 = {
+						CreatedOnToolsVersion = 6.3.1;
+						TestTargetID = 037EA79F1AF5C9DA00883622;
+					};
+				};
+			};
+			buildConfigurationList = 037EA79B1AF5C9DA00883622 /* Build configuration list for PBXProject "GuasapucNG" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 037EA7971AF5C9DA00883622;
+			productRefGroup = 037EA7A11AF5C9DA00883622 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				037EA79F1AF5C9DA00883622 /* GuasapucNG */,
+				037EA7B71AF5C9DA00883622 /* GuasapucNGTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		037EA79E1AF5C9DA00883622 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				030541911B0FEDD200347CF6 /* Images.xcassets in Resources */,
+				037EA7AE1AF5C9DA00883622 /* Main.storyboard in Resources */,
+				037EA7B31AF5C9DA00883622 /* LaunchScreen.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		037EA7B61AF5C9DA00883622 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		037EA79C1AF5C9DA00883622 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				03BF90AB1B0CE387009FDD5C /* AddGroupView.swift in Sources */,
+				0390D8331B1EA077002F8787 /* TcpListener.m in Sources */,
+				038DB5061AF6C5DE00AFD1AC /* Common.swift in Sources */,
+				03DECA851B0AD3AD004642C4 /* ViewControllerGroups.swift in Sources */,
+				030541931B0FEE7800347CF6 /* MapView.swift in Sources */,
+				03ACBDF61B03A4C500EE83A8 /* TabBarController.swift in Sources */,
+				037EA7AB1AF5C9DA00883622 /* ViewController.swift in Sources */,
+				03EF200C1AF860BC0064B66A /* TablaChatRoomDelegate.swift in Sources */,
+				03EF200E1AF877AC0064B66A /* CeldaMensaje.swift in Sources */,
+				03A9D20F1AF6CC5400108F97 /* ChatMessage.swift in Sources */,
+				038DB4F61AF5E0BF00AFD1AC /* TablaChatsDelegate.swift in Sources */,
+				03A9D2111AF6CC5400108F97 /* Contacto.swift in Sources */,
+				0390D83A1B1EA1E7002F8787 /* Client.swift in Sources */,
+				03EF200A1AF85B1F0064B66A /* ChatRoomView.swift in Sources */,
+				035B246C1B4833DF001F3709 /* SRWebClient.swift in Sources */,
+				037EA7A61AF5C9DA00883622 /* AppDelegate.swift in Sources */,
+				03D48FA81B3CB9FD00A5E9D7 /* Test.swift in Sources */,
+				03A9D20B1AF6CC5300108F97 /* User.swift in Sources */,
+				038DB4FC1AF6B98800AFD1AC /* ChatManager.swift in Sources */,
+				03BF90AD1B0CEEFF009FDD5C /* CeldaUsuarioAgregarAGrupo.swift in Sources */,
+				037EA7A91AF5C9DA00883622 /* GuasapucNG.xcdatamodeld in Sources */,
+				038DB4F41AF5D25D00AFD1AC /* CeldaChat.swift in Sources */,
+				03A9D2151AF6CE4300108F97 /* ChatRoom.swift in Sources */,
+				03DECA871B0AD3C4004642C4 /* TablaChatsDelegateGroups.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		037EA7B41AF5C9DA00883622 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				037EA7BF1AF5C9DA00883622 /* GuasapucNGTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		037EA7BA1AF5C9DA00883622 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 037EA79F1AF5C9DA00883622 /* GuasapucNG */;
+			targetProxy = 037EA7B91AF5C9DA00883622 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		037EA7AC1AF5C9DA00883622 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				037EA7AD1AF5C9DA00883622 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		037EA7B11AF5C9DA00883622 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				037EA7B21AF5C9DA00883622 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		037EA7C01AF5C9DA00883622 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		037EA7C11AF5C9DA00883622 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		037EA7C31AF5C9DA00883622 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = GuasapucNG/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "GuasapucNG/GuasapucNG-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		037EA7C41AF5C9DA00883622 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = GuasapucNG/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "GuasapucNG/GuasapucNG-Bridging-Header.h";
+			};
+			name = Release;
+		};
+		037EA7C61AF5C9DA00883622 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = GuasapucNGTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GuasapucNG.app/GuasapucNG";
+			};
+			name = Debug;
+		};
+		037EA7C71AF5C9DA00883622 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = GuasapucNGTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GuasapucNG.app/GuasapucNG";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		037EA79B1AF5C9DA00883622 /* Build configuration list for PBXProject "GuasapucNG" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				037EA7C01AF5C9DA00883622 /* Debug */,
+				037EA7C11AF5C9DA00883622 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		037EA7C21AF5C9DA00883622 /* Build configuration list for PBXNativeTarget "GuasapucNG" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				037EA7C31AF5C9DA00883622 /* Debug */,
+				037EA7C41AF5C9DA00883622 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		037EA7C51AF5C9DA00883622 /* Build configuration list for PBXNativeTarget "GuasapucNGTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				037EA7C61AF5C9DA00883622 /* Debug */,
+				037EA7C71AF5C9DA00883622 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		037EA7A71AF5C9DA00883622 /* GuasapucNG.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				037EA7A81AF5C9DA00883622 /* GuasapucNG.xcdatamodel */,
+			);
+			currentVersion = 037EA7A81AF5C9DA00883622 /* GuasapucNG.xcdatamodel */;
+			path = GuasapucNG.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 037EA7981AF5C9DA00883622 /* Project object */;
+}

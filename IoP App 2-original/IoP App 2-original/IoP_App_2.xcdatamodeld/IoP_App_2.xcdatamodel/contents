@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7549" systemVersion="14D130a" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Contacto" representedClassName="IoP_App_2.Contacto" syncable="YES">
+        <attribute name="apellidoM" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="apellidoP" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="idWeb" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="isContactoWeb" optional="YES" attributeType="Boolean" defaultValueString="0" syncable="YES"/>
+        <attribute name="letraO" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nombre" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nombreOrden" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+<<<<<<< Updated upstream:IoP App 2/IoP_App_2.xcdatamodeld/IoP_App_2.xcdatamodel/contents
+        <element name="Contacto" positionX="-1350" positionY="-414" width="128" height="150"/>
+=======
+        <element name="Contacto" positionX="-1350" positionY="-414" width="128" height="120"/>
+>>>>>>> Stashed changes:IoP App 2-original/IoP_App_2.xcdatamodeld/IoP_App_2.xcdatamodel/contents
+    </elements>
+</model>
