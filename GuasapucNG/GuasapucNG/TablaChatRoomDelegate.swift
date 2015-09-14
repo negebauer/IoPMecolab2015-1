@@ -12,6 +12,7 @@ import UIKit
 class TablaChatRoomDelegate: NSObject, UITableViewDelegate, UITableViewDataSource {
     weak var referenciaAlChatRoomViewController: ChatRoomView!
     var chatRoom: ChatRoom!
+    var urlToShow = ""
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let c = tableView.dequeueReusableCellWithIdentifier("IDCeldaMensaje") as! CeldaMensaje
@@ -44,9 +45,17 @@ class TablaChatRoomDelegate: NSObject, UITableViewDelegate, UITableViewDataSourc
             let targetURL = NSURL(string: msg.url)
             if targetURL == nil { return }
             
+            if referenciaAlChatRoomViewController == nil { return }
+            
+            urlToShow = msg.url
+            
+            referenciaAlChatRoomViewController.performSegueWithIdentifier("IDShowImage", sender: self)
+            
+            /* Deprecated
             let application=UIApplication.sharedApplication()
             
             application.openURL(targetURL!);
+            */
         }
         tableView.deselectRowAtIndexPath(indexPath, animated: false)
     }

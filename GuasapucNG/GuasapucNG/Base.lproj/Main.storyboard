@@ -280,11 +280,44 @@
                         <outlet property="BottomConstraint" destination="w35-hP-nN2" id="o6t-xh-9ka"/>
                         <outlet property="TablaMensajes" destination="6xh-Hu-coF" id="uWi-Aq-4qf"/>
                         <outlet property="TextField" destination="AsL-IN-J0i" id="wF6-I1-Coq"/>
+                        <segue destination="W48-DH-qMY" kind="show" identifier="IDShowImage" id="Plq-mG-59D"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sR7-kd-qpK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1813" y="-46"/>
+        </scene>
+        <!--Image Viewer View Controller-->
+        <scene sceneID="vgl-5g-U21">
+            <objects>
+                <viewController id="W48-DH-qMY" customClass="ImageViewerViewController" customModule="GuasapucNG" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="e8x-HC-8yZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="Wyv-RO-EpQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="CVx-vR-Uy8">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="W6t-La-kOU">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="W6t-La-kOU" firstAttribute="leading" secondItem="CVx-vR-Uy8" secondAttribute="leadingMargin" constant="-16" id="05t-cN-PiK"/>
+                            <constraint firstItem="W6t-La-kOU" firstAttribute="bottom" secondItem="CVx-vR-Uy8" secondAttribute="bottomMargin" id="3Ew-QD-ixm"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="W6t-La-kOU" secondAttribute="trailing" constant="-16" id="Gko-ly-V55"/>
+                            <constraint firstItem="W6t-La-kOU" firstAttribute="top" secondItem="CVx-vR-Uy8" secondAttribute="topMargin" id="Pga-yT-RBB"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="Image" destination="W6t-La-kOU" id="2aX-jp-UyM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZPD-4S-7bZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2528" y="310"/>
         </scene>
         <!--Chats-->
         <scene sceneID="QPc-VN-Uu9">
@@ -602,6 +635,7 @@
                         <outlet property="BottomConstraint" destination="w1E-si-Q1V" id="vvC-yj-ACR"/>
                         <outlet property="TablaMensajes" destination="GDc-yi-bRo" id="Khs-LX-iAh"/>
                         <outlet property="TextField" destination="bfw-MY-VJp" id="3gF-dj-goL"/>
+                        <segue destination="W48-DH-qMY" kind="show" identifier="IDShowImage" id="uaz-ss-qSX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WLl-90-cir" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -892,4 +926,7 @@
         <image name="MapIcon" width="30" height="30"/>
         <image name="ShareIcon" width="30" height="30"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Plq-mG-59D"/>
+    </inferredMetricsTieBreakers>
 </document>

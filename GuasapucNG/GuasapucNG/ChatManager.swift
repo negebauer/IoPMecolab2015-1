@@ -519,7 +519,7 @@ class ChatManager {
         fetch.predicate = revisarIdMensaje
         if let fetchResults = Common.moc?.executeFetchRequest(fetch, error: nil) as? [ChatMessage] {
             if fetchResults.count == 0 {
-                let newMessage = ChatMessage.new(Common.moc!, _sender: sender, _content: "Click to view image", _hasURL: true, _url: url)
+                let newMessage = ChatMessage.new(Common.moc!, _sender: sender, _content: "Click to view image", _hasURL: true, _url: url, _id:id)
                 return newMessage
             }
             else if fetchResults.count == 1 {

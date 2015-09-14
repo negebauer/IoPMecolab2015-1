@@ -16,6 +16,7 @@
 		037EA7AE1AF5C9DA00883622 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 037EA7AC1AF5C9DA00883622 /* Main.storyboard */; };
 		037EA7B31AF5C9DA00883622 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 037EA7B11AF5C9DA00883622 /* LaunchScreen.xib */; };
 		037EA7BF1AF5C9DA00883622 /* GuasapucNGTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037EA7BE1AF5C9DA00883622 /* GuasapucNGTests.swift */; };
+		03850C1A1BA68CFA00FC91CE /* ImageViewerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03850C191BA68CFA00FC91CE /* ImageViewerViewController.swift */; };
 		038DB4F41AF5D25D00AFD1AC /* CeldaChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038DB4F31AF5D25D00AFD1AC /* CeldaChat.swift */; };
 		038DB4F61AF5E0BF00AFD1AC /* TablaChatsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038DB4F51AF5E0BF00AFD1AC /* TablaChatsDelegate.swift */; };
 		038DB4FC1AF6B98800AFD1AC /* ChatManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038DB4FB1AF6B98800AFD1AC /* ChatManager.swift */; };
@@ -62,6 +63,7 @@
 		037EA7B81AF5C9DA00883622 /* GuasapucNGTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GuasapucNGTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		037EA7BD1AF5C9DA00883622 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		037EA7BE1AF5C9DA00883622 /* GuasapucNGTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuasapucNGTests.swift; sourceTree = "<group>"; };
+		03850C191BA68CFA00FC91CE /* ImageViewerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewerViewController.swift; sourceTree = "<group>"; };
 		038DB4F31AF5D25D00AFD1AC /* CeldaChat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CeldaChat.swift; sourceTree = "<group>"; };
 		038DB4F51AF5E0BF00AFD1AC /* TablaChatsDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TablaChatsDelegate.swift; sourceTree = "<group>"; };
 		038DB4FB1AF6B98800AFD1AC /* ChatManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatManager.swift; sourceTree = "<group>"; };
@@ -205,6 +207,7 @@
 				03BF90AA1B0CE387009FDD5C /* AddGroupView.swift */,
 				03EF20091AF85B1F0064B66A /* ChatRoomView.swift */,
 				030541921B0FEE7800347CF6 /* MapView.swift */,
+				03850C191BA68CFA00FC91CE /* ImageViewerViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -344,6 +347,7 @@
 				038DB4F61AF5E0BF00AFD1AC /* TablaChatsDelegate.swift in Sources */,
 				03A9D2111AF6CC5400108F97 /* Contacto.swift in Sources */,
 				0390D83A1B1EA1E7002F8787 /* Client.swift in Sources */,
+				03850C1A1BA68CFA00FC91CE /* ImageViewerViewController.swift in Sources */,
 				03EF200A1AF85B1F0064B66A /* ChatRoomView.swift in Sources */,
 				035B246C1B4833DF001F3709 /* SRWebClient.swift in Sources */,
 				037EA7A61AF5C9DA00883622 /* AppDelegate.swift in Sources */,

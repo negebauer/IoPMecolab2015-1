@@ -294,7 +294,7 @@ class ChatRoomView: UIViewController, UITextFieldDelegate, UIImagePickerControll
     }
     
     func sendMessageURL(url:String) {
-        let newMessage = ChatMessage.new(Common.moc!, _sender: Common.userNumber, _content: "Click to view image", _hasURL: true, _url: url)
+        let newMessage = ChatMessage.new(Common.moc!, _sender: Common.userNumber, _content: "Click to view image", _hasURL: true, _url: url, _id: -1)
         chatRoomToShow.addMessageToChat(newMessage)
         println("Content: " + newMessage.content)
         println("Sender: "+newMessage.sender)
@@ -447,6 +447,18 @@ class ChatRoomView: UIViewController, UITextFieldDelegate, UIImagePickerControll
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "IDShowImage" {
+            let s = sender as? TablaChatRoomDelegate
+            if s != nil {
+                let imgView = segue.destinationViewController as? ImageViewerViewController
+                if imgView != nil {
+                    imgView!.urlString = s!.urlToShow
+                }
+            }
+        }
     }
     
     override func didReceiveMemoryWarning() {

@@ -73,13 +73,13 @@ class ChatMessage: NSManagedObject {
         return newItem
     }
     
-    class func new(moc: NSManagedObjectContext, _sender:String, _content:String, _hasURL:Bool, _url:String) -> ChatMessage {
+    class func new(moc: NSManagedObjectContext, _sender:String, _content:String, _hasURL:Bool, _url:String, _id:Int) -> ChatMessage {
         let newItem = NSEntityDescription.insertNewObjectForEntityForName("ChatMessage", inManagedObjectContext: moc) as! GuasapucNG.ChatMessage
         
         newItem.content = _content
         newItem.sender = _sender
         newItem.createdAt = NSDate(timeIntervalSince1970: NSTimeInterval.abs(0))
-        newItem.id = -1
+        newItem.id = _id
         newItem.hasURL = _hasURL
         newItem.url = _url
         
