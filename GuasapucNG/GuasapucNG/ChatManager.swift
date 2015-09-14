@@ -89,16 +89,20 @@ class ChatManager {
                 for jsonMensaje in jsonArray {
                     //json con todas las conversaciones donde estoy
                     if let diccionarioMensaje = jsonMensaje as? Dictionary<String, NSObject> {
-                        let id = diccionarioMensaje["id"] as! Int
-                        let isGroup = diccionarioMensaje["group"] as! Bool
-                        let title = diccionarioMensaje["title"] as! String
-                        let admin = diccionarioMensaje["admin"] as! String
+                        let id = diccionarioMensaje["id"] as? Int
+                        let isGroup = diccionarioMensaje["group"] as? Bool
+                        let title = diccionarioMensaje["title"] as? String
+                        let admin = diccionarioMensaje["admin"] as? String
                         
-                        if isGroup {
-                            self.checkChatRoomGroup(id, title: title, admin: admin)
+                        if id == nil || isGroup == nil || title == nil || admin == nil {
+                            return
+                        }
+                        
+                        if isGroup! {
+                            self.checkChatRoomGroup(id!, title: title!, admin: admin!)
                         }
                         else {
-                            self.checkChatRoom(id, title: title, admin: admin)
+                            self.checkChatRoom(id!, title: title!, admin: admin!)
                         }}}}
         }
         task.resume()
@@ -157,28 +161,53 @@ class ChatManager {
                 for jsonMensaje in jsonArray {
                     if let diccionarioMensaje = jsonMensaje as? Dictionary<String,NSObject> {
                         self.fetchChatRooms()
-                        //No vamos a revisar los mensajes que yo envie
-                        let sender = diccionarioMensaje["sender"] as! String
-                        if sender == Common.userNumber { continue }
-                        let id = diccionarioMensaje["id"] as! Int
-                        if contains(chatRoom.getMessagesInChat(), {m in m.id == id}) { continue }
-                        var content = ""
-                        if !(diccionarioMensaje["content"] is NSNull) {
-                            content = diccionarioMensaje["content"] as! String
-                        }
-                        let createdAtString = diccionarioMensaje["created_at"] as! String
-                        let newMessage = ChatMessage.new(Common.moc!, _sender: sender, _content: content, _createdAtString: createdAtString, _id: id)
                         
-                        Common.synced(chatRoom, closure: { chatRoom.addMessageToChat(newMessage) })
-                        if chatRoom.isGroup {
-                            if self.referenciaAlDelegateGroups != nil {
-                                if self.referenciaAlDelegateGroups.referenciaAlViewControllerGroups != nil {
-                                    self.referenciaAlDelegateGroups.referenciaAlViewControllerGroups.TablaChats.reloadData()
+                        func addMessage(m:ChatMessage) {
+                            Common.synced(chatRoom, closure: { chatRoom.addMessageToChat(m) })
+                            if chatRoom.isGroup {
+                                if self.referenciaAlDelegateGroups != nil {
+                                    if self.referenciaAlDelegateGroups.referenciaAlViewControllerGroups != nil {
+                                        self.referenciaAlDelegateGroups.referenciaAlViewControllerGroups.TablaChats.reloadData()
+                                    }
                                 }
                             }
+                            else { self.referenciaAlDelegate.referenciaAlViewController.TablaChats.reloadData()
+                            }
                         }
-                        else { self.referenciaAlDelegate.referenciaAlViewController.TablaChats.reloadData()
+                        
+                        let id = diccionarioMensaje["id"] as? Int
+                        let sender = diccionarioMensaje["sender"] as? String
+                        let content = diccionarioMensaje["content"] as? String
+                        let createdAtString = diccionarioMensaje["created_at"] as? String
+                        var url: String?
+                        var mime_type: String?
+                        let diccFile = diccionarioMensaje["file"] as? Dictionary<String,NSObject>
+                        if diccFile != nil {
+                            url = diccFile!["url"] as? String
+                            mime_type = diccFile!["mime_type"] as? String
                         }
+                        
+                        if id != nil && contains(chatRoom.getMessagesInChat(), {m in m.id == id}) {
+                            continue
+                        }
+                        
+                        if sender != nil && sender == Common.userNumber {
+                            continue
+                        }
+                        
+                        if url != nil && mime_type != nil && id != nil && sender != nil && createdAtString != nil {
+                            let date = Common.getDateFromString(createdAtString!)
+                            let m = self.getMessageForData(id!, sender: sender!, url: url!, mime_type: mime_type!)
+                            m.createdAt = date
+                            addMessage(m)
+                        }
+                        else if id != nil && sender != nil && content != nil && createdAtString != nil {
+                            let date = Common.getDateFromString(createdAtString!)
+                            let m = self.getMessageForData(id!, sender: sender!, content: content!)
+                            m.createdAt = date
+                            addMessage(m)
+                        }
+                        
                     }}}
         }
         reloadData()
@@ -359,6 +388,9 @@ class ChatManager {
                             }}}}
                 
                 //Descargo los mensajes del chat y los agrego al chat
+                getMessagesFromWebForChat(newChatRoom)
+                
+                /* Deprecated
                 let requestMensajesGrupo = Common.getRequestGetMessagesInConversation(id)
                 let taskMensajesGrupo = NSURLSession.sharedSession().dataTaskWithRequest(requestMensajesGrupo) {
                     data, response, error in
@@ -379,12 +411,13 @@ class ChatManager {
                                 let m = self.getMessageForData(id!, sender: sender!, content: content!)
                                 m.createdAt = date
                             }}}}
+                */
                 
                 Common.synced(chatRoomsGroups, closure: {self.chatRoomsGroups.append(newChatRoom)})
                 ordenarListaChats()
                 fetchChatRooms()
                 reloadData()
-                taskMensajesGrupo.resume()
+                //taskMensajesGrupo.resume()
                 taskMiembrosGrupo.resume()
             }
             else if fetchResultsChatRoomGroup.count > 1 {
@@ -419,6 +452,9 @@ class ChatManager {
                             }}}}
                 
                 //Descargo los mensajes del chat y los agrego al chat
+                getMessagesFromWebForChat(newChatRoom)
+                
+                /* Deprecated
                 let requestMensajesGrupo = Common.getRequestGetMessagesInConversation(id)
                 let taskMensajesGrupo = NSURLSession.sharedSession().dataTaskWithRequest(requestMensajesGrupo) {
                     data, response, error in
@@ -439,12 +475,13 @@ class ChatManager {
                                 let m = self.getMessageForData(id!, sender: sender!, content: content!)
                                 m.createdAt = date
                             }}}}
-                
+                */               
+
                 Common.synced(chatRooms, closure: {self.chatRoomsGroups.append(newChatRoom)})
                 ordenarListaChats()
                 fetchChatRooms()
                 reloadData()
-                taskMensajesGrupo.resume()
+                //taskMensajesGrupo.resume()
                 taskMiembrosGrupo.resume()
             }
             else if fetchResultsChatRoom1on1.count > 1 {
@@ -461,6 +498,28 @@ class ChatManager {
         if let fetchResults = Common.moc?.executeFetchRequest(fetch, error: nil) as? [ChatMessage] {
             if fetchResults.count == 0 {
                 let newMessage = ChatMessage.new(Common.moc!, _sender: sender, _content: content, _id: id)
+                return newMessage
+            }
+            else if fetchResults.count == 1 {
+                return fetchResults[0]
+            }
+            else if fetchResults.count > 1 {
+                NSLog("ERROR---\nTenemos mas de un chat para el id: \(String(id))")
+                return ChatMessage()
+            }
+        }
+        NSLog("No funciono un fetchRequest para busqueda de mensaje con id: \(String(id))")
+        return ChatMessage()
+    }
+    
+    ///Checks if message is in DB. Creates it if it's not. Returns the message
+    func getMessageForData(id:Int, sender:String, url:String, mime_type:String) -> ChatMessage {
+        let fetch = NSFetchRequest(entityName: "ChatMessage")
+        let revisarIdMensaje = NSPredicate(format: "id == %X", id)
+        fetch.predicate = revisarIdMensaje
+        if let fetchResults = Common.moc?.executeFetchRequest(fetch, error: nil) as? [ChatMessage] {
+            if fetchResults.count == 0 {
+                let newMessage = ChatMessage.new(Common.moc!, _sender: sender, _content: "Click to view image", _hasURL: true, _url: url)
                 return newMessage
             }
             else if fetchResults.count == 1 {
