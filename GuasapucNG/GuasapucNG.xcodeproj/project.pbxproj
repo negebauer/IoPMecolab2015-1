@@ -168,7 +168,7 @@
 				037EA7BC1AF5C9DA00883622 /* Supporting Files */,
 			);
 			path = GuasapucNGTests;
-			sourceTree = "<group>";
+			sourceTree = SOURCE_ROOT;
 		};
 		037EA7BC1AF5C9DA00883622 /* Supporting Files */ = {
 			isa = PBXGroup;
@@ -277,6 +277,7 @@
 		037EA7981AF5C9DA00883622 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = "Nicolás Gebauer";
 				TargetAttributes = {

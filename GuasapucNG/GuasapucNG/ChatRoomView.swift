@@ -161,6 +161,7 @@ class ChatRoomView: UIViewController, UITextFieldDelegate, UIImagePickerControll
         */
     }
     
+    /// Envia una imagen
     func sendImage(image:UIImage){
         let imageData = UIImageJPEGRepresentation(image, 1.0)
         SRWebClient.POST("http://guasapuc.herokuapp.com/api/v2/conversations/send_file_message")
