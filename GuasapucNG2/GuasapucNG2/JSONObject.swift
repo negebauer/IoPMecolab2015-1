@@ -88,7 +88,7 @@ class JSONObject : NSObject {
             return true
         } else if id != nil && sender != nil && mime_type != nil && url_file != nil && conversation_id != nil && created_at != nil && url_message != nil {
             // Mensaje con archivo
-            content = ""
+            content = "Click to view image"
             return true
         }
         return false

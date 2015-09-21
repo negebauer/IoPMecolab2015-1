@@ -19,6 +19,15 @@ class ChatRoom: NSManagedObject {
     @NSManaged var user: User
     @NSManaged var chatMembers: NSSet   //Set de Contacto
     @NSManaged var chatMessages: NSSet  //Set de ChatMessage
+    
+    var arrayMessage: [ChatMessage] {
+        return chatMessages.allObjects as! [ChatMessage]
+    }
+    
+    var ultimoMensaje: String {
+        let lastMessage = arrayMessage.last?.content
+        return lastMessage != nil ? lastMessage! : "THERE IS NO LAST MESSAGE"
+    }
 
     class func new(moc: NSManagedObjectContext, _isGroup: Bool, _nombreChat: String, _admin: String, _id: Int) -> ChatRoom {
         let newChat = NSEntityDescription.insertNewObjectForEntityForName("ChatRoom", inManagedObjectContext: moc) as! GuasapucNG2.ChatRoom
@@ -48,11 +57,15 @@ class ChatRoom: NSManagedObject {
     
     /// Adds a chatMessage to this chatRooms messages. Returns true if success, false if duplicated or failed.
     /// Also adds this chatRoom to the chatMessage chatRoom reference.
+    /// Also updates the chatRoom updatedAt if the chatMessage.createdAt is more recent
     func addChatMessageToChat(message: ChatMessage) -> Bool {
         var messages = chatMessages.allObjects as! [ChatMessage]
         if !messages.contains(message) {
             messages.append(message)
             chatMessages = NSSet(array: messages)
+            if isDate1GreaterThanDate2(message.createdAt, date2: updatedAt) {
+                updatedAt = message.createdAt
+            }
             return true
         }
         return false

@@ -9,7 +9,7 @@
 import UIKit
 
 /// View that manages the display of all chatRooms.
-class ChatViewController: UIViewController, ChatManagerDelegate {
+class ChatViewController: UIViewController, ChatRoomListDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     var chatManager: ChatManager!
@@ -37,13 +37,14 @@ class ChatViewController: UIViewController, ChatManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        chatManager = ChatManager()
+        chatManager = ChatManager(chatRoomListDelegate: self)
         crearTabla()
     }
     
     func crearTabla() {
         tableDelegate = TablaChatsDelegate()
         
+        tableDelegate.refChatViewController = self
         tableDelegate.refChatManager = chatManager
         tableView.delegate = tableDelegate
         tableView.dataSource = tableDelegate

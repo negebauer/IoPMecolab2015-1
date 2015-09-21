@@ -24,15 +24,6 @@ class Contacto: NSManagedObject {
         return newContact
     }
     
-    class func new(moc: NSManagedObjectContext, nombre: String, numero: String, chatRooms: [ChatRoom]) -> Contacto {
-        let newContact = NSEntityDescription.insertNewObjectForEntityForName("Contacto", inManagedObjectContext: moc) as! GuasapucNG2.Contacto
-        newContact.nombre = nombre
-        newContact.numero = numero
-        newContact.chatRooms = NSSet(array: chatRooms)
-        
-        return newContact
-    }
-    
     ///Ads a chatRoom to this Contact. Returns true if success, false if duplicated or failed
     func addChatRoom(chatRoom: ChatRoom) -> Bool {
         var arrayChats = chatRooms.allObjects as? [ChatRoom]

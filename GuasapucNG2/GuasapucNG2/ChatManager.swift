@@ -12,13 +12,14 @@ import AddressBook
 
 // MARK: - Protocols
 
-protocol ChatManagerDelegate {
+protocol ChatRoomListDelegate {
     func reloadChatRooms()
     var table: UITableView { get }
 }
 
-protocol ChatRoomManagerDelegate {
-    
+protocol ChatMessageListDelegate {
+    func reloadChatRoom()
+    //var table: UITableView { get }
 }
 
 // MARK: - Chat manager class
@@ -28,18 +29,55 @@ class ChatManager {
     var diccionarioNumeroPersonABRecord = Dictionary<String,ABRecord>()
     var listaChats = [ChatRoom]()
     var moc: NSManagedObjectContext!
-    var chatListDelegate: ChatManagerDelegate?              //Vista de todos los chats
-    var chatRoomDelegate: ChatRoomManagerDelegate?  //Vista del ChatRoom que se esta mostrando actualmente
+    var chatRoomListDelegate: ChatRoomListDelegate?              //Vista de todos los chats
+    var chatMessageListDelegate: ChatMessageListDelegate?       //Vista del ChatRoom que se esta mostrando actualmente
     
-    init() {
+    init(chatRoomListDelegate: ChatRoomListDelegate) {
+        self.chatRoomListDelegate = chatRoomListDelegate
         getMoc()
         checkMoc()
         createArrayNumberName()
+        fetchChatRooms()
+        reloadChatRooms()
         updateChats()
-        reload()
+        
+        //deleteAll()
+        logStuff()
     }
     
-    /// Logs a lot of stuff.
+    // MARK: - Developing stage
+    
+    /// [DEVELOPING] Deletes everything
+    func deleteAll() {
+        let fetchRequest0 = NSFetchRequest(entityName: "User")
+        if let fetchResults0 = (try? moc.executeFetchRequest(fetchRequest0)) as? [User] {
+            for result in fetchResults0 {
+                moc.deleteObject(result)
+            }
+        }
+        let fetchRequest = NSFetchRequest(entityName: "ChatRoom")
+        if let fetchResults = (try? moc.executeFetchRequest(fetchRequest)) as? [ChatRoom] {
+            for result in fetchResults {
+                moc.deleteObject(result)
+            }
+            listaChats = [ChatRoom]()
+        }
+        let fetchRequest2 = NSFetchRequest(entityName: "Contacto")
+        if let fetchResults2 = (try? moc.executeFetchRequest(fetchRequest2)) as? [Contacto] {
+            for result in fetchResults2 {
+                moc.deleteObject(result)
+            }
+        }
+        let fetchRequest3 = NSFetchRequest(entityName: "User")
+        if let fetchResults3 = (try? moc.executeFetchRequest(fetchRequest3)) as? [User] {
+            for result in fetchResults3 {
+                moc.deleteObject(result)
+            }
+        }
+        User.checkUser()
+    }
+    
+    /// [DEVELOPING] Logs a lot of stuff.
     func logStuff() {
         var nChatMessages = 0
         for chat in listaChats {
@@ -60,12 +98,10 @@ class ChatManager {
     /// Updates everything (chatRooms, chatMessages, etc.)
     func updateChats() {
         checkMoc()
-        fetchChatRooms()
         getChatRooms()
         for chat in listaChats {
             updateChat(chat)
         }
-        logStuff()
     }
     
     /// Updates everything of a chatRoom.
@@ -83,7 +119,9 @@ class ChatManager {
             let jsonContainer = JSONObjectCreator(data: data, type: JSONObject.TiposDeJSON.ChatRoom, error: error)
             
             for jsonObject in jsonContainer.arrayJSONObjects {
-                self.checkForChatRoom(jsonObject)
+                dispatch_async(dispatch_get_main_queue(), {
+                    self.checkForChatRoom(jsonObject)
+                })
             }
         }
         task.resume()
@@ -97,7 +135,9 @@ class ChatManager {
             let jsonContainer = JSONObjectCreator(data: data!, type: JSONObject.TiposDeJSON.ChatMessage, error: error)
             
             for jsonObject in jsonContainer.arrayJSONObjects {
-                self.checkForChatMessageInChatRoom(chat, jsonObject: jsonObject)
+                dispatch_async(dispatch_get_main_queue(), {
+                    self.checkForChatMessageInChatRoom(chat, jsonObject: jsonObject)
+                })
             }
         }
         task.resume()
@@ -111,8 +151,10 @@ class ChatManager {
             let jsonContainer = JSONObjectCreator(data: data!, type: JSONObject.TiposDeJSON.MiembroChat, error: error)
             
             for jsonObject in jsonContainer.arrayJSONObjects {
-                let contact = self.getContactForNumber(jsonObject.phone_number!)
-                chat.addMemberToChat(contact)
+                dispatch_async(dispatch_get_main_queue(), {
+                    let contact = self.getContactForNumber(jsonObject.phone_number!)
+                    chat.addMemberToChat(contact)
+                })
             }
         }
         task.resume()
@@ -128,36 +170,52 @@ class ChatManager {
         synced(listaChats, closure: {
             if !self.listaChats.contains({chat in chat.id == jsonObject.id!}) {
                 newChatRoom = ChatRoom.new(self.moc, _isGroup: jsonObject.group!, _nombreChat: jsonObject.title!, _admin: jsonObject.admin!, _id: jsonObject.id!)
+                newChatRoom!.updatedAt = NSDate(timeIntervalSince1970: 0)
                 isNew = true
                 saveDatabase()
-                self.fetchChatRooms()
             }
         })
         if isNew {
+            listaChats.append(newChatRoom!)
+            listaChats.sortInPlace({ chat1, chat2 in return isDate1GreaterThanDate2(chat1.updatedAt, date2: chat2.updatedAt) })
+            if let delegate = chatRoomListDelegate {
+                let indexPaths = [NSIndexPath(forRow: listaChats.indexOf(newChatRoom!)! + 1, inSection: 0)]
+                delegate.table.insertRowsAtIndexPaths(indexPaths, withRowAnimation: UITableViewRowAnimation.Automatic)
+            }
+            
             self.getUsersOfChatRoom(newChatRoom!)
             self.updateChat(newChatRoom!)
         }
-        reload()
         logStuff()
     }
     
     /// Checks the existance of a given chatMessage. If it doesn't exist, it creates it, adds it to its corresponding chatRoom and updates the chatRoom. If exists, ignores.
     func checkForChatMessageInChatRoom(chat: ChatRoom, jsonObject: JSONObject) {
         fetchChatRooms()
+        var isNew = false
+//        var newChatMessage: ChatMessage?
         synced(chat, closure: {
             if !chat.containsMessageWithID(jsonObject.id!) {
-                _ = ChatMessage.new(self.moc, sender: jsonObject.sender!, content: jsonObject.content!, createdAt: jsonObject.created_at!, id: jsonObject.id!, isFile: jsonObject.hasFile(), fileURL: jsonObject.url_file!, mimeType: jsonObject.mime_type!, chatRoom: chat)
+                isNew = true
+                /*newChatMessage*/ _ = ChatMessage.new(self.moc, sender: jsonObject.sender!, content: jsonObject.content!, createdAt: jsonObject.created_at!, id: jsonObject.id!, isFile: jsonObject.hasFile(), fileURL: jsonObject.url_file!, mimeType: jsonObject.mime_type!, chatRoom: chat)
                 saveDatabase()
                 self.fetchChatRooms()
             }
         })
-        reload()
+        // Set a delegate for a chatRoom view to insert chatMessages in it
+        if isNew {
+            reloadChatRooms()
+//            if let delegate = chatListDelegate {
+//                let indexPaths = [NSIndexPath(forRow: chat.arrayMessage.indexOf(newChatMessage!)!, inSection: 0)]
+//                delegate.table.insertRowsAtIndexPaths(indexPaths, withRowAnimation: UITableViewRowAnimation.Automatic)
+//            }
+        }
         logStuff()
     }
     
     // MARK: - Contacts managing
     
-    /// Returns the Contact that matches the specified number. Creates a new one if it doesn't exist
+    /// Returns the Contact that matches the specified number. Creates a new one if it doesn't exist.
     func getContactForNumber(number: String) -> Contacto {
         let fetchRequestContacto = NSFetchRequest(entityName: "Contacto")
         let revisarNumero = NSPredicate(format: "numero == %@", number)
@@ -212,9 +270,17 @@ class ChatManager {
     
     // MARK: - View managing
     
-    func reload() {
-        if let delegate = chatListDelegate {
+    /// Reloads the list of chatRooms if the delegate is set.
+    func reloadChatRooms() {
+        if let delegate = chatRoomListDelegate {
             delegate.reloadChatRooms()
+        }
+    }
+    
+    /// Reloads the list of chatMessages of a chatRoom if the delegate is set.
+    func reloadChatMessages() {
+        if let delegate = chatMessageListDelegate {
+            delegate.reloadChatRoom()
         }
     }
     

@@ -9,7 +9,7 @@
 import UIKit
 
 /// View that manages the display of a chatRoom
-class ChatRoomViewController: UIViewController, ChatRoomManagerDelegate {
+class ChatRoomViewController: UIViewController, ChatMessageListDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +22,11 @@ class ChatRoomViewController: UIViewController, ChatRoomManagerDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    // MARK: - ChatMessageListDelegate methods
+    
+    func reloadChatRoom() {
+        
+    }
 
     /*
     // MARK: - Navigation

@@ -13,6 +13,7 @@ import UIKit
 class TablaChatsDelegate: NSObject, UITableViewDelegate, UITableViewDataSource {
     
     weak var refChatManager: ChatManager!
+    weak var refChatViewController: ChatViewController!
     
     // MARK: - UITableViewDelegate methods
     
@@ -20,13 +21,30 @@ class TablaChatsDelegate: NSObject, UITableViewDelegate, UITableViewDataSource {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
     
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 60
+    }
+    
     // MARK: - UITableViewDataSource methods
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return refChatManager.listaChats.count + 1
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        if indexPath.row == 0 {
+            let cell = tableView.dequeueReusableCellWithIdentifier("IDCeldaCrearGrupo", forIndexPath: indexPath) as? CreateGroupTableViewCell
+            
+            cell?.refChatViewController = refChatViewController
+            
+            return cell != nil ? cell! : UITableViewCell()
+        }
+        
+        let cell = tableView.dequeueReusableCellWithIdentifier("IDCeldaChat", forIndexPath: indexPath) as? ChatTableViewCell
+        
+        cell?.LabelNombreChat.text = refChatManager.listaChats[indexPath.row - 1].nombreChat
+        cell?.LabelUltimoMensaje.text = refChatManager.listaChats[indexPath.row - 1].ultimoMensaje
+        
+        return cell != nil ? cell! : UITableViewCell()
     }
 }

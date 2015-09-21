@@ -21,7 +21,7 @@ class ChatMessage: NSManagedObject {
     @NSManaged var chatRoom: ChatRoom
     
     /// Creates and returns a new chatMessage. Also calls chatRoom.addChatMessageToChat to make the connection right away.
-    class func new(moc: NSManagedObjectContext, sender: String, content: String, createdAt: String, id: Int, isFile: Bool, fileURL: String, mimeType: String, chatRoom: ChatRoom) -> ChatMessage {
+    class func new(moc: NSManagedObjectContext, sender: String, content: String, createdAt: String, id: Int, isFile: Bool, fileURL: String, mimeType: String, chatRoom: ChatRoom) -> GuasapucNG2.ChatMessage {
         let newMessage = NSEntityDescription.insertNewObjectForEntityForName("ChatMessage", inManagedObjectContext: moc) as! GuasapucNG2.ChatMessage
         
         newMessage.sender = sender
