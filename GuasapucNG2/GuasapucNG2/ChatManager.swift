@@ -200,22 +200,27 @@ class ChatManager {
     private func checkForChatMessageInChatRoom(chat: ChatRoom, jsonObject: JSONObject) {
         fetchChatRooms()
         var isNew = false
-//        var newChatMessage: ChatMessage?
+        var newChatMessage: ChatMessage?
         synced(chat, closure: {
             if !chat.containsMessageWithID(jsonObject.id!) {
+                newChatMessage = ChatMessage.new(self.moc, sender: jsonObject.sender!, content: jsonObject.content!, createdAt: jsonObject.created_at!, id: jsonObject.id!, isFile: jsonObject.hasFile(), fileURL: jsonObject.url_file!, mimeType: jsonObject.mime_type!, chatRoom: chat)
                 isNew = true
-                /*newChatMessage*/ _ = ChatMessage.new(self.moc, sender: jsonObject.sender!, content: jsonObject.content!, createdAt: jsonObject.created_at!, id: jsonObject.id!, isFile: jsonObject.hasFile(), fileURL: jsonObject.url_file!, mimeType: jsonObject.mime_type!, chatRoom: chat)
                 saveDatabase()
-                self.fetchChatRooms()
+                if let delegate = self.chatRoomListDelegate {
+                    let indexPathBefore = NSIndexPath(forRow: self.listaChats.indexOf(chat)! + 1, inSection: 0)
+                    self.fetchChatRooms()
+                    let indexPathAfter = NSIndexPath(forRow: self.listaChats.indexOf(chat)! + 1, inSection: 0)
+                    delegate.table.moveRowAtIndexPath(indexPathBefore, toIndexPath: indexPathAfter)
+                    delegate.table.reloadRowsAtIndexPaths([indexPathAfter], withRowAnimation: UITableViewRowAnimation.Automatic)
+                }
             }
         })
-        // Set a delegate for a chatRoom view to insert chatMessages in it
         if isNew {
-            reloadChatRooms()
-//            if let delegate = chatListDelegate {
-//                let indexPaths = [NSIndexPath(forRow: chat.arrayMessage.indexOf(newChatMessage!)!, inSection: 0)]
-//                delegate.table.insertRowsAtIndexPaths(indexPaths, withRowAnimation: UITableViewRowAnimation.Automatic)
-//            }
+            
+            if let delegate = chatMessageListDelegate {
+                let indexPaths = [NSIndexPath(forRow: chat.arrayMessage.indexOf(newChatMessage!)!, inSection: 0)]
+                delegate.table.insertRowsAtIndexPaths(indexPaths, withRowAnimation: UITableViewRowAnimation.Automatic)
+            }
         }
         logStuff()
     }

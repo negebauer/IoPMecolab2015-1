@@ -68,6 +68,7 @@ class ChatViewController: UIViewController, ChatRoomListDelegate {
             let chatRoom = sender as? ChatRoom
             let chatRoomView = segue.destinationViewController as? ChatRoomViewController
             chatRoomView?.refChatRoomToShow = chatRoom
+            chatManager.chatMessageListDelegate = chatRoomView
         } else if segue.identifier == "IDCrearChatGrupal" {
             let addGroupView = segue.destinationViewController as? AddGroupViewController
             addGroupView?.refChatManager = chatManager

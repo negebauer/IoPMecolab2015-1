@@ -21,7 +21,9 @@ class ChatRoom: NSManagedObject {
     @NSManaged var chatMessages: NSSet  //Set de ChatMessage
     
     var arrayMessage: [ChatMessage] {
-        return chatMessages.allObjects as! [ChatMessage]
+        var tempArray = chatMessages.allObjects as! [ChatMessage]
+        tempArray.sortInPlace({ message1, message2 in return isDate1GreaterThanDate2(message1.createdAt, date2: message2.createdAt) })
+        return tempArray
     }
     
     var ultimoMensaje: String {

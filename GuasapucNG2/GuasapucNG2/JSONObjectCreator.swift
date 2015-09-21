@@ -46,6 +46,11 @@ class JSONObjectCreator: NSObject {
                     newJSONObject.conversation_id = diccionarioMensaje["conversation_id"] as? Int
                     newJSONObject.created_at = diccionarioMensaje["created_at"] as? String
                     newJSONObject.token = diccionarioMensaje["api_key"] as? String
+                    let fileOptional = diccionarioMensaje["file"] as? [String: AnyObject]
+                    if let file = fileOptional {
+                        newJSONObject.url_file = file["url"] as? String
+                        newJSONObject.mime_type = file["mime_type"] as? String
+                    }
                     
                     if newJSONObject.compliesWithType(type) {
                         arrayJSONObjects.append(newJSONObject)
