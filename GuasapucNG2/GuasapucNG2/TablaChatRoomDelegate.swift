@@ -37,11 +37,7 @@ class TablaChatRoomDelegate: NSObject, UITableViewDelegate, UITableViewDataSourc
         let cell = tableView.dequeueReusableCellWithIdentifier("IDCeldaMensaje", forIndexPath: indexPath) as? ChatMessageTableViewCell
         
         cell?.LabelMensaje.text = refChatRoomToShow.arrayMessage[indexPath.row].content
-        if refChatRoomToShow.arrayMessage[indexPath.row].sender == (User.currentUser?.number)! {
-            cell?.bubbleString = "ChatBubble2"
-        } else {
-            cell?.bubbleString = "ChatBubble"
-        }
+        cell?.isSentBySelf = refChatRoomToShow.arrayMessage[indexPath.row].sender == User.currentUser!.number
         
         cell?.loadChatBubble()
         

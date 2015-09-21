@@ -14,10 +14,16 @@ class ChatMessageTableViewCell: UITableViewCell {
     var bubbleImageView: UIImageView!
     var firstBubbleLoadDone = false
     var bubbleString = ""
+    var isSentBySelf = false
     
     func loadChatBubble() {
         if LabelMensaje.text == "" || LabelMensaje.text == nil { return }
         if firstBubbleLoadDone { return }
+        if isSentBySelf {
+            bubbleString = "ChatBubble2"
+        } else {
+            bubbleString = "ChatBubble"
+        }
         let image = UIImage(named: bubbleString)?.resizableImageWithCapInsets(UIEdgeInsetsMake(10, 20, 10, 20))
         bubbleImageView = UIImageView(image: image)
         bubbleImageView.reloadInputViews()
