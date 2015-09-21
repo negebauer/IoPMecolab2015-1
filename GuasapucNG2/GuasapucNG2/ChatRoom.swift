@@ -13,17 +13,45 @@ class ChatRoom: NSManagedObject {
 
     @NSManaged var admin: String
     @NSManaged var id: NSNumber
-    @NSManaged var isGroup: NSNumber
+    @NSManaged private var isGroup: NSNumber
     @NSManaged var nombreChat: String
     @NSManaged var updatedAt: NSDate
     @NSManaged var user: User
-    @NSManaged var chatMembers: NSSet   //Set de Contacto
-    @NSManaged var chatMessages: NSSet  //Set de ChatMessage
+    @NSManaged private var chatMembers: NSSet   //Set de Contacto
+    @NSManaged private var chatMessages: NSSet  //Set de ChatMessage
     
+    /// Returns the array of chatMessages sorted
     var arrayMessage: [ChatMessage] {
         var tempArray = chatMessages.allObjects as! [ChatMessage]
         tempArray.sortInPlace({ message1, message2 in return !isDate1GreaterThanDate2(message1.createdAt, date2: message2.createdAt) })
         return tempArray
+    }
+    
+    /// Returns the number of the chat destinatary if this chatRoom is not a group
+    var number: String {
+        let arrayMembers = chatMembers.allObjects as! [Contacto]
+        if arrayMembers.count > 0 && !group {
+            return arrayMembers[0].numero
+        }
+        return ""
+    }
+    
+    /// Returns all the numbers that take part in this chatRoom only if it's a group
+    var numbers: [String] {
+        let arrayMembers = chatMembers.allObjects as! [Contacto]
+        if arrayMembers.count > 0 && group {
+            var arrayNumbers = [String]()
+            for contact in arrayMembers {
+                arrayNumbers.append(contact.numero)
+            }
+            return arrayNumbers
+        }
+        return [""]
+    }
+    
+    /// Returns true if the chatRoom is a group, false if else
+    var group: Bool {
+        return Bool(isGroup)
     }
     
     var ultimoMensaje: String {

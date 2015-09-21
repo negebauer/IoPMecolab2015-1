@@ -16,6 +16,7 @@ class ChatViewController: UIViewController, ChatRoomListDelegate, ABPeoplePicker
     @IBOutlet weak var tableView: UITableView!
     var chatManager: ChatManager!
     var tableDelegate: TablaChatsDelegate!
+    var adbk = ABAddressBookCreateWithOptions(nil, nil).takeRetainedValue()
     
     // MARK: - Button actions
     
@@ -34,7 +35,9 @@ class ChatViewController: UIViewController, ChatRoomListDelegate, ABPeoplePicker
     
     /// Start a new chat.
     @IBAction func addNewChat(sender: AnyObject) {
-        
+        let picker: ABPeoplePickerNavigationController =  ABPeoplePickerNavigationController()
+        picker.peoplePickerDelegate = self
+        self.presentViewController(picker, animated: true, completion:nil)
     }
     
     // MARK: - Init
@@ -42,7 +45,7 @@ class ChatViewController: UIViewController, ChatRoomListDelegate, ABPeoplePicker
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        chatManager = ChatManager(chatRoomListDelegate: self)
+        chatManager = ChatManager(chatRoomListDelegate: self, adbk: adbk)
         crearTabla()
     }
     
@@ -71,6 +74,21 @@ class ChatViewController: UIViewController, ChatRoomListDelegate, ABPeoplePicker
         newPersonView.navigationController?.dismissViewControllerAnimated(true, completion: nil);
     }
     
+    // MARK: - ABPeoplePickerNavigationControllerDelegate methods
+    
+    func peoplePickerNavigationController(peoplePicker: ABPeoplePickerNavigationController, didSelectPerson person: ABRecord, property: ABPropertyID, identifier: ABMultiValueIdentifier) {
+        
+        if property == kABPersonPhoneProperty {
+            let numbersValueRef: ABMultiValueRef = ABRecordCopyValue(person, property).takeRetainedValue()
+            let numberValueIndex = ABMultiValueGetIndexForIdentifier(numbersValueRef, identifier)
+            let numberRaw = ABMultiValueCopyValueAtIndex(numbersValueRef, numberValueIndex).takeRetainedValue() as! String
+            let number = limpiarNumero(numberRaw)
+
+            let chatRoomToShow = chatManager.getChatRoomForNumber(number)
+            performSegueWithIdentifier("IDMostrarChatRoom", sender:  chatRoomToShow)
+        }
+    }
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -87,3 +105,26 @@ class ChatViewController: UIViewController, ChatRoomListDelegate, ABPeoplePicker
     }
 
 }
+
+/*
+@IBAction func showPicker(sender: AnyObject) {
+var picker: ABPeoplePickerNavigationController =  ABPeoplePickerNavigationController()
+
+picker.peoplePickerDelegate = self
+self.presentViewController(picker, animated: true, completion:nil)
+}
+
+func peoplePickerNavigationController(peoplePicker: ABPeoplePickerNavigationController!, didSelectPerson person: ABRecord!, property: ABPropertyID, identifier: ABMultiValueIdentifier) {
+    
+    if property == kABPersonPhoneProperty {
+        self.adbk = peoplePicker.addressBook
+        let numbersValueRef: ABMultiValueRef = ABRecordCopyValue(person, property).takeRetainedValue()
+        let numberValueIndex = ABMultiValueGetIndexForIdentifier(numbersValueRef, identifier)
+        let numberRaw = ABMultiValueCopyValueAtIndex(numbersValueRef, numberValueIndex).takeRetainedValue() as! String
+        let number = Common.limpiarNumero(numberRaw)
+        
+        delegateChatTable?.enviarMensajeAContacto(number)
+        TablaChats.reloadData()
+    }
+}
+*/

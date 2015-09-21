@@ -26,7 +26,7 @@ protocol ChatMessageListDelegate {
 
 /// Manages everything related to getting chatRooms, sending messages, getting messages, etc. It's the core of the app.
 class ChatManager {
-    private let adbk : ABAddressBook? = ABAddressBookCreateWithOptions(nil, nil).takeRetainedValue()
+    weak var adbk : ABAddressBook!
     private var diccionarioNumeroPersonABRecord = Dictionary<String,ABRecord>()
     var listaChats = [ChatRoom]()
     private var moc: NSManagedObjectContext!
@@ -36,8 +36,9 @@ class ChatManager {
     
     // MARK: - Init
     
-    init(chatRoomListDelegate: ChatRoomListDelegate) {
+    init(chatRoomListDelegate: ChatRoomListDelegate, adbk: ABAddressBook) {
         self.chatRoomListDelegate = chatRoomListDelegate
+        self.adbk = adbk
         getMoc()
         checkMoc()
         createArrayNumberName()
@@ -57,7 +58,7 @@ class ChatManager {
         return
         var nChatMessages = 0
         for chat in listaChats {
-            nChatMessages += chat.chatMessages.count
+            nChatMessages += chat.arrayMessage.count
         }
         let stringLog =
             [
@@ -185,6 +186,33 @@ class ChatManager {
         logStuff()
     }
     
+    // MARK: - Functions for views
+    
+    /// Searchs for a chatRoom that isn't a group and has the number provided. If it doesn't exist, it creates it.
+    func getChatRoomForNumber(number:String) -> ChatRoom {
+        fetchChatRooms()
+        if listaChats.contains({ chat in chat.number == number }) {
+            return listaChats.filter({ chat in chat.number == number })[0]
+        } else {
+            synced(listaChats, closure: {
+                let request = CreateRequest.create2UserConversation(User.currentUser!.number, second: number, title: self.getNameForContactNumber(number))
+                let task = NSURLSession.sharedSession().dataTaskWithRequest(request) { data, response, error in
+                    synced(self.listaChats, closure: {
+                        let jsonContainer = JSONObjectCreator(data: data!, type: JSONObject.TiposDeJSON.NewChatRoom, error: error)
+                        
+                        for jsonObject in jsonContainer.arrayJSONObjects {
+                            dispatch_async(dispatch_get_main_queue(), {
+                                self.checkForChatRoom(jsonObject)
+                            })
+                        }
+                    })
+                }
+                task.resume()
+            })
+            return getChatRoomForNumber(number)
+        }
+    }
+    
     // MARK: - Contacts managing
     
     /// Returns the Contact that matches the specified number. Creates a new one if it doesn't exist.
@@ -281,8 +309,12 @@ class ChatManager {
         let sortDescriptor = NSSortDescriptor(key: "updatedAt", ascending: false)
         let fetchRequest = NSFetchRequest(entityName: "ChatRoom")
         fetchRequest.sortDescriptors = [sortDescriptor]
-        if let fetchResults = (try? moc.executeFetchRequest(fetchRequest)) as? [ChatRoom] {
-            listaChats = fetchResults
+        do {
+            if let fetchResults = (try moc.executeFetchRequest(fetchRequest)) as? [ChatRoom] {
+                listaChats = fetchResults
+            }
+        } catch {
+            
         }
     }
     

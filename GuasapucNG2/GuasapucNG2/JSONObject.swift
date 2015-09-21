@@ -16,7 +16,8 @@ class JSONObject : NSObject {
         ChatRoom,
         ChatMessage,
         MiembroChat,
-        Token
+        Token,
+        NewChatRoom
     }
     
     var id: Int?
@@ -33,6 +34,8 @@ class JSONObject : NSObject {
     var conversation_id: Int?
     var created_at: String?
     var token: String?
+    var first: String?
+    var second: String?
     
     /// Checks if the JSONObject has the information that it should have.
     func compliesWithType(type: TiposDeJSON) -> Bool {
@@ -45,6 +48,8 @@ class JSONObject : NSObject {
             return isChatMember()
         case .Token:
             return isToken()
+        case .NewChatRoom:
+            return isNewChatRoom()
         }
     }
     
@@ -123,6 +128,19 @@ class JSONObject : NSObject {
         "updated_at":"2015-04-27T02:17:24.690Z"
         */
         if token != nil && phone_number != nil {
+            return true
+        }
+        return false
+    }
+    
+    /// Checks if JSONObject is a new chatRoom
+    private func isNewChatRoom() -> Bool {
+        /* Formato de cada json
+        "first":"56912345678",
+        "second":"56987654321",
+        "title":"Titulo
+        */
+        if first != nil && second != nil && title != nil {
             return true
         }
         return false
