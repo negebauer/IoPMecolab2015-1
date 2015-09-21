@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		032AB2041BAFD6750050C949 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032AB2031BAFD6750050C949 /* AppDelegate.swift */; };
+		032AB2061BAFD6750050C949 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032AB2051BAFD6750050C949 /* ViewController.swift */; };
+		032AB2091BAFD6750050C949 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 032AB2071BAFD6750050C949 /* Main.storyboard */; };
+		032AB20B1BAFD6750050C949 /* GuasapucNG2Tests.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 032AB20A1BAFD6750050C949 /* GuasapucNG2Tests.xcdatamodeld */; };
+		032AB20D1BAFD6750050C949 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 032AB20C1BAFD6750050C949 /* Assets.xcassets */; };
+		032AB2101BAFD6750050C949 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 032AB20E1BAFD6750050C949 /* LaunchScreen.storyboard */; };
+		032AB21B1BAFD6750050C949 /* GuasapucNG2TestsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032AB21A1BAFD6750050C949 /* GuasapucNG2TestsTests.swift */; };
+		032AB2261BAFD6750050C949 /* GuasapucNG2TestsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032AB2251BAFD6750050C949 /* GuasapucNG2TestsUITests.swift */; };
 		032DA51A1BAFC2C0007B5D73 /* ImageViewerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032DA5191BAFC2C0007B5D73 /* ImageViewerViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		03358AF81BAF4CE5003A5E6D /* JSONObjectCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03358AF71BAF4CE5003A5E6D /* JSONObjectCreator.swift */; settings = {ASSET_TAGS = (); }; };
 		03358AFA1BAF58C7003A5E6D /* JSONObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03358AF91BAF58C7003A5E6D /* JSONObject.swift */; settings = {ASSET_TAGS = (); }; };
@@ -46,20 +54,38 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		037864BD1B934ED200EEE12E /* PBXContainerItemProxy */ = {
+		032AB2171BAFD6750050C949 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0378649C1B934ED100EEE12E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 037864A31B934ED100EEE12E;
-			remoteInfo = GuasapucNG2;
+			remoteGlobalIDString = 032AB2001BAFD6750050C949;
+			remoteInfo = GuasapucNG2Tests;
+		};
+		032AB2221BAFD6750050C949 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0378649C1B934ED100EEE12E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 032AB2001BAFD6750050C949;
+			remoteInfo = GuasapucNG2Tests;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		032AB2011BAFD6750050C949 /* GuasapucNG2Tests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuasapucNG2Tests.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		032AB2031BAFD6750050C949 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		032AB2051BAFD6750050C949 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		032AB2081BAFD6750050C949 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		032AB20C1BAFD6750050C949 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		032AB20F1BAFD6750050C949 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		032AB2111BAFD6750050C949 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		032AB2161BAFD6750050C949 /* GuasapucNG2TestsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GuasapucNG2TestsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		032AB21A1BAFD6750050C949 /* GuasapucNG2TestsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuasapucNG2TestsTests.swift; sourceTree = "<group>"; };
+		032AB21C1BAFD6750050C949 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		032AB2211BAFD6750050C949 /* GuasapucNG2TestsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GuasapucNG2TestsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		032AB2251BAFD6750050C949 /* GuasapucNG2TestsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuasapucNG2TestsUITests.swift; sourceTree = "<group>"; };
+		032AB2271BAFD6750050C949 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		032DA5191BAFC2C0007B5D73 /* ImageViewerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewerViewController.swift; sourceTree = "<group>"; };
 		03358AEF1BAF4A17003A5E6D /* GuasapucNG2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuasapucNG2.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		03358AF01BAF4A17003A5E6D /* GuasapucNG2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GuasapucNG2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		03358AF41BAF4B03003A5E6D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = GuasapucNG2Tests/Info.plist; sourceTree = SOURCE_ROOT; };
 		03358AF71BAF4CE5003A5E6D /* JSONObjectCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONObjectCreator.swift; sourceTree = "<group>"; };
 		03358AF91BAF58C7003A5E6D /* JSONObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONObject.swift; sourceTree = "<group>"; };
 		037864A81B934ED100EEE12E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -100,14 +126,28 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		037864A11B934ED100EEE12E /* Frameworks */ = {
+		032AB1FE1BAFD6750050C949 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		037864B91B934ED200EEE12E /* Frameworks */ = {
+		032AB2131BAFD6750050C949 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		032AB21E1BAFD6750050C949 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		037864A11B934ED100EEE12E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -117,22 +157,47 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		032AB2021BAFD6750050C949 /* GuasapucNG2Tests */ = {
+			isa = PBXGroup;
+			children = (
+				032AB2011BAFD6750050C949 /* GuasapucNG2Tests.app */,
+				032AB2161BAFD6750050C949 /* GuasapucNG2TestsTests.xctest */,
+				032AB2211BAFD6750050C949 /* GuasapucNG2TestsUITests.xctest */,
+				032AB2031BAFD6750050C949 /* AppDelegate.swift */,
+				032AB2051BAFD6750050C949 /* ViewController.swift */,
+				032AB2071BAFD6750050C949 /* Main.storyboard */,
+				032AB20C1BAFD6750050C949 /* Assets.xcassets */,
+				032AB20E1BAFD6750050C949 /* LaunchScreen.storyboard */,
+				032AB2111BAFD6750050C949 /* Info.plist */,
+				032AB20A1BAFD6750050C949 /* GuasapucNG2Tests.xcdatamodeld */,
+			);
+			path = GuasapucNG2Tests;
+			sourceTree = "<group>";
+		};
+		032AB2191BAFD6750050C949 /* GuasapucNG2TestsTests */ = {
+			isa = PBXGroup;
+			children = (
+				032AB21A1BAFD6750050C949 /* GuasapucNG2TestsTests.swift */,
+				032AB21C1BAFD6750050C949 /* Info.plist */,
+			);
+			path = GuasapucNG2TestsTests;
+			sourceTree = "<group>";
+		};
+		032AB2241BAFD6750050C949 /* GuasapucNG2TestsUITests */ = {
+			isa = PBXGroup;
+			children = (
+				032AB2251BAFD6750050C949 /* GuasapucNG2TestsUITests.swift */,
+				032AB2271BAFD6750050C949 /* Info.plist */,
+			);
+			path = GuasapucNG2TestsUITests;
+			sourceTree = "<group>";
+		};
 		03358AF21BAF4A38003A5E6D /* Products */ = {
 			isa = PBXGroup;
 			children = (
 				03358AEF1BAF4A17003A5E6D /* GuasapucNG2.app */,
-				03358AF01BAF4A17003A5E6D /* GuasapucNG2Tests.xctest */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		03358AF31BAF4AA7003A5E6D /* GuasapucNG2Tests */ = {
-			isa = PBXGroup;
-			children = (
-				03358AF41BAF4B03003A5E6D /* Info.plist */,
-			);
-			name = GuasapucNG2Tests;
-			path = GuasapucNG2;
 			sourceTree = "<group>";
 		};
 		03358AF61BAF4C5E003A5E6D /* Other classes */ = {
@@ -152,7 +217,9 @@
 			isa = PBXGroup;
 			children = (
 				037864A61B934ED100EEE12E /* GuasapucNG2 */,
-				03358AF31BAF4AA7003A5E6D /* GuasapucNG2Tests */,
+				032AB2021BAFD6750050C949 /* GuasapucNG2Tests */,
+				032AB2191BAFD6750050C949 /* GuasapucNG2TestsTests */,
+				032AB2241BAFD6750050C949 /* GuasapucNG2TestsUITests */,
 				03358AF21BAF4A38003A5E6D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -248,6 +315,59 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		032AB2001BAFD6750050C949 /* GuasapucNG2Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 032AB2281BAFD6750050C949 /* Build configuration list for PBXNativeTarget "GuasapucNG2Tests" */;
+			buildPhases = (
+				032AB1FD1BAFD6750050C949 /* Sources */,
+				032AB1FE1BAFD6750050C949 /* Frameworks */,
+				032AB1FF1BAFD6750050C949 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GuasapucNG2Tests;
+			productName = GuasapucNG2Tests;
+			productReference = 032AB2011BAFD6750050C949 /* GuasapucNG2Tests.app */;
+			productType = "com.apple.product-type.application";
+		};
+		032AB2151BAFD6750050C949 /* GuasapucNG2TestsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 032AB22B1BAFD6750050C949 /* Build configuration list for PBXNativeTarget "GuasapucNG2TestsTests" */;
+			buildPhases = (
+				032AB2121BAFD6750050C949 /* Sources */,
+				032AB2131BAFD6750050C949 /* Frameworks */,
+				032AB2141BAFD6750050C949 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				032AB2181BAFD6750050C949 /* PBXTargetDependency */,
+			);
+			name = GuasapucNG2TestsTests;
+			productName = GuasapucNG2TestsTests;
+			productReference = 032AB2161BAFD6750050C949 /* GuasapucNG2TestsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		032AB2201BAFD6750050C949 /* GuasapucNG2TestsUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 032AB22E1BAFD6750050C949 /* Build configuration list for PBXNativeTarget "GuasapucNG2TestsUITests" */;
+			buildPhases = (
+				032AB21D1BAFD6750050C949 /* Sources */,
+				032AB21E1BAFD6750050C949 /* Frameworks */,
+				032AB21F1BAFD6750050C949 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				032AB2231BAFD6750050C949 /* PBXTargetDependency */,
+			);
+			name = GuasapucNG2TestsUITests;
+			productName = GuasapucNG2TestsUITests;
+			productReference = 032AB2211BAFD6750050C949 /* GuasapucNG2TestsUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		037864A31B934ED100EEE12E /* GuasapucNG2 */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 037864C61B934ED200EEE12E /* Build configuration list for PBXNativeTarget "GuasapucNG2" */;
@@ -265,24 +385,6 @@
 			productReference = 03358AEF1BAF4A17003A5E6D /* GuasapucNG2.app */;
 			productType = "com.apple.product-type.application";
 		};
-		037864BB1B934ED200EEE12E /* GuasapucNG2Tests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 037864C91B934ED200EEE12E /* Build configuration list for PBXNativeTarget "GuasapucNG2Tests" */;
-			buildPhases = (
-				037864B81B934ED200EEE12E /* Sources */,
-				037864B91B934ED200EEE12E /* Frameworks */,
-				037864BA1B934ED200EEE12E /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				037864BE1B934ED200EEE12E /* PBXTargetDependency */,
-			);
-			name = GuasapucNG2Tests;
-			productName = GuasapucNG2Tests;
-			productReference = 03358AF01BAF4A17003A5E6D /* GuasapucNG2Tests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -294,6 +396,17 @@
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Nicolás Gebauer";
 				TargetAttributes = {
+					032AB2001BAFD6750050C949 = {
+						CreatedOnToolsVersion = 7.0;
+					};
+					032AB2151BAFD6750050C949 = {
+						CreatedOnToolsVersion = 7.0;
+						TestTargetID = 032AB2001BAFD6750050C949;
+					};
+					032AB2201BAFD6750050C949 = {
+						CreatedOnToolsVersion = 7.0;
+						TestTargetID = 032AB2001BAFD6750050C949;
+					};
 					037864A31B934ED100EEE12E = {
 						CreatedOnToolsVersion = 6.4;
 						SystemCapabilities = {
@@ -301,10 +414,6 @@
 								enabled = 0;
 							};
 						};
-					};
-					037864BB1B934ED200EEE12E = {
-						CreatedOnToolsVersion = 6.4;
-						TestTargetID = 037864A31B934ED100EEE12E;
 					};
 				};
 			};
@@ -322,12 +431,38 @@
 			projectRoot = "";
 			targets = (
 				037864A31B934ED100EEE12E /* GuasapucNG2 */,
-				037864BB1B934ED200EEE12E /* GuasapucNG2Tests */,
+				032AB2001BAFD6750050C949 /* GuasapucNG2Tests */,
+				032AB2151BAFD6750050C949 /* GuasapucNG2TestsTests */,
+				032AB2201BAFD6750050C949 /* GuasapucNG2TestsUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		032AB1FF1BAFD6750050C949 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				032AB2101BAFD6750050C949 /* LaunchScreen.storyboard in Resources */,
+				032AB20D1BAFD6750050C949 /* Assets.xcassets in Resources */,
+				032AB2091BAFD6750050C949 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		032AB2141BAFD6750050C949 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		032AB21F1BAFD6750050C949 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		037864A21B934ED100EEE12E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -349,16 +484,35 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		037864BA1B934ED200EEE12E /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		032AB1FD1BAFD6750050C949 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				032AB20B1BAFD6750050C949 /* GuasapucNG2Tests.xcdatamodeld in Sources */,
+				032AB2061BAFD6750050C949 /* ViewController.swift in Sources */,
+				032AB2041BAFD6750050C949 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		032AB2121BAFD6750050C949 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				032AB21B1BAFD6750050C949 /* GuasapucNG2TestsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		032AB21D1BAFD6750050C949 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				032AB2261BAFD6750050C949 /* GuasapucNG2TestsUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		037864A01B934ED100EEE12E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -388,24 +542,38 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		037864B81B934ED200EEE12E /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		037864BE1B934ED200EEE12E /* PBXTargetDependency */ = {
+		032AB2181BAFD6750050C949 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 037864A31B934ED100EEE12E /* GuasapucNG2 */;
-			targetProxy = 037864BD1B934ED200EEE12E /* PBXContainerItemProxy */;
+			target = 032AB2001BAFD6750050C949 /* GuasapucNG2Tests */;
+			targetProxy = 032AB2171BAFD6750050C949 /* PBXContainerItemProxy */;
+		};
+		032AB2231BAFD6750050C949 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 032AB2001BAFD6750050C949 /* GuasapucNG2Tests */;
+			targetProxy = 032AB2221BAFD6750050C949 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		032AB2071BAFD6750050C949 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				032AB2081BAFD6750050C949 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		032AB20E1BAFD6750050C949 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				032AB20F1BAFD6750050C949 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
 		037864B01B934ED200EEE12E /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -425,6 +593,85 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		032AB2291BAFD6750050C949 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				INFOPLIST_FILE = GuasapucNG2Tests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.nicogeb.GuasapucNG2Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		032AB22A1BAFD6750050C949 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = GuasapucNG2Tests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.nicogeb.GuasapucNG2Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		032AB22C1BAFD6750050C949 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				INFOPLIST_FILE = GuasapucNG2TestsTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.nicogeb.GuasapucNG2TestsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GuasapucNG2Tests.app/GuasapucNG2Tests";
+			};
+			name = Debug;
+		};
+		032AB22D1BAFD6750050C949 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = GuasapucNG2TestsTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.nicogeb.GuasapucNG2TestsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GuasapucNG2Tests.app/GuasapucNG2Tests";
+			};
+			name = Release;
+		};
+		032AB22F1BAFD6750050C949 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				INFOPLIST_FILE = GuasapucNG2TestsUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.nicogeb.GuasapucNG2TestsUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = GuasapucNG2Tests;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		032AB2301BAFD6750050C949 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = GuasapucNG2TestsUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.nicogeb.GuasapucNG2TestsUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = GuasapucNG2Tests;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
 		037864C41B934ED200EEE12E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -536,45 +783,33 @@
 			};
 			name = Release;
 		};
-		037864CA1B934ED200EEE12E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = GuasapucNG2Tests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.nicogeb.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GuasapucNG2.app/GuasapucNG2";
-			};
-			name = Debug;
-		};
-		037864CB1B934ED200EEE12E /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = GuasapucNG2Tests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.nicogeb.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GuasapucNG2.app/GuasapucNG2";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		032AB2281BAFD6750050C949 /* Build configuration list for PBXNativeTarget "GuasapucNG2Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				032AB2291BAFD6750050C949 /* Debug */,
+				032AB22A1BAFD6750050C949 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		032AB22B1BAFD6750050C949 /* Build configuration list for PBXNativeTarget "GuasapucNG2TestsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				032AB22C1BAFD6750050C949 /* Debug */,
+				032AB22D1BAFD6750050C949 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		032AB22E1BAFD6750050C949 /* Build configuration list for PBXNativeTarget "GuasapucNG2TestsUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				032AB22F1BAFD6750050C949 /* Debug */,
+				032AB2301BAFD6750050C949 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		0378649F1B934ED100EEE12E /* Build configuration list for PBXProject "GuasapucNG2" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -593,18 +828,17 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		037864C91B934ED200EEE12E /* Build configuration list for PBXNativeTarget "GuasapucNG2Tests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				037864CA1B934ED200EEE12E /* Debug */,
-				037864CB1B934ED200EEE12E /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
+		032AB20A1BAFD6750050C949 /* GuasapucNG2Tests.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+			);
+			path = GuasapucNG2Tests.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
 		037864AB1B934ED200EEE12E /* GuasapucNG2.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
