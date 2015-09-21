@@ -9,7 +9,7 @@
 import UIKit
 
 /// Cell used to show a chatRoom.
-class ChatTableViewCell: UITableViewCell {
+class ChatRoomTableViewCell: UITableViewCell {
 
     @IBOutlet weak var LabelNombreChat: UILabel!
     @IBOutlet weak var LabelUltimoMensaje: UILabel!
