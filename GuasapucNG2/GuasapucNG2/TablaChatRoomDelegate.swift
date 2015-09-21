@@ -19,8 +19,7 @@ class TablaChatRoomDelegate: NSObject, UITableViewDelegate, UITableViewDataSourc
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         if refChatRoomToShow.arrayMessage[indexPath.row].isFile {
-            // Mostrar archivo
-            abort()
+            refChatRoomViewController.performSegueWithIdentifier("IDMostrarImagen", sender: refChatRoomToShow.arrayMessage[indexPath.row])
         }
     }
     

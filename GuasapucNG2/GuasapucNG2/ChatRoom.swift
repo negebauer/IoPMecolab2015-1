@@ -22,7 +22,7 @@ class ChatRoom: NSManagedObject {
     
     var arrayMessage: [ChatMessage] {
         var tempArray = chatMessages.allObjects as! [ChatMessage]
-        tempArray.sortInPlace({ message1, message2 in return isDate1GreaterThanDate2(message1.createdAt, date2: message2.createdAt) })
+        tempArray.sortInPlace({ message1, message2 in return !isDate1GreaterThanDate2(message1.createdAt, date2: message2.createdAt) })
         return tempArray
     }
     

@@ -85,6 +85,7 @@ class ChatManager {
     
     /// [DEVELOPING] Logs a lot of stuff.
     private func logStuff() {
+        return
         var nChatMessages = 0
         for chat in listaChats {
             nChatMessages += chat.chatMessages.count
@@ -172,40 +173,37 @@ class ChatManager {
     /// Checks the existance of a chat room. If it doesn't exist, it creates it and updates it. If exist, ignores
     private func checkForChatRoom(jsonObject: JSONObject) {
         fetchChatRooms()
-        var isNew = false
         var newChatRoom: ChatRoom?
         synced(listaChats, closure: {
             if !self.listaChats.contains({chat in chat.id == jsonObject.id!}) {
                 newChatRoom = ChatRoom.new(self.moc, _isGroup: jsonObject.group!, _nombreChat: jsonObject.title!, _admin: jsonObject.admin!, _id: jsonObject.id!)
                 newChatRoom!.updatedAt = NSDate(timeIntervalSince1970: 0)
-                isNew = true
                 saveDatabase()
+                self.listaChats.append(newChatRoom!)
+                self.listaChats.sortInPlace({ chat1, chat2 in return isDate1GreaterThanDate2(chat1.updatedAt, date2: chat2.updatedAt) })
+                if let delegate = self.chatRoomListDelegate {
+                    let indexPaths = [NSIndexPath(forRow: self.listaChats.indexOf(newChatRoom!)! + 1, inSection: 0)]
+                    delegate.table.insertRowsAtIndexPaths(indexPaths, withRowAnimation: UITableViewRowAnimation.Automatic)
+                }
+                self.getUsersOfChatRoom(newChatRoom!)
+                self.updateChat(newChatRoom!)
             }
         })
-        if isNew {
-            listaChats.append(newChatRoom!)
-            listaChats.sortInPlace({ chat1, chat2 in return isDate1GreaterThanDate2(chat1.updatedAt, date2: chat2.updatedAt) })
-            if let delegate = chatRoomListDelegate {
-                let indexPaths = [NSIndexPath(forRow: listaChats.indexOf(newChatRoom!)! + 1, inSection: 0)]
-                delegate.table.insertRowsAtIndexPaths(indexPaths, withRowAnimation: UITableViewRowAnimation.Automatic)
-            }
-            
-            self.getUsersOfChatRoom(newChatRoom!)
-            self.updateChat(newChatRoom!)
-        }
         logStuff()
     }
     
     /// Checks the existance of a given chatMessage. If it doesn't exist, it creates it, adds it to its corresponding chatRoom and updates the chatRoom. If exists, ignores.
     private func checkForChatMessageInChatRoom(chat: ChatRoom, jsonObject: JSONObject) {
         fetchChatRooms()
-        var isNew = false
         var newChatMessage: ChatMessage?
         synced(chat, closure: {
             if !chat.containsMessageWithID(jsonObject.id!) {
                 newChatMessage = ChatMessage.new(self.moc, sender: jsonObject.sender!, content: jsonObject.content!, createdAt: jsonObject.created_at!, id: jsonObject.id!, isFile: jsonObject.hasFile(), fileURL: jsonObject.url_file!, mimeType: jsonObject.mime_type!, chatRoom: chat)
-                isNew = true
                 saveDatabase()
+                if let delegate = self.chatMessageListDelegate {
+                    let indexPaths = [NSIndexPath(forRow: chat.arrayMessage.indexOf(newChatMessage!)!, inSection: 0)]
+                    delegate.table.insertRowsAtIndexPaths(indexPaths, withRowAnimation: UITableViewRowAnimation.Automatic)
+                }
                 if let delegate = self.chatRoomListDelegate {
                     let indexPathBefore = NSIndexPath(forRow: self.listaChats.indexOf(chat)! + 1, inSection: 0)
                     self.fetchChatRooms()
@@ -215,13 +213,6 @@ class ChatManager {
                 }
             }
         })
-        if isNew {
-            
-            if let delegate = chatMessageListDelegate {
-                let indexPaths = [NSIndexPath(forRow: chat.arrayMessage.indexOf(newChatMessage!)!, inSection: 0)]
-                delegate.table.insertRowsAtIndexPaths(indexPaths, withRowAnimation: UITableViewRowAnimation.Automatic)
-            }
-        }
         logStuff()
     }
     

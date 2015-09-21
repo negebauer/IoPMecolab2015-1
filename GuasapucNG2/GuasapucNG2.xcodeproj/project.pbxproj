@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		032DA51A1BAFC2C0007B5D73 /* ImageViewerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032DA5191BAFC2C0007B5D73 /* ImageViewerViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		03358AF81BAF4CE5003A5E6D /* JSONObjectCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03358AF71BAF4CE5003A5E6D /* JSONObjectCreator.swift */; settings = {ASSET_TAGS = (); }; };
 		03358AFA1BAF58C7003A5E6D /* JSONObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03358AF91BAF58C7003A5E6D /* JSONObject.swift */; settings = {ASSET_TAGS = (); }; };
 		037864AA1B934ED100EEE12E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037864A91B934ED100EEE12E /* AppDelegate.swift */; };
@@ -55,6 +56,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		032DA5191BAFC2C0007B5D73 /* ImageViewerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewerViewController.swift; sourceTree = "<group>"; };
 		03358AEF1BAF4A17003A5E6D /* GuasapucNG2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuasapucNG2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		03358AF01BAF4A17003A5E6D /* GuasapucNG2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GuasapucNG2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		03358AF41BAF4B03003A5E6D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = GuasapucNG2Tests/Info.plist; sourceTree = SOURCE_ROOT; };
@@ -188,6 +190,7 @@
 			children = (
 				037864CF1B9369E900EEE12E /* ChatViewController.swift */,
 				037864F31B953DD700EEE12E /* ChatRoomViewController.swift */,
+				032DA5191BAFC2C0007B5D73 /* ImageViewerViewController.swift */,
 				03B1D4481BAFA44300CD220A /* AddGroupViewController.swift */,
 				037864CC1B9369C600EEE12E /* TabBarViewController.swift */,
 			);
@@ -380,6 +383,7 @@
 				037864E61B9524F100EEE12E /* User.swift in Sources */,
 				03358AFA1BAF58C7003A5E6D /* JSONObject.swift in Sources */,
 				037864AA1B934ED100EEE12E /* AppDelegate.swift in Sources */,
+				032DA51A1BAFC2C0007B5D73 /* ImageViewerViewController.swift in Sources */,
 				03B1D4501BAFB37200CD220A /* ChatMessageTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
