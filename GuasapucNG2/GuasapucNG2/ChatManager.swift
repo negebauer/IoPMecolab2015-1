@@ -47,41 +47,10 @@ class ChatManager {
         
         User.currentUser?.chatManager = self
         
-        //deleteAll()
         logStuff()
     }
     
     // MARK: - [DEVELOPING] Don't call this functions when deploying
-    
-    /// [DEVELOPING] Deletes everything
-    private func deleteAll() {
-        let fetchRequest0 = NSFetchRequest(entityName: "User")
-        if let fetchResults0 = (try? moc.executeFetchRequest(fetchRequest0)) as? [User] {
-            for result in fetchResults0 {
-                moc.deleteObject(result)
-            }
-        }
-        let fetchRequest = NSFetchRequest(entityName: "ChatRoom")
-        if let fetchResults = (try? moc.executeFetchRequest(fetchRequest)) as? [ChatRoom] {
-            for result in fetchResults {
-                moc.deleteObject(result)
-            }
-            listaChats = [ChatRoom]()
-        }
-        let fetchRequest2 = NSFetchRequest(entityName: "Contacto")
-        if let fetchResults2 = (try? moc.executeFetchRequest(fetchRequest2)) as? [Contacto] {
-            for result in fetchResults2 {
-                moc.deleteObject(result)
-            }
-        }
-        let fetchRequest3 = NSFetchRequest(entityName: "User")
-        if let fetchResults3 = (try? moc.executeFetchRequest(fetchRequest3)) as? [User] {
-            for result in fetchResults3 {
-                moc.deleteObject(result)
-            }
-        }
-        User.checkUser()
-    }
     
     /// [DEVELOPING] Logs a lot of stuff.
     private func logStuff() {
