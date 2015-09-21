@@ -38,6 +38,8 @@
 		037865091B953FEE00EEE12E /* API Guasap UC V2 Localizacion.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 037864FE1B953FEE00EEE12E /* API Guasap UC V2 Localizacion.pdf */; };
 		0378650A1B953FEE00EEE12E /* API Guasap UC V2 Modificacion creacion conversación.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 037864FF1B953FEE00EEE12E /* API Guasap UC V2 Modificacion creacion conversación.pdf */; };
 		0378650B1B953FEE00EEE12E /* API Guasap UC V2.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 037865001B953FEE00EEE12E /* API Guasap UC V2.pdf */; };
+		03B1D4491BAFA44300CD220A /* AddGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B1D4481BAFA44300CD220A /* AddGroupViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		03B1D44E1BAFB14400CD220A /* TablaChatRoomDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B1D44D1BAFB14400CD220A /* TablaChatRoomDelegate.swift */; settings = {ASSET_TAGS = (); }; };
 		03FF5E3B1B9BD6440030055E /* TablaChatsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FF5E3A1B9BD6440030055E /* TablaChatsDelegate.swift */; };
 /* End PBXBuildFile section */
 
@@ -88,6 +90,8 @@
 		037864FE1B953FEE00EEE12E /* API Guasap UC V2 Localizacion.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "API Guasap UC V2 Localizacion.pdf"; sourceTree = "<group>"; };
 		037864FF1B953FEE00EEE12E /* API Guasap UC V2 Modificacion creacion conversación.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "API Guasap UC V2 Modificacion creacion conversación.pdf"; sourceTree = "<group>"; };
 		037865001B953FEE00EEE12E /* API Guasap UC V2.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "API Guasap UC V2.pdf"; sourceTree = "<group>"; };
+		03B1D4481BAFA44300CD220A /* AddGroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddGroupViewController.swift; sourceTree = "<group>"; };
+		03B1D44D1BAFB14400CD220A /* TablaChatRoomDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TablaChatRoomDelegate.swift; sourceTree = "<group>"; };
 		03FF5E3A1B9BD6440030055E /* TablaChatsDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TablaChatsDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -153,9 +157,9 @@
 			isa = PBXGroup;
 			children = (
 				037864A91B934ED100EEE12E /* AppDelegate.swift */,
-				037864D31B936A1500EEE12E /* TableViewCells */,
 				037864CE1B9369CA00EEE12E /* ViewControllers */,
 				03FF5E3C1B9BD6470030055E /* TableDelegates */,
+				037864D31B936A1500EEE12E /* TableViewCells */,
 				03358AF61BAF4C5E003A5E6D /* Other classes */,
 				037864DE1B95226D00EEE12E /* GuasapucNG2-Bridging-Header.h */,
 				037864E41B9524AE00EEE12E /* NSManagedObjects */,
@@ -182,6 +186,7 @@
 			children = (
 				037864CF1B9369E900EEE12E /* ChatViewController.swift */,
 				037864F31B953DD700EEE12E /* ChatRoomViewController.swift */,
+				03B1D4481BAFA44300CD220A /* AddGroupViewController.swift */,
 				037864CC1B9369C600EEE12E /* TabBarViewController.swift */,
 			);
 			name = ViewControllers;
@@ -229,6 +234,7 @@
 			isa = PBXGroup;
 			children = (
 				03FF5E3A1B9BD6440030055E /* TablaChatsDelegate.swift */,
+				03B1D44D1BAFB14400CD220A /* TablaChatRoomDelegate.swift */,
 			);
 			name = TableDelegates;
 			sourceTree = "<group>";
@@ -284,6 +290,11 @@
 				TargetAttributes = {
 					037864A31B934ED100EEE12E = {
 						CreatedOnToolsVersion = 6.4;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 0;
+							};
+						};
 					};
 					037864BB1B934ED200EEE12E = {
 						CreatedOnToolsVersion = 6.4;
@@ -358,7 +369,9 @@
 				037864DC1B9521F700EEE12E /* IPGetter.swift in Sources */,
 				037864D51B936A2300EEE12E /* CreateGroupTableViewCell.swift in Sources */,
 				037864EC1B95252400EEE12E /* Contacto.swift in Sources */,
+				03B1D4491BAFA44300CD220A /* AddGroupViewController.swift in Sources */,
 				037864D01B9369E900EEE12E /* ChatViewController.swift in Sources */,
+				03B1D44E1BAFB14400CD220A /* TablaChatRoomDelegate.swift in Sources */,
 				037864F01B95253D00EEE12E /* ChatRoom.swift in Sources */,
 				037864F21B9538FC00EEE12E /* ChatManager.swift in Sources */,
 				037864E61B9524F100EEE12E /* User.swift in Sources */,

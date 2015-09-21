@@ -27,6 +27,8 @@ class JSONObjectCreator: NSObject {
         
         let jsonSwift: AnyObject? = try? NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers)
         
+        //let jsonSwift: AnyObject? = try? NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers)
+        
         if let jsonArray = jsonSwift as? NSArray {
             for jsonMensaje in jsonArray {
                 if let diccionarioMensaje = jsonMensaje as? Dictionary<String, NSObject> {
@@ -43,6 +45,7 @@ class JSONObjectCreator: NSObject {
                     newJSONObject.sender = diccionarioMensaje["sender"] as? String
                     newJSONObject.conversation_id = diccionarioMensaje["conversation_id"] as? Int
                     newJSONObject.created_at = diccionarioMensaje["created_at"] as? String
+                    newJSONObject.token = diccionarioMensaje["api_key"] as? String
                     
                     if newJSONObject.compliesWithType(type) {
                         arrayJSONObjects.append(newJSONObject)

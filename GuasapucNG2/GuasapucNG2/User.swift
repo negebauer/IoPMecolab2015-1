@@ -14,13 +14,34 @@ class User: NSManagedObject {
 
     @NSManaged var numero: String
     @NSManaged var chatRooms: NSSet //Set de ChatRoom
+    @NSManaged var token: String
 
+    weak var chatManager: ChatManager?
+    
     /// Creates and returns a new user.
     class func new(moc: NSManagedObjectContext) -> User {
         let newUser = NSEntityDescription.insertNewObjectForEntityForName("User", inManagedObjectContext: moc) as! GuasapucNG2.User
         newUser.numero = "56962448489"
+        newUser.token = ""
         
         return newUser
+    }
+    
+    /// Gets the user token
+    func getToken() {
+        let request = CreateRequest.getToken()
+        let task = NSURLSession.sharedSession().dataTaskWithRequest(request) { data, response, error in
+            
+            let jsonContainer = JSONObjectCreator(data: data, type: JSONObject.TiposDeJSON.Token, error: error)
+            let jsonObjectArray = jsonContainer.arrayJSONObjects.filter({ object in return object.phone_number! == self.numero })
+            if jsonObjectArray.count > 0 {
+                self.token = jsonObjectArray.first!.token!
+                self.chatManager?.updateChats()
+                saveDatabase()
+            }
+            
+        }
+        task.resume()
     }
     
     /// Gets/sets the current user.
@@ -65,7 +86,8 @@ class User: NSManagedObject {
         return
             [
                 "numero = \(numero)",
-                "number of chats = \(chatRooms.count)"
+                "number of chats = \(chatRooms.count)",
+                "token = \(token)"
             ].joinWithSeparator("\n")
     }
 }

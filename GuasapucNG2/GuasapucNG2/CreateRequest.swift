@@ -16,11 +16,13 @@ import UIKit
 class CreateRequest {
    
     private static let host = "https://guasapuc.herokuapp.com/"
-    private static let tokenFormatted = "Token token=\(token)"
-    private static let token = "jQQNqGlnI2gvLKOG4KeMaQtt"
     private static let user = "Nicolas Gebauer"
     private static let userNumber = "56962448489" //"56981362982"
+    private static let userLink = "\(host)users/5"
     
+    private static var tokenFormatted: String {
+        return "Token token=\(User.currentUser!.token)"
+    }
 }
 
 // Basic functions
@@ -61,6 +63,12 @@ extension CreateRequest {
 
 // Public functions
 extension CreateRequest {
+    ///Creates the request for getting the user token
+    static func getToken() -> NSMutableURLRequest {
+        let request = makeRequest("\(host)/users.json")
+        return makeGETRequest(request)
+    }
+    
     ///Receives two numbers and creates a conversation between them with a given title
     static func create2UserConversation(first:String, second:String, title:String) -> NSMutableURLRequest {
         let request = makeRequest("\(host)api/v2/conversations/create_two_conversation")

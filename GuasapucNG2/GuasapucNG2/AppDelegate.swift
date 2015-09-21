@@ -22,6 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Gets the current user, creates a new one if it doesn't exist.
         User.checkUser()
+        currentUser?.getToken()
         
         return true
     }
