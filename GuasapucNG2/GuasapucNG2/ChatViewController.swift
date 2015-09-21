@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import AddressBook
+import AddressBookUI
 
 /// View that manages the display of all chatRooms.
-class ChatViewController: UIViewController, ChatRoomListDelegate {
+class ChatViewController: UIViewController, ChatRoomListDelegate, ABPeoplePickerNavigationControllerDelegate, ABNewPersonViewControllerDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     var chatManager: ChatManager!
@@ -24,7 +26,10 @@ class ChatViewController: UIViewController, ChatRoomListDelegate {
     
     /// Create a new contact.
     @IBAction func addNewContact(sender: AnyObject) {
-        
+        let controller = ABNewPersonViewController()
+        controller.newPersonViewDelegate = self
+        let navigationController = UINavigationController(rootViewController: controller)
+        self.presentViewController(navigationController, animated: true, completion: nil)
     }
     
     /// Start a new chat.
@@ -58,6 +63,12 @@ class ChatViewController: UIViewController, ChatRoomListDelegate {
     
     func reloadChatRooms() {
         tableView.reloadData()
+    }
+    
+    // MARK: - ABNewPersonViewControllerDelegate methods
+    
+    func newPersonViewController(newPersonView: ABNewPersonViewController, didCompleteWithNewPerson person: ABRecord?) {
+        newPersonView.navigationController?.dismissViewControllerAnimated(true, completion: nil);
     }
     
     // MARK: - Navigation
