@@ -9,7 +9,7 @@
 import XCTest
 
 class GuasapucNG2TestsUITests: XCTestCase {
-        
+    
     override func setUp() {
         super.setUp()
         

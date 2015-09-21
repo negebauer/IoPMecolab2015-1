@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import GuasapucNG2
 @testable import GuasapucNG2Tests
 
 class GuasapucNG2TestsTests: XCTestCase {

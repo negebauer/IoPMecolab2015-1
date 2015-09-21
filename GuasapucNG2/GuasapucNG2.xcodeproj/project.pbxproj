@@ -160,9 +160,6 @@
 		032AB2021BAFD6750050C949 /* GuasapucNG2Tests */ = {
 			isa = PBXGroup;
 			children = (
-				032AB2011BAFD6750050C949 /* GuasapucNG2Tests.app */,
-				032AB2161BAFD6750050C949 /* GuasapucNG2TestsTests.xctest */,
-				032AB2211BAFD6750050C949 /* GuasapucNG2TestsUITests.xctest */,
 				032AB2031BAFD6750050C949 /* AppDelegate.swift */,
 				032AB2051BAFD6750050C949 /* ViewController.swift */,
 				032AB2071BAFD6750050C949 /* Main.storyboard */,
@@ -221,6 +218,9 @@
 				032AB2191BAFD6750050C949 /* GuasapucNG2TestsTests */,
 				032AB2241BAFD6750050C949 /* GuasapucNG2TestsUITests */,
 				03358AF21BAF4A38003A5E6D /* Products */,
+				032AB2011BAFD6750050C949 /* GuasapucNG2Tests.app */,
+				032AB2161BAFD6750050C949 /* GuasapucNG2TestsTests.xctest */,
+				032AB2211BAFD6750050C949 /* GuasapucNG2TestsUITests.xctest */,
 			);
 			sourceTree = "<group>";
 		};
