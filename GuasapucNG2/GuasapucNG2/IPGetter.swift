@@ -12,7 +12,10 @@ import AddressBookUI
 import CoreData
 import UIKit
 
-class NetworkManager: NSObject {
+// Used to get the local IP's of the device. Taken from somewhere in the internet.
+class IPGetter: NSObject {
+    
+    // Returns the array of IP's addresses of the device.
     static func getIFAddresses() -> [String] {
         var addresses = [String]()
         var ifaddr : UnsafeMutablePointer<ifaddrs> = nil
@@ -33,10 +36,12 @@ class NetworkManager: NSObject {
         return addresses
     }
     
+    // Returns (hopefully) the local IP of the device.
     static func getLocalAddress() -> String {
         let addresses = self.getIFAddresses()
-        if addresses.count == 0 { NSLog("ERROR obteniendo id"); return "0"}
-        else {
+        if addresses.count == 0 {
+            NSLog("ERROR obteniendo id"); return "0"
+        } else {
             for a in addresses {
                 let b = a.componentsSeparatedByString(".")
                 if b[0] == "192" && b[1] == "168" {

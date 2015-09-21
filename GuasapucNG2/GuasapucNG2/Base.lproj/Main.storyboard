@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Hj3-LP-MOB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Hj3-LP-MOB">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -41,9 +42,10 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="IDCeldaCrearGrupo" rowHeight="40" id="cPL-i2-y4X" customClass="CreateGroupTableViewCell" customModule="GuasapucNG2" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="86" width="600" height="40"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cPL-i2-y4X" id="vLB-2k-Rre">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="39.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5si-mO-5WU">
@@ -52,7 +54,7 @@
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
-                                                        <action selector="CreateNewGroup:" destination="cPL-i2-y4X" eventType="touchUpInside" id="8rL-mq-p8g"/>
+                                                        <action selector="createNewGroup:" destination="cPL-i2-y4X" eventType="touchUpInside" id="8qR-Uc-hS7"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -73,19 +75,20 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="IDCeldaChat" rowHeight="60" id="gkN-T5-cgZ" customClass="ChatTableViewCell" customModule="GuasapucNG2" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="126" width="600" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gkN-T5-cgZ" id="GRj-ys-STu">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="59.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NombreContacto" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gaf-5J-1GP">
-                                                    <rect key="frame" x="16" y="16" width="132.5" height="27.5"/>
+                                                    <rect key="frame" x="16" y="16" width="132" height="27.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UltimoMensajeRecibido" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TlA-dL-re0">
-                                                    <rect key="frame" x="156.5" y="16" width="182.5" height="27.5"/>
+                                                    <rect key="frame" x="156.5" y="16" width="180" height="27.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
@@ -113,14 +116,22 @@
                             <constraint firstAttribute="centerY" secondItem="06s-g2-9UL" secondAttribute="centerY" id="2NL-6x-yPr"/>
                             <constraint firstItem="06s-g2-9UL" firstAttribute="top" secondItem="gOJ-Bo-zRU" secondAttribute="topMargin" id="4Zb-F9-uhu"/>
                             <constraint firstItem="06s-g2-9UL" firstAttribute="bottom" secondItem="gOJ-Bo-zRU" secondAttribute="bottomMargin" id="D4w-W6-VIm"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="06s-g2-9UL" secondAttribute="trailing" constant="-16" id="DAO-dl-2Xu"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="06s-g2-9UL" secondAttribute="trailing" id="DAO-dl-2Xu"/>
+                            <constraint firstItem="06s-g2-9UL" firstAttribute="bottom" secondItem="gOJ-Bo-zRU" secondAttribute="bottomMargin" id="NzK-vS-QF5"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="06s-g2-9UL" secondAttribute="trailing" constant="-20" id="Wyx-TF-7ya"/>
+                            <constraint firstItem="06s-g2-9UL" firstAttribute="top" secondItem="gOJ-Bo-zRU" secondAttribute="topMargin" id="drz-4b-bZR"/>
+                            <constraint firstItem="06s-g2-9UL" firstAttribute="leading" secondItem="gOJ-Bo-zRU" secondAttribute="leadingMargin" constant="-20" id="nIw-NZ-bsQ"/>
                             <constraint firstAttribute="centerX" secondItem="06s-g2-9UL" secondAttribute="centerX" id="tbe-YF-8Fv"/>
-                            <constraint firstItem="06s-g2-9UL" firstAttribute="leading" secondItem="gOJ-Bo-zRU" secondAttribute="leadingMargin" constant="-16" id="vnP-t1-PLI"/>
+                            <constraint firstItem="06s-g2-9UL" firstAttribute="leading" secondItem="gOJ-Bo-zRU" secondAttribute="leadingMargin" id="vnP-t1-PLI"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="2NL-6x-yPr"/>
+                                <exclude reference="4Zb-F9-uhu"/>
+                                <exclude reference="D4w-W6-VIm"/>
+                                <exclude reference="DAO-dl-2Xu"/>
                                 <exclude reference="tbe-YF-8Fv"/>
+                                <exclude reference="vnP-t1-PLI"/>
                             </mask>
                         </variation>
                     </view>
@@ -128,7 +139,7 @@
                         <nil key="title"/>
                         <barButtonItem key="leftBarButtonItem" systemItem="refresh" id="DO6-Mt-Edp">
                             <connections>
-                                <action selector="RefreshChats:" destination="Wcp-9A-QvI" id="iHT-5E-NjY"/>
+                                <action selector="refreshChats:" destination="Wcp-9A-QvI" id="Clb-LV-KtA"/>
                             </connections>
                         </barButtonItem>
                         <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="NcH-51-0an">
@@ -138,12 +149,12 @@
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
-                                <action selector="AddNewContact:" destination="Wcp-9A-QvI" eventType="touchUpInside" id="TWm-D5-nOx"/>
+                                <action selector="addNewContact:" destination="Wcp-9A-QvI" eventType="touchUpInside" id="KDt-Ge-gbJ"/>
                             </connections>
                         </button>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="rac-AE-6fH">
                             <connections>
-                                <action selector="AddNewChat:" destination="Wcp-9A-QvI" id="NY4-FT-5Hg"/>
+                                <action selector="addNewChat:" destination="Wcp-9A-QvI" id="5f9-q4-bzo"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -214,9 +225,10 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <prototypes>
                                             <tableViewCell contentMode="scaleToFill" restorationIdentifier="IDCeldaUsuarioAgregar" selectionStyle="default" indentationWidth="10" reuseIdentifier="IDCeldaUsuarioAgregarAGrupo" id="gLe-za-sdP" customClass="CeldaUsuarioAgregarAGrupo" customModule="GuasapucNG2" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="242" height="44"/>
+                                                <rect key="frame" x="0.0" y="22" width="242" height="44"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gLe-za-sdP" id="KNf-JH-Qbm">
+                                                    <rect key="frame" x="0.0" y="0.0" width="242" height="44"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nombre" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BcX-im-7hq">

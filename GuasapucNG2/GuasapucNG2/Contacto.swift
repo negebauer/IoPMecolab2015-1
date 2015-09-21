@@ -16,7 +16,7 @@ class Contacto: NSManagedObject {
     @NSManaged var chatRooms: NSSet //Set de ChatRoom
 
     
-    class func new(moc: NSManagedObjectContext, nombre:String, numero:String) -> Contacto {
+    class func new(moc: NSManagedObjectContext, nombre: String, numero: String) -> Contacto {
         let newContact = NSEntityDescription.insertNewObjectForEntityForName("Contacto", inManagedObjectContext: moc) as! GuasapucNG2.Contacto
         newContact.nombre = nombre
         newContact.numero = numero
@@ -24,7 +24,7 @@ class Contacto: NSManagedObject {
         return newContact
     }
     
-    class func new(moc: NSManagedObjectContext, nombre:String, numero:String, chatRooms:[ChatRoom]) -> Contacto {
+    class func new(moc: NSManagedObjectContext, nombre: String, numero: String, chatRooms: [ChatRoom]) -> Contacto {
         let newContact = NSEntityDescription.insertNewObjectForEntityForName("Contacto", inManagedObjectContext: moc) as! GuasapucNG2.Contacto
         newContact.nombre = nombre
         newContact.numero = numero
@@ -34,10 +34,10 @@ class Contacto: NSManagedObject {
     }
     
     ///Ads a chatRoom to this Contact. Returns true if success, false if duplicated or failed
-    func addChatRoom(chatRoom:ChatRoom) -> Bool {
+    func addChatRoom(chatRoom: ChatRoom) -> Bool {
         var arrayChats = chatRooms.allObjects as? [ChatRoom]
         if arrayChats == nil { return false }
-        if !contains(arrayChats!, chatRoom) {
+        if !(arrayChats!).contains(chatRoom) {
             arrayChats!.append(chatRoom)
             chatRooms = NSSet(array: arrayChats!)
             return true
@@ -46,11 +46,11 @@ class Contacto: NSManagedObject {
     }
     
     ///Removes a chatRoom from this Contact. Returns true if success, false if doesn't exist or failed
-    func removeChatRoom(chatRoom:ChatRoom) -> Bool {
+    func removeChatRoom(chatRoom: ChatRoom) -> Bool {
         var arrayChats = chatRooms.allObjects as? [ChatRoom]
         if arrayChats == nil { return false }
-        if contains(arrayChats!, chatRoom) {
-            arrayChats!.removeAtIndex(find(arrayChats!, chatRoom)!)
+        if (arrayChats!).contains(chatRoom) {
+            arrayChats!.removeAtIndex((arrayChats!).indexOf(chatRoom)!)
             return true
         }
         return false

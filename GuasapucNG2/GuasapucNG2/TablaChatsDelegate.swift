@@ -9,7 +9,18 @@
 import Foundation
 import UIKit
 
+/// Delegate that manages the representation of the chatRooms.
 class TablaChatsDelegate: NSObject, UITableViewDelegate, UITableViewDataSource {
+    
+    weak var refChatManager: ChatManager!
+    
+    // MARK: - UITableViewDelegate methods
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    }
+    
+    // MARK: - UITableViewDataSource methods
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 0

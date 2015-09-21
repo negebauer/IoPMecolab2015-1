@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// Tab bar controller. Doesn't do anything as of right now.
 class TabBarViewController: UITabBarController {
 
     override func viewDidLoad() {

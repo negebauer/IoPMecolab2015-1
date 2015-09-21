@@ -8,31 +8,40 @@
 
 import UIKit
 
+/// Returns a string transformed into a NSDate using the format "yyy-MM-dd'T'HH:mm:ss.SSS'Z'".
 func getDateFromString(str:String) -> NSDate {
     let formatter = NSDateFormatter()
     formatter.dateFormat="yyy-MM-dd'T'HH:mm:ss.SSS'Z'"
     return formatter.dateFromString(str)!
 }
 
+/// Compares to date and returns true if date1 > date2, returns false if not.
 func isDate1GreaterThanDate2(date1:NSDate, date2:NSDate) -> Bool {
     return date1.compare(date2).rawValue == 1 ? true : false
 }
 
-///Bloquea una objeto impidiendo ser accedido mientras se ejecuta closure()
+/// Blocks acces to lock while closure() is being executed.
 func synced(lock: AnyObject, closure: () -> ()) {
     objc_sync_enter(lock)
     closure()
     objc_sync_exit(lock)
 }
 
-///Elimina espacios y simbolos de un string de un numero
+/// Cleans a string representing a number by deleting spaces and symbols.
 func limpiarNumero(num:String) -> String {
     var numLimpio = ""
-    for letra in num {
-        if letra == "(" || letra == ")" || letra == "+" || letra == "-" || letra == " "{ }
-        else { numLimpio += String(letra) }}
+    for letra in num.characters {
+        if !(letra == "(" || letra == ")" || letra == "+" || letra == "-" || letra == " ") {
+            numLimpio += String(letra)
+        }
+    }
     
-    let components = numLimpio.componentsSeparatedByCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()).filter({!isEmpty($0)})
+    let components = numLimpio.componentsSeparatedByCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()).filter({!$0.characters.isEmpty})
     
-    return join("", components)
+    return components.joinWithSeparator("")
+}
+
+/// Saves the database if there have been changes
+func saveDatabase() {
+    (UIApplication.sharedApplication().delegate as! AppDelegate).saveContext()
 }

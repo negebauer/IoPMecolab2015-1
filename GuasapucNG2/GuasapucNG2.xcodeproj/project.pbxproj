@@ -7,18 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		03358AF81BAF4CE5003A5E6D /* JSONObjectCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03358AF71BAF4CE5003A5E6D /* JSONObjectCreator.swift */; settings = {ASSET_TAGS = (); }; };
+		03358AFA1BAF58C7003A5E6D /* JSONObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03358AF91BAF58C7003A5E6D /* JSONObject.swift */; settings = {ASSET_TAGS = (); }; };
 		037864AA1B934ED100EEE12E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037864A91B934ED100EEE12E /* AppDelegate.swift */; };
 		037864AD1B934ED200EEE12E /* GuasapucNG2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 037864AB1B934ED200EEE12E /* GuasapucNG2.xcdatamodeld */; };
 		037864B21B934ED200EEE12E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 037864B01B934ED200EEE12E /* Main.storyboard */; };
 		037864B41B934ED200EEE12E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 037864B31B934ED200EEE12E /* Images.xcassets */; };
 		037864B71B934ED200EEE12E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 037864B51B934ED200EEE12E /* LaunchScreen.xib */; };
-		037864C31B934ED200EEE12E /* GuasapucNG2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037864C21B934ED200EEE12E /* GuasapucNG2Tests.swift */; };
 		037864CD1B9369C600EEE12E /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037864CC1B9369C600EEE12E /* TabBarViewController.swift */; };
 		037864D01B9369E900EEE12E /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037864CF1B9369E900EEE12E /* ChatViewController.swift */; };
 		037864D21B936A0100EEE12E /* ChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037864D11B936A0100EEE12E /* ChatTableViewCell.swift */; };
 		037864D51B936A2300EEE12E /* CreateGroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037864D41B936A2300EEE12E /* CreateGroupTableViewCell.swift */; };
 		037864D91B951CED00EEE12E /* CreateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037864D81B951CED00EEE12E /* CreateRequest.swift */; };
-		037864DC1B9521F700EEE12E /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037864DB1B9521F700EEE12E /* NetworkManager.swift */; };
+		037864DC1B9521F700EEE12E /* IPGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037864DB1B9521F700EEE12E /* IPGetter.swift */; };
 		037864E31B9522D800EEE12E /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037864E21B9522D700EEE12E /* Functions.swift */; };
 		037864E61B9524F100EEE12E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037864E51B9524F100EEE12E /* User.swift */; };
 		037864EC1B95252400EEE12E /* Contacto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037864EB1B95252400EEE12E /* Contacto.swift */; };
@@ -51,22 +52,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		037864A41B934ED100EEE12E /* GuasapucNG2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuasapucNG2.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		03358AEF1BAF4A17003A5E6D /* GuasapucNG2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuasapucNG2.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		03358AF01BAF4A17003A5E6D /* GuasapucNG2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GuasapucNG2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		03358AF41BAF4B03003A5E6D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = GuasapucNG2Tests/Info.plist; sourceTree = SOURCE_ROOT; };
+		03358AF71BAF4CE5003A5E6D /* JSONObjectCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONObjectCreator.swift; sourceTree = "<group>"; };
+		03358AF91BAF58C7003A5E6D /* JSONObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONObject.swift; sourceTree = "<group>"; };
 		037864A81B934ED100EEE12E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		037864A91B934ED100EEE12E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		037864AC1B934ED200EEE12E /* GuasapucNG2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GuasapucNG2.xcdatamodel; sourceTree = "<group>"; };
 		037864B11B934ED200EEE12E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		037864B31B934ED200EEE12E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		037864B61B934ED200EEE12E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		037864BC1B934ED200EEE12E /* GuasapucNG2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GuasapucNG2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		037864C11B934ED200EEE12E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		037864C21B934ED200EEE12E /* GuasapucNG2Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuasapucNG2Tests.swift; sourceTree = "<group>"; };
 		037864CC1B9369C600EEE12E /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		037864CF1B9369E900EEE12E /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		037864D11B936A0100EEE12E /* ChatTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatTableViewCell.swift; sourceTree = "<group>"; };
 		037864D41B936A2300EEE12E /* CreateGroupTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateGroupTableViewCell.swift; sourceTree = "<group>"; };
 		037864D81B951CED00EEE12E /* CreateRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateRequest.swift; sourceTree = "<group>"; };
-		037864DB1B9521F700EEE12E /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		037864DB1B9521F700EEE12E /* IPGetter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IPGetter.swift; sourceTree = "<group>"; };
 		037864DE1B95226D00EEE12E /* GuasapucNG2-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GuasapucNG2-Bridging-Header.h"; sourceTree = "<group>"; };
 		037864E21B9522D700EEE12E /* Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		037864E51B9524F100EEE12E /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -107,22 +109,44 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		03358AF21BAF4A38003A5E6D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				03358AEF1BAF4A17003A5E6D /* GuasapucNG2.app */,
+				03358AF01BAF4A17003A5E6D /* GuasapucNG2Tests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		03358AF31BAF4AA7003A5E6D /* GuasapucNG2Tests */ = {
+			isa = PBXGroup;
+			children = (
+				03358AF41BAF4B03003A5E6D /* Info.plist */,
+			);
+			name = GuasapucNG2Tests;
+			path = GuasapucNG2;
+			sourceTree = "<group>";
+		};
+		03358AF61BAF4C5E003A5E6D /* Other classes */ = {
+			isa = PBXGroup;
+			children = (
+				037864F11B9538FC00EEE12E /* ChatManager.swift */,
+				037864DB1B9521F700EEE12E /* IPGetter.swift */,
+				037864D81B951CED00EEE12E /* CreateRequest.swift */,
+				037864E21B9522D700EEE12E /* Functions.swift */,
+				03358AF71BAF4CE5003A5E6D /* JSONObjectCreator.swift */,
+				03358AF91BAF58C7003A5E6D /* JSONObject.swift */,
+			);
+			name = "Other classes";
+			sourceTree = "<group>";
+		};
 		0378649B1B934ED100EEE12E = {
 			isa = PBXGroup;
 			children = (
 				037864A61B934ED100EEE12E /* GuasapucNG2 */,
-				037864BF1B934ED200EEE12E /* GuasapucNG2Tests */,
-				037864A51B934ED100EEE12E /* Products */,
+				03358AF31BAF4AA7003A5E6D /* GuasapucNG2Tests */,
+				03358AF21BAF4A38003A5E6D /* Products */,
 			);
-			sourceTree = "<group>";
-		};
-		037864A51B934ED100EEE12E /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				037864A41B934ED100EEE12E /* GuasapucNG2.app */,
-				037864BC1B934ED200EEE12E /* GuasapucNG2Tests.xctest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		037864A61B934ED100EEE12E /* GuasapucNG2 */ = {
@@ -132,10 +156,7 @@
 				037864D31B936A1500EEE12E /* TableViewCells */,
 				037864CE1B9369CA00EEE12E /* ViewControllers */,
 				03FF5E3C1B9BD6470030055E /* TableDelegates */,
-				037864F11B9538FC00EEE12E /* ChatManager.swift */,
-				037864DB1B9521F700EEE12E /* NetworkManager.swift */,
-				037864D81B951CED00EEE12E /* CreateRequest.swift */,
-				037864E21B9522D700EEE12E /* Functions.swift */,
+				03358AF61BAF4C5E003A5E6D /* Other classes */,
 				037864DE1B95226D00EEE12E /* GuasapucNG2-Bridging-Header.h */,
 				037864E41B9524AE00EEE12E /* NSManagedObjects */,
 				037864B01B934ED200EEE12E /* Main.storyboard */,
@@ -152,23 +173,6 @@
 			isa = PBXGroup;
 			children = (
 				037864A81B934ED100EEE12E /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		037864BF1B934ED200EEE12E /* GuasapucNG2Tests */ = {
-			isa = PBXGroup;
-			children = (
-				037864C21B934ED200EEE12E /* GuasapucNG2Tests.swift */,
-				037864C01B934ED200EEE12E /* Supporting Files */,
-			);
-			path = GuasapucNG2Tests;
-			sourceTree = "<group>";
-		};
-		037864C01B934ED200EEE12E /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				037864C11B934ED200EEE12E /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -246,7 +250,7 @@
 			);
 			name = GuasapucNG2;
 			productName = GuasapucNG2;
-			productReference = 037864A41B934ED100EEE12E /* GuasapucNG2.app */;
+			productReference = 03358AEF1BAF4A17003A5E6D /* GuasapucNG2.app */;
 			productType = "com.apple.product-type.application";
 		};
 		037864BB1B934ED200EEE12E /* GuasapucNG2Tests */ = {
@@ -264,7 +268,7 @@
 			);
 			name = GuasapucNG2Tests;
 			productName = GuasapucNG2Tests;
-			productReference = 037864BC1B934ED200EEE12E /* GuasapucNG2Tests.xctest */;
+			productReference = 03358AF01BAF4A17003A5E6D /* GuasapucNG2Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -273,7 +277,9 @@
 		0378649C1B934ED100EEE12E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0640;
+				LastSwiftMigration = 0700;
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Nicolás Gebauer";
 				TargetAttributes = {
 					037864A31B934ED100EEE12E = {
@@ -294,7 +300,7 @@
 				Base,
 			);
 			mainGroup = 0378649B1B934ED100EEE12E;
-			productRefGroup = 037864A51B934ED100EEE12E /* Products */;
+			productRefGroup = 0378649B1B934ED100EEE12E;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -348,13 +354,15 @@
 				03FF5E3B1B9BD6440030055E /* TablaChatsDelegate.swift in Sources */,
 				037864D91B951CED00EEE12E /* CreateRequest.swift in Sources */,
 				037864D21B936A0100EEE12E /* ChatTableViewCell.swift in Sources */,
-				037864DC1B9521F700EEE12E /* NetworkManager.swift in Sources */,
+				03358AF81BAF4CE5003A5E6D /* JSONObjectCreator.swift in Sources */,
+				037864DC1B9521F700EEE12E /* IPGetter.swift in Sources */,
 				037864D51B936A2300EEE12E /* CreateGroupTableViewCell.swift in Sources */,
 				037864EC1B95252400EEE12E /* Contacto.swift in Sources */,
 				037864D01B9369E900EEE12E /* ChatViewController.swift in Sources */,
 				037864F01B95253D00EEE12E /* ChatRoom.swift in Sources */,
 				037864F21B9538FC00EEE12E /* ChatManager.swift in Sources */,
 				037864E61B9524F100EEE12E /* User.swift in Sources */,
+				03358AFA1BAF58C7003A5E6D /* JSONObject.swift in Sources */,
 				037864AA1B934ED100EEE12E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -363,7 +371,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				037864C31B934ED200EEE12E /* GuasapucNG2Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,6 +425,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -487,6 +495,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = GuasapucNG2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nicogeb.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "GuasapucNG2/GuasapucNG2-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -500,6 +509,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = GuasapucNG2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nicogeb.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "GuasapucNG2/GuasapucNG2-Bridging-Header.h";
 			};
@@ -519,6 +529,7 @@
 				);
 				INFOPLIST_FILE = GuasapucNG2Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nicogeb.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GuasapucNG2.app/GuasapucNG2";
 			};
@@ -534,6 +545,7 @@
 				);
 				INFOPLIST_FILE = GuasapucNG2Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nicogeb.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GuasapucNG2.app/GuasapucNG2";
 			};

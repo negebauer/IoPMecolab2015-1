@@ -8,27 +8,31 @@
 
 import UIKit
 
+/// View that manages the display of all chatRooms.
 class ChatViewController: UIViewController, ChatManagerDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     var chatManager: ChatManager!
     var tableDelegate: TablaChatsDelegate!
     
-    var table: UITableView {
-        get { return tableView }
-    }
+    // MARK: - Button actions
     
-    @IBAction func RefreshChats(sender: AnyObject) {
+    /// Refresh the local chatRooms.
+    @IBAction func refreshChats(sender: AnyObject) {
         chatManager.updateChats()
     }
     
-    @IBAction func AddNewContact(sender: AnyObject) {
+    /// Create a new contact.
+    @IBAction func addNewContact(sender: AnyObject) {
         
     }
     
-    @IBAction func AddNewChat(sender: AnyObject) {
+    /// Start a new chat.
+    @IBAction func addNewChat(sender: AnyObject) {
         
     }
+    
+    // MARK: - Init
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,21 +44,21 @@ class ChatViewController: UIViewController, ChatManagerDelegate {
     func crearTabla() {
         tableDelegate = TablaChatsDelegate()
         
+        tableDelegate.refChatManager = chatManager
         tableView.delegate = tableDelegate
         tableView.dataSource = tableDelegate
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    // MARK: - ChatManagerDelegate methods
+    
+    var table: UITableView {
+        return tableView
     }
     
     func reloadChatRooms() {
         tableView.reloadData()
     }
     
-
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -62,6 +66,5 @@ class ChatViewController: UIViewController, ChatManagerDelegate {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-    */
 
 }

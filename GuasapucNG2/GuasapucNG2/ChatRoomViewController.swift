@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// View that manages the display of a chatRoom
 class ChatRoomViewController: UIViewController, ChatRoomManagerDelegate {
 
     override func viewDidLoad() {

@@ -9,11 +9,13 @@
 import UIKit
 import CoreData
 
+/// Stores the user number and chatRooms that the user is participating in.
 class User: NSManagedObject {
 
     @NSManaged var numero: String
     @NSManaged var chatRooms: NSSet //Set de ChatRoom
 
+    /// Creates and returns a new user.
     class func new(moc: NSManagedObjectContext) -> User {
         let newUser = NSEntityDescription.insertNewObjectForEntityForName("User", inManagedObjectContext: moc) as! GuasapucNG2.User
         newUser.numero = "56962448489"
@@ -21,6 +23,7 @@ class User: NSManagedObject {
         return newUser
     }
     
+    /// Gets/sets the current user.
     static var currentUser: User? {
         get {
             return (UIApplication.sharedApplication().delegate as! AppDelegate).currentUser
@@ -30,17 +33,18 @@ class User: NSManagedObject {
         }
     }
     
+    /// Fetches the current user. Returns nil if it doesn't exits
     class func fetchUser() -> User? {
         let moc = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
         let fetchRequest = NSFetchRequest(entityName: "User")
-        if let fetchResults = moc?.executeFetchRequest(fetchRequest, error: nil) as? [User] {
+        if let fetchResults = (try? moc?.executeFetchRequest(fetchRequest)) as? [User] {
             return fetchResults.count == 1 ? fetchResults[0] : nil
-        }
-        else {
+        } else {
             return nil
         }
     }
     
+    /// Checks the existance of the current user. If it doesn't exist it creates a new one.
     class func checkUser() {
         currentUser = fetchUser()
         if currentUser == nil {
@@ -50,29 +54,18 @@ class User: NSManagedObject {
                 return
             }
             currentUser = new(moc!)
-            moc!.save(nil)
-        }
+            do {
+                try moc!.save()
+            } catch let error as NSError {
+                NSLog("Error grabando base de datos: \(error.localizedDescription)")
+            }}
+    }
+    
+    override var description: String {
+        return
+            [
+                "numero = \(numero)",
+                "number of chats = \(chatRooms.count)"
+            ].joinWithSeparator("\n")
     }
 }
-
-/*
-static var currentUser: Usuario? {
-get {
-    return (UIApplication.sharedApplication().delegate as! AppDelegate).usuarioApp
-}
-set {
-    (UIApplication.sharedApplication().delegate as! AppDelegate).usuarioApp = newValue
-}
-}
-
-class func fetchUser() -> Usuario? {
-    let moc = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
-    let fetchRequest = NSFetchRequest(entityName: "Usuario")
-    if let fetchResults = moc?.executeFetchRequest(fetchRequest, error: nil) as? [Usuario] {
-        return fetchResults.count == 1 ? fetchResults[0] : nil
-    }
-    else {
-        return nil
-    }
-}
-*/

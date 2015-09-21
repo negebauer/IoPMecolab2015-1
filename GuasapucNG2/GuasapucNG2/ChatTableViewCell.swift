@@ -8,20 +8,10 @@
 
 import UIKit
 
+/// Cell used to show a chatRoom.
 class ChatTableViewCell: UITableViewCell {
 
     @IBOutlet weak var LabelNombreChat: UILabel!
     @IBOutlet weak var LabelUltimoMensaje: UILabel!
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
 
 }
