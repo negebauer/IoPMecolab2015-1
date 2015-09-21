@@ -41,7 +41,7 @@ class TablaChatsDelegate: NSObject, UITableViewDelegate, UITableViewDataSource {
             return cell != nil ? cell! : UITableViewCell()
         }
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("IDCeldaChat", forIndexPath: indexPath) as? ChatTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("IDCeldaChat", forIndexPath: indexPath) as? ChatRoomTableViewCell
         
         cell?.LabelNombreChat.text = refChatManager.listaChats[indexPath.row - 1].nombreChat
         cell?.LabelUltimoMensaje.text = refChatManager.listaChats[indexPath.row - 1].ultimoMensaje

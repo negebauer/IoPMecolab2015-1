@@ -26,7 +26,7 @@
         <relationship name="chatRooms" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="ChatRoom" inverseName="chatMembers" inverseEntity="ChatRoom" syncable="YES"/>
     </entity>
     <entity name="User" representedClassName="GuasapucNG2.User" syncable="YES">
-        <attribute name="numero" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="number" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="token" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="chatRooms" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="ChatRoom" inverseName="user" inverseEntity="ChatRoom" syncable="YES"/>
     </entity>

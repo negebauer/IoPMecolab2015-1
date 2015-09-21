@@ -11,18 +11,48 @@ import UIKit
 /// View that manages the display of a chatRoom
 class ChatRoomViewController: UIViewController, ChatMessageListDelegate {
 
+    @IBOutlet weak var tableView: UITableView!
+    var tableDelegate: TablaChatRoomDelegate!
+    weak var refChatRoomToShow: ChatRoom!
+    weak var refChatViewController: ChatViewController!
+    
+    // MARK: - Init
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        crearTabla()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        scrollToBottom()
+    }
+    
+    func crearTabla() {
+        tableDelegate = TablaChatRoomDelegate()
+        
+        tableDelegate.refChatRoomViewController = self
+        tableDelegate.refChatRoomToShow = refChatRoomToShow
+        tableView.delegate = tableDelegate
+        tableView.dataSource = tableDelegate
+    }
+    
+    // MARK: - Table scrolling
+    
+    func scrollToBottom() {
+        let numberOfSections = tableView.numberOfSections - 1
+        let numberOfRows = tableView.numberOfRowsInSection(numberOfSections) - 1
+        let indexPath = NSIndexPath(forRow: numberOfRows, inSection: numberOfSections)
+        tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: UITableViewScrollPosition.Bottom, animated: true)
     }
     
     // MARK: - ChatMessageListDelegate methods
+    
+    var table: UITableView {
+        return tableView
+    }
     
     func reloadChatRoom() {
         

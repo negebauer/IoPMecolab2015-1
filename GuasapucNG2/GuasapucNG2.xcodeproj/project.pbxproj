@@ -16,7 +16,7 @@
 		037864B71B934ED200EEE12E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 037864B51B934ED200EEE12E /* LaunchScreen.xib */; };
 		037864CD1B9369C600EEE12E /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037864CC1B9369C600EEE12E /* TabBarViewController.swift */; };
 		037864D01B9369E900EEE12E /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037864CF1B9369E900EEE12E /* ChatViewController.swift */; };
-		037864D21B936A0100EEE12E /* ChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037864D11B936A0100EEE12E /* ChatTableViewCell.swift */; };
+		037864D21B936A0100EEE12E /* ChatRoomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037864D11B936A0100EEE12E /* ChatRoomTableViewCell.swift */; };
 		037864D51B936A2300EEE12E /* CreateGroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037864D41B936A2300EEE12E /* CreateGroupTableViewCell.swift */; };
 		037864D91B951CED00EEE12E /* CreateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037864D81B951CED00EEE12E /* CreateRequest.swift */; };
 		037864DC1B9521F700EEE12E /* IPGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037864DB1B9521F700EEE12E /* IPGetter.swift */; };
@@ -40,6 +40,7 @@
 		0378650B1B953FEE00EEE12E /* API Guasap UC V2.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 037865001B953FEE00EEE12E /* API Guasap UC V2.pdf */; };
 		03B1D4491BAFA44300CD220A /* AddGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B1D4481BAFA44300CD220A /* AddGroupViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		03B1D44E1BAFB14400CD220A /* TablaChatRoomDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B1D44D1BAFB14400CD220A /* TablaChatRoomDelegate.swift */; settings = {ASSET_TAGS = (); }; };
+		03B1D4501BAFB37200CD220A /* ChatMessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B1D44F1BAFB37200CD220A /* ChatMessageTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 		03FF5E3B1B9BD6440030055E /* TablaChatsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FF5E3A1B9BD6440030055E /* TablaChatsDelegate.swift */; };
 /* End PBXBuildFile section */
 
@@ -67,7 +68,7 @@
 		037864B61B934ED200EEE12E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		037864CC1B9369C600EEE12E /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		037864CF1B9369E900EEE12E /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
-		037864D11B936A0100EEE12E /* ChatTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatTableViewCell.swift; sourceTree = "<group>"; };
+		037864D11B936A0100EEE12E /* ChatRoomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatRoomTableViewCell.swift; sourceTree = "<group>"; };
 		037864D41B936A2300EEE12E /* CreateGroupTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateGroupTableViewCell.swift; sourceTree = "<group>"; };
 		037864D81B951CED00EEE12E /* CreateRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateRequest.swift; sourceTree = "<group>"; };
 		037864DB1B9521F700EEE12E /* IPGetter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IPGetter.swift; sourceTree = "<group>"; };
@@ -92,6 +93,7 @@
 		037865001B953FEE00EEE12E /* API Guasap UC V2.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "API Guasap UC V2.pdf"; sourceTree = "<group>"; };
 		03B1D4481BAFA44300CD220A /* AddGroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddGroupViewController.swift; sourceTree = "<group>"; };
 		03B1D44D1BAFB14400CD220A /* TablaChatRoomDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TablaChatRoomDelegate.swift; sourceTree = "<group>"; };
+		03B1D44F1BAFB37200CD220A /* ChatMessageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatMessageTableViewCell.swift; sourceTree = "<group>"; };
 		03FF5E3A1B9BD6440030055E /* TablaChatsDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TablaChatsDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -195,7 +197,8 @@
 		037864D31B936A1500EEE12E /* TableViewCells */ = {
 			isa = PBXGroup;
 			children = (
-				037864D11B936A0100EEE12E /* ChatTableViewCell.swift */,
+				037864D11B936A0100EEE12E /* ChatRoomTableViewCell.swift */,
+				03B1D44F1BAFB37200CD220A /* ChatMessageTableViewCell.swift */,
 				037864D41B936A2300EEE12E /* CreateGroupTableViewCell.swift */,
 			);
 			name = TableViewCells;
@@ -364,7 +367,7 @@
 				037864E31B9522D800EEE12E /* Functions.swift in Sources */,
 				03FF5E3B1B9BD6440030055E /* TablaChatsDelegate.swift in Sources */,
 				037864D91B951CED00EEE12E /* CreateRequest.swift in Sources */,
-				037864D21B936A0100EEE12E /* ChatTableViewCell.swift in Sources */,
+				037864D21B936A0100EEE12E /* ChatRoomTableViewCell.swift in Sources */,
 				03358AF81BAF4CE5003A5E6D /* JSONObjectCreator.swift in Sources */,
 				037864DC1B9521F700EEE12E /* IPGetter.swift in Sources */,
 				037864D51B936A2300EEE12E /* CreateGroupTableViewCell.swift in Sources */,
@@ -377,6 +380,7 @@
 				037864E61B9524F100EEE12E /* User.swift in Sources */,
 				03358AFA1BAF58C7003A5E6D /* JSONObject.swift in Sources */,
 				037864AA1B934ED100EEE12E /* AppDelegate.swift in Sources */,
+				03B1D4501BAFB37200CD220A /* ChatMessageTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

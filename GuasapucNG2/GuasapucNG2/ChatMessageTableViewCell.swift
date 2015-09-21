@@ -10,15 +10,25 @@ import UIKit
 
 class ChatMessageTableViewCell: UITableViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    @IBOutlet weak var LabelMensaje: UILabel!
+    var bubbleImageView: UIImageView!
+    var firstBubbleLoadDone = false
+    var bubbleString = ""
+    
+    func loadChatBubble() {
+        if LabelMensaje.text == "" || LabelMensaje.text == nil { return }
+        if firstBubbleLoadDone { return }
+        let image = UIImage(named: bubbleString)?.resizableImageWithCapInsets(UIEdgeInsetsMake(10, 20, 10, 20))
+        bubbleImageView = UIImageView(image: image)
+        bubbleImageView.reloadInputViews()
+        
+        let x: CGFloat = 8
+        let y: CGFloat = 4
+        
+        bubbleImageView.frame = CGRectMake(x, y, LabelMensaje.intrinsicContentSize().width + 28, LabelMensaje.intrinsicContentSize().height + 12)
+        
+        insertSubview(bubbleImageView, atIndex: 0)
+        firstBubbleLoadDone = true
     }
 
 }

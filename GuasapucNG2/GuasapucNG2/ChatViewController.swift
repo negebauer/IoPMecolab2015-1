@@ -65,7 +65,9 @@ class ChatViewController: UIViewController, ChatRoomListDelegate {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "IDMostrarChatRoom" {
-            
+            let chatRoom = sender as? ChatRoom
+            let chatRoomView = segue.destinationViewController as? ChatRoomViewController
+            chatRoomView?.refChatRoomToShow = chatRoom
         } else if segue.identifier == "IDCrearChatGrupal" {
             let addGroupView = segue.destinationViewController as? AddGroupViewController
             addGroupView?.refChatManager = chatManager

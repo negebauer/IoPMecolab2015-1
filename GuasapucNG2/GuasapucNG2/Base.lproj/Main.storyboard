@@ -9,7 +9,6 @@
         <!--Map-->
         <scene sceneID="Kby-zi-CQg">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="kH7-VE-N5R" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="qad-RN-gZx" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gEb-41-S4r"/>
@@ -20,8 +19,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Map" image="364A6BBA-8B68-42C8-AB7B-4FAA22D303DB" id="ebT-g0-EpC"/>
+                    <tabBarItem key="tabBarItem" title="Map" image="MapIcon" id="ebT-g0-EpC"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kH7-VE-N5R" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-815" y="68"/>
         </scene>
@@ -74,7 +74,7 @@
                                             </variation>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="IDCeldaChat" rowHeight="60" id="gkN-T5-cgZ" customClass="ChatTableViewCell" customModule="GuasapucNG2" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="IDCeldaChat" rowHeight="60" id="gkN-T5-cgZ" customClass="ChatRoomTableViewCell" customModule="GuasapucNG2" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="126" width="600" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gkN-T5-cgZ" id="GRj-ys-STu">
@@ -84,13 +84,13 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NombreContacto" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gaf-5J-1GP">
                                                     <rect key="frame" x="16" y="16" width="132" height="27.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UltimoMensajeRecibido" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TlA-dL-re0">
                                                     <rect key="frame" x="156.5" y="16" width="180" height="27.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -180,26 +180,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="F3s-om-nNR">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="F3s-om-nNR">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="pls-gS-N4U" style="IBUITableViewCellStyleDefault" id="g1b-Lc-fkc">
-                                        <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="IDCeldaMensaje" rowHeight="40" id="g1b-Lc-fkc" customClass="ChatMessageTableViewCell" customModule="GuasapucNG2" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="92" width="600" height="40"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="g1b-Lc-fkc" id="Svd-w2-Le1">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="40"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pls-gS-N4U">
-                                                    <rect key="frame" x="15" y="0.0" width="570" height="43.5"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Isj-yz-SKO">
+                                                    <rect key="frame" x="16" y="8" width="42" height="23.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Isj-yz-SKO" firstAttribute="top" secondItem="Svd-w2-Le1" secondAttribute="topMargin" id="MBs-5s-gBT"/>
+                                                <constraint firstItem="Isj-yz-SKO" firstAttribute="leading" secondItem="Svd-w2-Le1" secondAttribute="leadingMargin" constant="8" id="YG4-72-1gc"/>
+                                                <constraint firstItem="Isj-yz-SKO" firstAttribute="bottom" secondItem="Svd-w2-Le1" secondAttribute="bottomMargin" id="ima-Qu-rxs"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="LabelMensaje" destination="Isj-yz-SKO" id="A8T-Wu-ssO"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -426,117 +433,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="364A6BBA-8B68-42C8-AB7B-4FAA22D303DB" width="30" height="30">
-            <mutableData key="keyedArchiveRepresentation">
-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
-NgAAAAAAAAADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAQEBpAICAsoAAAAAAAAA
-AwAAAAABAQFBAgIC+AAAADsAAAAAAAAAAwAAAAAAAAAAAAAAAAAAAAMAAAAAAQEBNgMDA/8DAwP/AQEB
-NgAAAAAAAAADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAFgICAuwBAQGGAAAA
-AAAAAA4BAQHiAQEBkgAAAAAAAAADAAAAAAAAAAAAAAAAAAAAAAAAAAMAAAAAAQEBNgMDA/8DAwP/AQEB
-NgAAAAAAAAADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADAAAAAAAAAFMCAgL+AQEB
-NQEBAZUBAQHdAAAABgAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAMAAAAAAQEBNgMDA/8DAwP/AQEB
-NgAAAAAAAAADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAACAgKOAwMD
-/wICAu0AAAA5AAAAAAAAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAAAAAAQEBNgMDA/8DAwP/AQEB
-NgAAAAAAAAADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAGAgIC
-wAAAAHQAAAAAAAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAAAAAAQEBNgMDA/8DAwP/AQEB
-NgAAAAAAAAADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAA
-AgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAAAAAAQEBNgMDA/8DAwP/AQEB
-NgAAAAAAAAADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAA
-AAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAAAAAAQEBNgMDA/8DAwP/AQEB
-NgAAAAAAAAADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-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
-dElUAAAAKAAAAnpuYk5PAAAAJgAAAqJrb0tSAAAAFgAAAshjc0NaAAAAIgAAAt5oZUlMAAAAHgAAAwBk
-ZURFAAAALAAAAx5odUhVAAAAKAAAA0pzdlNFAAAAJgAAAqJ6aENOAAAAFgAAA3JqYUpQAAAAGgAAA4hy
-b1JPAAAAJAAAA6JlbEdSAAAAIgAAA8ZwdFBPAAAAJgAAA+hubE5MAAAAKAAABA5lc0VTAAAAJgAAA+h0
-aFRIAAAAJAAABDZ0clRSAAAAIgAABFpmaUZJAAAAKAAABHxwbFBMAAAALAAABKRydVJVAAAAIgAABNBh
-ckVHAAAAJgAABPJlblVTAAAAJgAABRhkYURLAAAALgAABT4AVgFhAGUAbwBiAGUAYwBuAP0AIABSAEcA
-QgAgAHAAcgBvAGYAaQBsAEcAZQBuAGUAcgBpAQ0AawBpACAAUgBHAEIAIABwAHIAbwBmAGkAbABQAGUA
-cgBmAGkAbAAgAFIARwBCACAAZwBlAG4A6AByAGkAYwBQAGUAcgBmAGkAbAAgAFIARwBCACAARwBlAG4A
-6QByAGkAYwBvBBcEMAQzBDAEOwRMBD0EOAQ5ACAEPwRABD4ERAQwBDkEOwAgAFIARwBCAFAAcgBvAGYA
-aQBsACAAZwDpAG4A6QByAGkAcQB1AGUAIABSAFYAQpAadSgAIABSAEcAQgAggnJfaWPPj/AAUAByAG8A
-ZgBpAGwAbwAgAFIARwBCACAAZwBlAG4AZQByAGkAYwBvAEcAZQBuAGUAcgBpAHMAawAgAFIARwBCAC0A
-cAByAG8AZgBpAGzHfLwYACAAUgBHAEIAINUEuFzTDMd8AE8AYgBlAGMAbgD9ACAAUgBHAEIAIABwAHIA
-bwBmAGkAbAXkBegF1QXkBdkF3AAgAFIARwBCACAF2wXcBdwF2QBBAGwAbABnAGUAbQBlAGkAbgBlAHMA
-IABSAEcAQgAtAFAAcgBvAGYAaQBsAMEAbAB0AGEAbADhAG4AbwBzACAAUgBHAEIAIABwAHIAbwBmAGkA
-bGZukBoAIABSAEcAQgAgY8+P8GWHTvZOAIIsACAAUgBHAEIAIDDXMO0w1TChMKQw6wBQAHIAbwBmAGkA
-bAAgAFIARwBCACAAZwBlAG4AZQByAGkAYwOTA7UDvQO5A7oDzAAgA8ADwQO/A8YDrwO7ACAAUgBHAEIA
-UABlAHIAZgBpAGwAIABSAEcAQgAgAGcAZQBuAOkAcgBpAGMAbwBBAGwAZwBlAG0AZQBlAG4AIABSAEcA
-QgAtAHAAcgBvAGYAaQBlAGwOQg4bDiMORA4fDiUOTAAgAFIARwBCACAOFw4xDkgOJw5EDhsARwBlAG4A
-ZQBsACAAUgBHAEIAIABQAHIAbwBmAGkAbABpAFkAbABlAGkAbgBlAG4AIABSAEcAQgAtAHAAcgBvAGYA
-aQBpAGwAaQBVAG4AaQB3AGUAcgBzAGEAbABuAHkAIABwAHIAbwBmAGkAbAAgAFIARwBCBB4EMQRJBDgE
-OQAgBD8EQAQ+BEQEOAQ7BEwAIABSAEcAQgZFBkQGQQAgBioGOQYxBkoGQQAgAFIARwBCACAGJwZEBjkG
-JwZFAEcAZQBuAGUAcgBpAGMAIABSAEcAQgAgAFAAcgBvAGYAaQBsAGUARwBlAG4AZQByAGUAbAAgAFIA
-RwBCAC0AYgBlAHMAawByAGkAdgBlAGwAcwBldGV4dAAAAABDb3B5cmlnaHQgMjAwNyBBcHBsZSBJbmMu
-LCBhbGwgcmlnaHRzIHJlc2VydmVkLgBYWVogAAAAAAAA81IAAQAAAAEWz1hZWiAAAAAAAAB0TQAAPe4A
-AAPQWFlaIAAAAAAAAFp1AACscwAAFzRYWVogAAAAAAAAKBoAABWfAAC4NmN1cnYAAAAAAAAAAQHNAABz
-ZjMyAAAAAAABDEIAAAXe///zJgAAB5IAAP2R///7ov///aMAAAPcAADAbNIlJicoWiRjbGFzc25hbWVY
-JGNsYXNzZXNfEBBOU0JpdG1hcEltYWdlUmVwoykqK18QEE5TQml0bWFwSW1hZ2VSZXBaTlNJbWFnZVJl
-cFhOU09iamVjdNIlJi0uV05TQXJyYXmiLSvSJSYwMV5OU011dGFibGVBcnJheaMwLSvTMzQKNTY3V05T
-V2hpdGVcTlNDb2xvclNwYWNlRDAgMAAQA4AM0iUmOTpXTlNDb2xvcqI5K9IlJjw9V05TSW1hZ2WiPCtf
-EA9OU0tleWVkQXJjaGl2ZXLRQEFUcm9vdIABAAgAEQAaACMALQAyADcARgBMAFcAXgBlAHIAeQCBAIMA
-hQCKAIwAjgCXAJwApwCpAKsArQCyALUAtwC5ALsAvQDCANkA2wDdF18XZBdvF3gXixePF6IXrRe2F7sX
-wxfGF8sX2hfeF+UX7Rf6F/8YARgDGAgYEBgTGBgYIBgjGDUYOBg9AAAAAAAAAgEAAAAAAAAAQgAAAAAA
-AAAAAAAAAAAAGD8
-</mutableData>
-        </image>
         <image name="ChatIcon" width="30" height="30"/>
+        <image name="MapIcon" width="30" height="30"/>
     </resources>
 </document>

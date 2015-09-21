@@ -12,7 +12,7 @@ import CoreData
 /// Stores the user number and chatRooms that the user is participating in.
 class User: NSManagedObject {
 
-    @NSManaged var numero: String
+    @NSManaged var number: String
     @NSManaged var chatRooms: NSSet //Set de ChatRoom
     @NSManaged var token: String
 
@@ -21,7 +21,7 @@ class User: NSManagedObject {
     /// Creates and returns a new user.
     class func new(moc: NSManagedObjectContext) -> User {
         let newUser = NSEntityDescription.insertNewObjectForEntityForName("User", inManagedObjectContext: moc) as! GuasapucNG2.User
-        newUser.numero = "56962448489"
+        newUser.number = "56962448489"
         newUser.token = ""
         
         return newUser
@@ -33,7 +33,7 @@ class User: NSManagedObject {
         let task = NSURLSession.sharedSession().dataTaskWithRequest(request) { data, response, error in
             
             let jsonContainer = JSONObjectCreator(data: data, type: JSONObject.TiposDeJSON.Token, error: error)
-            let jsonObjectArray = jsonContainer.arrayJSONObjects.filter({ object in return object.phone_number! == self.numero })
+            let jsonObjectArray = jsonContainer.arrayJSONObjects.filter({ object in return object.phone_number! == self.number })
             if jsonObjectArray.count > 0 {
                 self.token = jsonObjectArray.first!.token!
                 self.chatManager?.updateChats()
@@ -85,7 +85,7 @@ class User: NSManagedObject {
     override var description: String {
         return
             [
-                "numero = \(numero)",
+                "numero = \(number)",
                 "number of chats = \(chatRooms.count)",
                 "token = \(token)"
             ].joinWithSeparator("\n")
