@@ -28,13 +28,22 @@ class ChatMessageTableViewCell: UITableViewCell {
         bubbleImageView = UIImageView(image: image)
         bubbleImageView.reloadInputViews()
         
-        let x: CGFloat = 8
+        let x: CGFloat = 2
         let y: CGFloat = 4
         
         bubbleImageView.frame = CGRectMake(x, y, LabelMensaje.intrinsicContentSize().width + 28, LabelMensaje.intrinsicContentSize().height + 12)
         
         insertSubview(bubbleImageView, atIndex: 0)
         firstBubbleLoadDone = true
+        reloadInputViews()
+    }
+    
+    func destroyBubble() {
+        for view in LabelMensaje.subviews {
+            view.removeFromSuperview()
+            bubbleImageView = nil
+            firstBubbleLoadDone = false
+        }
     }
 
 }

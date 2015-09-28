@@ -19,12 +19,12 @@ class ImageViewerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        //var urlPieces = urlString.componentsSeparatedByString(":")
-        //urlPieces.removeAtIndex(0)
-        //urlString = "https:" + urlPieces.joinWithSeparator(":")
         url = NSURL(string: urlString)
         if url != nil {
             data = NSData(contentsOfURL: url!)
+        }
+        if data != nil {
+            ImageView.hidden = true
         }
     }
 
@@ -36,6 +36,7 @@ class ImageViewerViewController: UIViewController {
             ImageView.image = img
             ImageView.reloadInputViews()
         }
+        ImageView.hidden = false
     }
 
 }

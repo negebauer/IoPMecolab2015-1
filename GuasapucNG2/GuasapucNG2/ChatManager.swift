@@ -25,7 +25,7 @@ protocol ChatMessageListDelegate {
 // MARK: - Chat manager class
 
 /// Manages everything related to getting chatRooms, sending messages, getting messages, etc. It's the core of the app.
-class ChatManager {
+public class ChatManager {
     weak var adbk : ABAddressBook!
     private var diccionarioNumeroPersonABRecord = Dictionary<String,ABRecord>()
     var listaChats = [ChatRoom]()
@@ -234,7 +234,7 @@ class ChatManager {
         return [Contacto]()[0]
     }
     
-    private func getNameForContactNumber(number: String) -> String {
+    public func getNameForContactNumber(number: String) -> String {
         if !diccionarioNumeroPersonABRecord.keys.contains(number) {
             createArrayNumberName()
         }

@@ -34,13 +34,21 @@ class TablaChatRoomDelegate: NSObject, UITableViewDelegate, UITableViewDataSourc
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("IDCeldaMensaje", forIndexPath: indexPath) as? ChatMessageTableViewCell
+        let cellMessage = tableView.dequeueReusableCellWithIdentifier("IDCeldaMensaje", forIndexPath: indexPath) as? ChatMessageTableViewCell
         
-        cell?.LabelMensaje.text = refChatRoomToShow.arrayMessage[indexPath.row].content
-        cell?.isSentBySelf = refChatRoomToShow.arrayMessage[indexPath.row].sender == User.currentUser!.number
+        cellMessage?.LabelMensaje.text = refChatRoomToShow.arrayMessage[indexPath.row].content
+        cellMessage?.isSentBySelf = refChatRoomToShow.arrayMessage[indexPath.row].sender == User.currentUser!.number
         
-        cell?.loadChatBubble()
+        dispatch_async(dispatch_get_main_queue(), {
+            cellMessage?.loadChatBubble()
+        })
         
-        return cell != nil ? cell! : UITableViewCell()
+        return cellMessage != nil ? cellMessage! : UITableViewCell()
+    }
+    
+    func tableView(tableView: UITableView, didEndDisplayingCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        if let cellMessage = cell as? ChatMessageTableViewCell {
+            cellMessage.destroyBubble()
+        }
     }
 }

@@ -18,6 +18,10 @@
 		032DA51A1BAFC2C0007B5D73 /* ImageViewerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032DA5191BAFC2C0007B5D73 /* ImageViewerViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		03358AF81BAF4CE5003A5E6D /* JSONObjectCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03358AF71BAF4CE5003A5E6D /* JSONObjectCreator.swift */; settings = {ASSET_TAGS = (); }; };
 		03358AFA1BAF58C7003A5E6D /* JSONObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03358AF91BAF58C7003A5E6D /* JSONObject.swift */; settings = {ASSET_TAGS = (); }; };
+		0369E0571BB99D6B00F000D9 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0369E0561BB99D6B00F000D9 /* MapKit.framework */; };
+		0369E05C1BB99DEB00F000D9 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0369E0581BB99DEB00F000D9 /* Client.swift */; settings = {ASSET_TAGS = (); }; };
+		0369E05D1BB99DEB00F000D9 /* TcpListener.m in Sources */ = {isa = PBXBuildFile; fileRef = 0369E05B1BB99DEB00F000D9 /* TcpListener.m */; settings = {ASSET_TAGS = (); }; };
+		0369E0601BB99E8500F000D9 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0369E05F1BB99E8500F000D9 /* MapView.swift */; settings = {ASSET_TAGS = (); }; };
 		037864AA1B934ED100EEE12E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037864A91B934ED100EEE12E /* AppDelegate.swift */; };
 		037864AD1B934ED200EEE12E /* GuasapucNG2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 037864AB1B934ED200EEE12E /* GuasapucNG2.xcdatamodeld */; };
 		037864B21B934ED200EEE12E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 037864B01B934ED200EEE12E /* Main.storyboard */; };
@@ -88,6 +92,12 @@
 		03358AEF1BAF4A17003A5E6D /* GuasapucNG2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuasapucNG2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		03358AF71BAF4CE5003A5E6D /* JSONObjectCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONObjectCreator.swift; sourceTree = "<group>"; };
 		03358AF91BAF58C7003A5E6D /* JSONObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONObject.swift; sourceTree = "<group>"; };
+		0369E0561BB99D6B00F000D9 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		0369E0581BB99DEB00F000D9 /* Client.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
+		0369E0591BB99DEB00F000D9 /* TcpDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TcpDelegate.h; sourceTree = "<group>"; };
+		0369E05A1BB99DEB00F000D9 /* TcpListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TcpListener.h; sourceTree = "<group>"; };
+		0369E05B1BB99DEB00F000D9 /* TcpListener.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TcpListener.m; sourceTree = "<group>"; };
+		0369E05F1BB99E8500F000D9 /* MapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		037864A81B934ED100EEE12E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		037864A91B934ED100EEE12E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		037864AC1B934ED200EEE12E /* GuasapucNG2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GuasapucNG2.xcdatamodel; sourceTree = "<group>"; };
@@ -151,6 +161,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0369E0571BB99D6B00F000D9 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,9 +221,21 @@
 			name = "Other classes";
 			sourceTree = "<group>";
 		};
+		0369E05E1BB99DF000F000D9 /* Sockets */ = {
+			isa = PBXGroup;
+			children = (
+				0369E0581BB99DEB00F000D9 /* Client.swift */,
+				0369E0591BB99DEB00F000D9 /* TcpDelegate.h */,
+				0369E05A1BB99DEB00F000D9 /* TcpListener.h */,
+				0369E05B1BB99DEB00F000D9 /* TcpListener.m */,
+			);
+			name = Sockets;
+			sourceTree = "<group>";
+		};
 		0378649B1B934ED100EEE12E = {
 			isa = PBXGroup;
 			children = (
+				0369E0561BB99D6B00F000D9 /* MapKit.framework */,
 				037864A61B934ED100EEE12E /* GuasapucNG2 */,
 				032AB2021BAFD6750050C949 /* GuasapucNG2Tests */,
 				032AB2191BAFD6750050C949 /* GuasapucNG2TestsTests */,
@@ -232,6 +255,7 @@
 				03FF5E3C1B9BD6470030055E /* TableDelegates */,
 				037864D31B936A1500EEE12E /* TableViewCells */,
 				03358AF61BAF4C5E003A5E6D /* Other classes */,
+				0369E05E1BB99DF000F000D9 /* Sockets */,
 				037864DE1B95226D00EEE12E /* GuasapucNG2-Bridging-Header.h */,
 				037864E41B9524AE00EEE12E /* NSManagedObjects */,
 				037864B01B934ED200EEE12E /* Main.storyboard */,
@@ -260,6 +284,7 @@
 				032DA5191BAFC2C0007B5D73 /* ImageViewerViewController.swift */,
 				03B1D4481BAFA44300CD220A /* AddGroupViewController.swift */,
 				037864CC1B9369C600EEE12E /* TabBarViewController.swift */,
+				0369E05F1BB99E8500F000D9 /* MapView.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -522,13 +547,16 @@
 				037864F41B953DD700EEE12E /* ChatRoomViewController.swift in Sources */,
 				037864EE1B95252F00EEE12E /* ChatMessage.swift in Sources */,
 				037864E31B9522D800EEE12E /* Functions.swift in Sources */,
+				0369E05D1BB99DEB00F000D9 /* TcpListener.m in Sources */,
 				03FF5E3B1B9BD6440030055E /* TablaChatsDelegate.swift in Sources */,
 				037864D91B951CED00EEE12E /* CreateRequest.swift in Sources */,
 				037864D21B936A0100EEE12E /* ChatRoomTableViewCell.swift in Sources */,
 				03358AF81BAF4CE5003A5E6D /* JSONObjectCreator.swift in Sources */,
 				037864DC1B9521F700EEE12E /* IPGetter.swift in Sources */,
 				037864D51B936A2300EEE12E /* CreateGroupTableViewCell.swift in Sources */,
+				0369E0601BB99E8500F000D9 /* MapView.swift in Sources */,
 				037864EC1B95252400EEE12E /* Contacto.swift in Sources */,
+				0369E05C1BB99DEB00F000D9 /* Client.swift in Sources */,
 				03B1D4491BAFA44300CD220A /* AddGroupViewController.swift in Sources */,
 				037864D01B9369E900EEE12E /* ChatViewController.swift in Sources */,
 				03B1D44E1BAFB14400CD220A /* TablaChatRoomDelegate.swift in Sources */,
@@ -793,6 +821,7 @@
 				032AB22A1BAFD6750050C949 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		032AB22B1BAFD6750050C949 /* Build configuration list for PBXNativeTarget "GuasapucNG2TestsTests" */ = {
 			isa = XCConfigurationList;
@@ -801,6 +830,7 @@
 				032AB22D1BAFD6750050C949 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		032AB22E1BAFD6750050C949 /* Build configuration list for PBXNativeTarget "GuasapucNG2TestsUITests" */ = {
 			isa = XCConfigurationList;
@@ -809,6 +839,7 @@
 				032AB2301BAFD6750050C949 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0378649F1B934ED100EEE12E /* Build configuration list for PBXProject "GuasapucNG2" */ = {
 			isa = XCConfigurationList;
