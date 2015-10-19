@@ -21,7 +21,7 @@ class User: NSManagedObject {
     /// Creates and returns a new user.
     class func new(moc: NSManagedObjectContext) -> User {
         let newUser = NSEntityDescription.insertNewObjectForEntityForName("User", inManagedObjectContext: moc) as! GuasapucNG2.User
-        newUser.number = "56962448489"
+        newUser.number = ""
         newUser.token = ""
         
         return newUser
@@ -85,7 +85,7 @@ class User: NSManagedObject {
     override var description: String {
         return
             [
-                "numero = \(number)",
+                "number = \(number)",
                 "number of chats = \(chatRooms.count)",
                 "token = \(token)"
             ].joinWithSeparator("\n")

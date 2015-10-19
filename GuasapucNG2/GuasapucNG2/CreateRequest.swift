@@ -20,9 +20,11 @@ class CreateRequest {
     private static let userNumber = "56962448489" //"56981362982"
     private static let userLink = "\(host)users/5"
     
-    private static var tokenFormatted: String {
+    static var tokenFormatted: String {
         return "Token token=\(User.currentUser!.token)"
     }
+    
+    static let sendFileMessageURL = "\(host)api/v2/conversations/send_file_message"
 }
 
 // Basic functions
@@ -116,7 +118,7 @@ extension CreateRequest {
     ///Request to send a message to a conversation
     static func sendMessageToConversation(content:String, sender:String, id:Int) -> NSMutableURLRequest {
         let request = makeRequest("\(host)api/v2/conversations/send_message")
-        let obj = ["conversation_id":String(id), "sender":sender]
+        let obj = ["conversation_id": String(id), "phone_number": sender, "content": content]
         return makePOSTRequest(request, obj: obj)
     }
     

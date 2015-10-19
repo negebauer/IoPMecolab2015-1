@@ -22,6 +22,7 @@ class JSONObjectCreator: NSObject {
         
         if error != nil {
             NSLog("There was an error getting a json #008")
+            print(error?.description)
             return
         }
         

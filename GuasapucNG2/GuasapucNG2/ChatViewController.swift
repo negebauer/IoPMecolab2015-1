@@ -77,16 +77,15 @@ class ChatViewController: UIViewController, ChatRoomListDelegate, ABPeoplePicker
     // MARK: - ABPeoplePickerNavigationControllerDelegate methods
     
     func peoplePickerNavigationController(peoplePicker: ABPeoplePickerNavigationController, didSelectPerson person: ABRecord, property: ABPropertyID, identifier: ABMultiValueIdentifier) {
-        // TODO: Create new chatRoom
-        
         if property == kABPersonPhoneProperty {
-//            let numbersValueRef: ABMultiValueRef = ABRecordCopyValue(person, property).takeRetainedValue()
-//            let numberValueIndex = ABMultiValueGetIndexForIdentifier(numbersValueRef, identifier)
-//            let numberRaw = ABMultiValueCopyValueAtIndex(numbersValueRef, numberValueIndex).takeRetainedValue() as! String
-//            let number = limpiarNumero(numberRaw)
+            let numbersValueRef: ABMultiValueRef = ABRecordCopyValue(person, property).takeRetainedValue()
+            let numberValueIndex = ABMultiValueGetIndexForIdentifier(numbersValueRef, identifier)
+            let numberRaw = ABMultiValueCopyValueAtIndex(numbersValueRef, numberValueIndex).takeRetainedValue() as! String
+            let number = cleanNumber(numberRaw)
 
-//            let chatRoomToShow = chatManager.getChatRoomForNumber(number)
-//            performSegueWithIdentifier("IDMostrarChatRoom", sender:  chatRoomToShow)
+            let chatRoomToShow = chatManager.getChatRoomForNumber(number)
+            peoplePicker.dismissViewControllerAnimated(true, completion: nil)
+            performSegueWithIdentifier("IDMostrarChatRoom", sender:  chatRoomToShow)
         }
     }
     
@@ -106,26 +105,3 @@ class ChatViewController: UIViewController, ChatRoomListDelegate, ABPeoplePicker
     }
 
 }
-
-/*
-@IBAction func showPicker(sender: AnyObject) {
-var picker: ABPeoplePickerNavigationController =  ABPeoplePickerNavigationController()
-
-picker.peoplePickerDelegate = self
-self.presentViewController(picker, animated: true, completion:nil)
-}
-
-func peoplePickerNavigationController(peoplePicker: ABPeoplePickerNavigationController!, didSelectPerson person: ABRecord!, property: ABPropertyID, identifier: ABMultiValueIdentifier) {
-    
-    if property == kABPersonPhoneProperty {
-        self.adbk = peoplePicker.addressBook
-        let numbersValueRef: ABMultiValueRef = ABRecordCopyValue(person, property).takeRetainedValue()
-        let numberValueIndex = ABMultiValueGetIndexForIdentifier(numbersValueRef, identifier)
-        let numberRaw = ABMultiValueCopyValueAtIndex(numbersValueRef, numberValueIndex).takeRetainedValue() as! String
-        let number = Common.limpiarNumero(numberRaw)
-        
-        delegateChatTable?.enviarMensajeAContacto(number)
-        TablaChats.reloadData()
-    }
-}
-*/

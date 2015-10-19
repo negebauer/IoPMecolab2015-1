@@ -19,7 +19,7 @@ class TablaChatsDelegate: NSObject, UITableViewDelegate, UITableViewDataSource {
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        refChatViewController.performSegueWithIdentifier("IDMostrarChatRoom", sender: refChatManager.listaChats[indexPath.row - 1])
+        refChatViewController.performSegueWithIdentifier("IDMostrarChatRoom", sender: refChatManager.chatsList[indexPath.row - 1])
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -29,7 +29,7 @@ class TablaChatsDelegate: NSObject, UITableViewDelegate, UITableViewDataSource {
     // MARK: - UITableViewDataSource methods
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return refChatManager.listaChats.count + 1
+        return refChatManager.chatsList.count + 1
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -43,8 +43,8 @@ class TablaChatsDelegate: NSObject, UITableViewDelegate, UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("IDCeldaChat", forIndexPath: indexPath) as? ChatRoomTableViewCell
         
-        cell?.LabelNombreChat.text = refChatManager.listaChats[indexPath.row - 1].nombreChat
-        cell?.LabelUltimoMensaje.text = refChatManager.listaChats[indexPath.row - 1].ultimoMensaje
+        cell?.LabelNombreChat.text = refChatManager.chatsList[indexPath.row - 1].nameChat
+        cell?.LabelUltimoMensaje.text = refChatManager.chatsList[indexPath.row - 1].ultimoMensaje
         
         return cell != nil ? cell! : UITableViewCell()
     }

@@ -35,7 +35,7 @@
 		037864DC1B9521F700EEE12E /* IPGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037864DB1B9521F700EEE12E /* IPGetter.swift */; };
 		037864E31B9522D800EEE12E /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037864E21B9522D700EEE12E /* Functions.swift */; };
 		037864E61B9524F100EEE12E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037864E51B9524F100EEE12E /* User.swift */; };
-		037864EC1B95252400EEE12E /* Contacto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037864EB1B95252400EEE12E /* Contacto.swift */; };
+		037864EC1B95252400EEE12E /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037864EB1B95252400EEE12E /* Contact.swift */; };
 		037864EE1B95252F00EEE12E /* ChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037864ED1B95252F00EEE12E /* ChatMessage.swift */; };
 		037864F01B95253D00EEE12E /* ChatRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037864EF1B95253D00EEE12E /* ChatRoom.swift */; };
 		037864F21B9538FC00EEE12E /* ChatManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037864F11B9538FC00EEE12E /* ChatManager.swift */; };
@@ -54,6 +54,8 @@
 		03B1D4491BAFA44300CD220A /* AddGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B1D4481BAFA44300CD220A /* AddGroupViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		03B1D44E1BAFB14400CD220A /* TablaChatRoomDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B1D44D1BAFB14400CD220A /* TablaChatRoomDelegate.swift */; settings = {ASSET_TAGS = (); }; };
 		03B1D4501BAFB37200CD220A /* ChatMessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B1D44F1BAFB37200CD220A /* ChatMessageTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
+		03EE6EC21BD41DD300DC8388 /* NumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EE6EC11BD41DD300DC8388 /* NumberViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		03EE6EC61BD427F700DC8388 /* SRWebClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EE6EC51BD427F700DC8388 /* SRWebClient.swift */; settings = {ASSET_TAGS = (); }; };
 		03FF5E3B1B9BD6440030055E /* TablaChatsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FF5E3A1B9BD6440030055E /* TablaChatsDelegate.swift */; };
 /* End PBXBuildFile section */
 
@@ -75,17 +77,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		032AB2011BAFD6750050C949 /* GuasapucNG2Tests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuasapucNG2Tests.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		032AB2011BAFD6750050C949 /* GuasapucNG2Tests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = GuasapucNG2Tests.app; path = "/Users/Nico/Documents/Xcode/IoPMecolab2015-1/GuasapucNG2/build/Debug-iphoneos/GuasapucNG2Tests.app"; sourceTree = "<absolute>"; };
 		032AB2031BAFD6750050C949 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		032AB2051BAFD6750050C949 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		032AB2081BAFD6750050C949 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		032AB20C1BAFD6750050C949 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		032AB20F1BAFD6750050C949 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		032AB2111BAFD6750050C949 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		032AB2161BAFD6750050C949 /* GuasapucNG2TestsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GuasapucNG2TestsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		032AB2161BAFD6750050C949 /* GuasapucNG2TestsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = GuasapucNG2TestsTests.xctest; path = "/Users/Nico/Documents/Xcode/IoPMecolab2015-1/GuasapucNG2/build/Debug-iphoneos/GuasapucNG2TestsTests.xctest"; sourceTree = "<absolute>"; };
 		032AB21A1BAFD6750050C949 /* GuasapucNG2TestsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuasapucNG2TestsTests.swift; sourceTree = "<group>"; };
 		032AB21C1BAFD6750050C949 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		032AB2211BAFD6750050C949 /* GuasapucNG2TestsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GuasapucNG2TestsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		032AB2211BAFD6750050C949 /* GuasapucNG2TestsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = GuasapucNG2TestsUITests.xctest; path = "/Users/Nico/Documents/Xcode/IoPMecolab2015-1/GuasapucNG2/build/Debug-iphoneos/GuasapucNG2TestsUITests.xctest"; sourceTree = "<absolute>"; };
 		032AB2251BAFD6750050C949 /* GuasapucNG2TestsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuasapucNG2TestsUITests.swift; sourceTree = "<group>"; };
 		032AB2271BAFD6750050C949 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		032DA5191BAFC2C0007B5D73 /* ImageViewerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewerViewController.swift; sourceTree = "<group>"; };
@@ -113,10 +115,10 @@
 		037864DE1B95226D00EEE12E /* GuasapucNG2-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GuasapucNG2-Bridging-Header.h"; sourceTree = "<group>"; };
 		037864E21B9522D700EEE12E /* Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		037864E51B9524F100EEE12E /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		037864EB1B95252400EEE12E /* Contacto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contacto.swift; sourceTree = "<group>"; };
+		037864EB1B95252400EEE12E /* Contact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		037864ED1B95252F00EEE12E /* ChatMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatMessage.swift; sourceTree = "<group>"; };
 		037864EF1B95253D00EEE12E /* ChatRoom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatRoom.swift; sourceTree = "<group>"; };
-		037864F11B9538FC00EEE12E /* ChatManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatManager.swift; sourceTree = "<group>"; };
+		037864F11B9538FC00EEE12E /* ChatManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = ChatManager.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		037864F31B953DD700EEE12E /* ChatRoomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatRoomViewController.swift; sourceTree = "<group>"; };
 		037864F61B953FEE00EEE12E /* API Guasap UC V1.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "API Guasap UC V1.rtf"; sourceTree = "<group>"; };
 		037864F71B953FEE00EEE12E /* API Guasap UC V1 notas jose.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "API Guasap UC V1 notas jose.rtf"; sourceTree = "<group>"; };
@@ -132,7 +134,9 @@
 		03B1D4481BAFA44300CD220A /* AddGroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddGroupViewController.swift; sourceTree = "<group>"; };
 		03B1D44D1BAFB14400CD220A /* TablaChatRoomDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TablaChatRoomDelegate.swift; sourceTree = "<group>"; };
 		03B1D44F1BAFB37200CD220A /* ChatMessageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatMessageTableViewCell.swift; sourceTree = "<group>"; };
-		03FF5E3A1B9BD6440030055E /* TablaChatsDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TablaChatsDelegate.swift; sourceTree = "<group>"; };
+		03EE6EC11BD41DD300DC8388 /* NumberViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberViewController.swift; sourceTree = "<group>"; };
+		03EE6EC51BD427F700DC8388 /* SRWebClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRWebClient.swift; sourceTree = "<group>"; };
+		03FF5E3A1B9BD6440030055E /* TablaChatsDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = TablaChatsDelegate.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -241,9 +245,6 @@
 				032AB2191BAFD6750050C949 /* GuasapucNG2TestsTests */,
 				032AB2241BAFD6750050C949 /* GuasapucNG2TestsUITests */,
 				03358AF21BAF4A38003A5E6D /* Products */,
-				032AB2011BAFD6750050C949 /* GuasapucNG2Tests.app */,
-				032AB2161BAFD6750050C949 /* GuasapucNG2TestsTests.xctest */,
-				032AB2211BAFD6750050C949 /* GuasapucNG2TestsUITests.xctest */,
 			);
 			sourceTree = "<group>";
 		};
@@ -262,8 +263,8 @@
 				037864B31B934ED200EEE12E /* Images.xcassets */,
 				037864B51B934ED200EEE12E /* LaunchScreen.xib */,
 				037864AB1B934ED200EEE12E /* GuasapucNG2.xcdatamodeld */,
-				037864F51B953FD800EEE12E /* Documentacion */,
 				037864A71B934ED100EEE12E /* Supporting Files */,
+				037864F51B953FD800EEE12E /* Documentacion */,
 			);
 			path = GuasapucNG2;
 			sourceTree = "<group>";
@@ -271,6 +272,7 @@
 		037864A71B934ED100EEE12E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				03EE6EC51BD427F700DC8388 /* SRWebClient.swift */,
 				037864A81B934ED100EEE12E /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -279,6 +281,7 @@
 		037864CE1B9369CA00EEE12E /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				03EE6EC11BD41DD300DC8388 /* NumberViewController.swift */,
 				037864CF1B9369E900EEE12E /* ChatViewController.swift */,
 				037864F31B953DD700EEE12E /* ChatRoomViewController.swift */,
 				032DA5191BAFC2C0007B5D73 /* ImageViewerViewController.swift */,
@@ -304,7 +307,7 @@
 			children = (
 				037864EF1B95253D00EEE12E /* ChatRoom.swift */,
 				037864ED1B95252F00EEE12E /* ChatMessage.swift */,
-				037864EB1B95252400EEE12E /* Contacto.swift */,
+				037864EB1B95252400EEE12E /* Contact.swift */,
 				037864E51B9524F100EEE12E /* User.swift */,
 			);
 			name = NSManagedObjects;
@@ -400,6 +403,7 @@
 				037864A01B934ED100EEE12E /* Sources */,
 				037864A11B934ED100EEE12E /* Frameworks */,
 				037864A21B934ED100EEE12E /* Resources */,
+				03EE6EC81BD42C8F00DC8388 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -511,6 +515,22 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		03EE6EC81BD42C8F00DC8388 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "TAGS=\"TODO:|FIXME:\"\nERRORTAG=\"ERROR:\"\nfind \"${SRCROOT}\" \\( -name \"*.h\" -or -name \"*.m\" -or -name \"*.swift\" \\) -print0 | xargs -0 egrep --with-filename --line-number --only-matching \"($TAGS).*\\$|($ERRORTAG).*\\$\" | perl -p -e \"s/($TAGS)/ warning: \\$1/\" | perl -p -e \"s/($ERRORTAG)/ error: \\$1/\"";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		032AB1FD1BAFD6750050C949 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -544,6 +564,7 @@
 			files = (
 				037864CD1B9369C600EEE12E /* TabBarViewController.swift in Sources */,
 				037864AD1B934ED200EEE12E /* GuasapucNG2.xcdatamodeld in Sources */,
+				03EE6EC61BD427F700DC8388 /* SRWebClient.swift in Sources */,
 				037864F41B953DD700EEE12E /* ChatRoomViewController.swift in Sources */,
 				037864EE1B95252F00EEE12E /* ChatMessage.swift in Sources */,
 				037864E31B9522D800EEE12E /* Functions.swift in Sources */,
@@ -555,7 +576,8 @@
 				037864DC1B9521F700EEE12E /* IPGetter.swift in Sources */,
 				037864D51B936A2300EEE12E /* CreateGroupTableViewCell.swift in Sources */,
 				0369E0601BB99E8500F000D9 /* MapView.swift in Sources */,
-				037864EC1B95252400EEE12E /* Contacto.swift in Sources */,
+				03EE6EC21BD41DD300DC8388 /* NumberViewController.swift in Sources */,
+				037864EC1B95252400EEE12E /* Contact.swift in Sources */,
 				0369E05C1BB99DEB00F000D9 /* Client.swift in Sources */,
 				03B1D4491BAFA44300CD220A /* AddGroupViewController.swift in Sources */,
 				037864D01B9369E900EEE12E /* ChatViewController.swift in Sources */,

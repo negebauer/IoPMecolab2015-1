@@ -14,10 +14,10 @@ class ChatRoom: NSManagedObject {
     @NSManaged var admin: String
     @NSManaged var id: NSNumber
     @NSManaged private var isGroup: NSNumber
-    @NSManaged var nombreChat: String
+    @NSManaged var nameChat: String
     @NSManaged var updatedAt: NSDate
     @NSManaged var user: User
-    @NSManaged private var chatMembers: NSSet   //Set de Contacto
+    @NSManaged private var chatMembers: NSSet   //Set de Contact
     @NSManaged private var chatMessages: NSSet  //Set de ChatMessage
     
     /// Returns the array of chatMessages sorted
@@ -29,20 +29,20 @@ class ChatRoom: NSManagedObject {
     
     /// Returns the number of the chat destinatary if this chatRoom is not a group
     var number: String {
-        let arrayMembers = chatMembers.allObjects as! [Contacto]
+        let arrayMembers = chatMembers.allObjects as! [Contact]
         if arrayMembers.count > 0 && !group {
-            return arrayMembers[0].numero
+            return arrayMembers[0].number
         }
         return ""
     }
     
     /// Returns all the numbers that take part in this chatRoom only if it's a group
     var numbers: [String] {
-        let arrayMembers = chatMembers.allObjects as! [Contacto]
+        let arrayMembers = chatMembers.allObjects as! [Contact]
         if arrayMembers.count > 0 && group {
             var arrayNumbers = [String]()
             for contact in arrayMembers {
-                arrayNumbers.append(contact.numero)
+                arrayNumbers.append(contact.number)
             }
             return arrayNumbers
         }
@@ -59,10 +59,10 @@ class ChatRoom: NSManagedObject {
         return lastMessage != nil ? lastMessage! : "THERE IS NO LAST MESSAGE"
     }
 
-    class func new(moc: NSManagedObjectContext, _isGroup: Bool, _nombreChat: String, _admin: String, _id: Int) -> ChatRoom {
+    class func new(moc: NSManagedObjectContext, _isGroup: Bool, _nameChat: String, _admin: String, _id: Int) -> ChatRoom {
         let newChat = NSEntityDescription.insertNewObjectForEntityForName("ChatRoom", inManagedObjectContext: moc) as! GuasapucNG2.ChatRoom
         newChat.user = User.currentUser!
-        newChat.nombreChat = _nombreChat
+        newChat.nameChat = _nameChat
         newChat.isGroup = _isGroup
         newChat.updatedAt = NSDate(timeIntervalSince1970: NSTimeInterval.abs(0))
         newChat.admin = _admin
@@ -73,8 +73,8 @@ class ChatRoom: NSManagedObject {
     
     ///Adds a contact to this chatRoom members. Returns true if success, false if duplicated or failed.
     /// Also adds this chatRoom to the contact's chatRooms reference.
-    func addMemberToChat(contact: Contacto) -> Bool {
-        var arrayMembers = chatMembers.allObjects as? [Contacto]
+    func addMemberToChat(contact: Contact) -> Bool {
+        var arrayMembers = chatMembers.allObjects as? [Contact]
         if arrayMembers == nil { return false }
         if !(arrayMembers!).contains(contact) {
             arrayMembers!.append(contact)

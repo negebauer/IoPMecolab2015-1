@@ -1,5 +1,5 @@
 //
-//  Contacto.swift
+//  Contact.swift
 //  GuasapucNG2
 //
 //  Created by Nicolás Gebauer on 31-08-15.
@@ -9,17 +9,17 @@
 import Foundation
 import CoreData
 
-class Contacto: NSManagedObject {
+class Contact: NSManagedObject {
 
-    @NSManaged var nombre: String
-    @NSManaged var numero: String
+    @NSManaged var name: String
+    @NSManaged var number: String
     @NSManaged var chatRooms: NSSet //Set de ChatRoom
 
     
-    class func new(moc: NSManagedObjectContext, nombre: String, numero: String) -> Contacto {
-        let newContact = NSEntityDescription.insertNewObjectForEntityForName("Contacto", inManagedObjectContext: moc) as! GuasapucNG2.Contacto
-        newContact.nombre = nombre
-        newContact.numero = numero
+    class func new(moc: NSManagedObjectContext, name: String, number: String) -> Contact {
+        let newContact = NSEntityDescription.insertNewObjectForEntityForName("Contact", inManagedObjectContext: moc) as! GuasapucNG2.Contact
+        newContact.name = name
+        newContact.number = number
         
         return newContact
     }

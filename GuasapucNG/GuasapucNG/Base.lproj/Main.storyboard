@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="zt0-vh-l9W">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="zt0-vh-l9W">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
@@ -20,6 +20,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="gtv-nG-Jes">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="IDCeldaChatRoom" id="GEx-Tc-fUo" customClass="CeldaChat" customModule="GuasapucNG" customModuleProvider="target">
@@ -31,6 +32,7 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nombre Contacto" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cUA-jv-4gU">
                                                     <rect key="frame" x="8" y="11" width="140" height="21"/>
+                                                    <animations/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="140" id="GiD-JV-Upm"/>
                                                     </constraints>
@@ -40,6 +42,7 @@
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ultimo mensaje del chat" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZYy-Rg-WWn">
                                                     <rect key="frame" x="156" y="11" width="436" height="21"/>
+                                                    <animations/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="436" id="lXr-rM-IEW"/>
                                                     </constraints>
@@ -53,6 +56,7 @@
                                                     </variation>
                                                 </label>
                                             </subviews>
+                                            <animations/>
                                             <constraints>
                                                 <constraint firstItem="cUA-jv-4gU" firstAttribute="leading" secondItem="EnB-Xd-mdX" secondAttribute="leadingMargin" id="69g-Da-wSo"/>
                                                 <constraint firstItem="ZYy-Rg-WWn" firstAttribute="leading" secondItem="cUA-jv-4gU" secondAttribute="trailing" constant="8" symbolic="YES" id="LLj-TJ-ncE"/>
@@ -67,6 +71,7 @@
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
+                                        <animations/>
                                         <connections>
                                             <outlet property="LabelNombreChat" destination="cUA-jv-4gU" id="86C-bd-Gn6"/>
                                             <outlet property="LabelUltimoMensaje" destination="ZYy-Rg-WWn" id="BLj-1l-UvQ"/>
@@ -75,6 +80,7 @@
                                 </prototypes>
                             </tableView>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Chats" image="ChatIcon" id="rIJ-jF-1lU"/>
@@ -88,6 +94,7 @@
                         <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="KLy-eI-WUa">
                             <rect key="frame" x="180" y="7" width="240" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <animations/>
                             <state key="normal" title="Add New Contact">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
@@ -118,6 +125,7 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" id="TT6-rV-ODn">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
@@ -147,11 +155,13 @@
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Escribe tu mensaje..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AsL-IN-J0i">
                                         <rect key="frame" x="8" y="6" width="492" height="30"/>
+                                        <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H9u-ut-djr">
                                         <rect key="frame" x="546" y="6" width="36" height="30"/>
+                                        <animations/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="36" id="Jyo-xl-oxC"/>
                                         </constraints>
@@ -164,6 +174,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P2d-I3-zdA">
                                         <rect key="frame" x="508" y="6" width="30" height="30"/>
+                                        <animations/>
                                         <state key="normal" image="ShareIcon">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -172,6 +183,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
+                                <animations/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="H9u-ut-djr" firstAttribute="leading" secondItem="AsL-IN-J0i" secondAttribute="trailing" constant="46" id="0RC-gJ-0mE"/>
@@ -204,6 +216,7 @@
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="6xh-Hu-coF">
                                 <rect key="frame" x="0.0" y="64" width="600" height="445"/>
+                                <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="IDCeldaMensaje" id="YXh-wY-ANB" customClass="CeldaMensaje" customModule="GuasapucNG" customModuleProvider="target">
@@ -215,11 +228,13 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4dM-NE-84c">
                                                     <rect key="frame" x="16" y="8" width="42" height="28"/>
+                                                    <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <animations/>
                                             <constraints>
                                                 <constraint firstItem="4dM-NE-84c" firstAttribute="leading" secondItem="wEF-u5-0iQ" secondAttribute="leadingMargin" id="9ZU-z2-Cd3"/>
                                                 <constraint firstItem="4dM-NE-84c" firstAttribute="top" secondItem="wEF-u5-0iQ" secondAttribute="topMargin" constant="3" id="9f8-Ae-GbW"/>
@@ -236,6 +251,7 @@
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
+                                        <animations/>
                                         <connections>
                                             <outlet property="LabelMensaje" destination="4dM-NE-84c" id="TnU-VH-yEw"/>
                                         </connections>
@@ -243,6 +259,7 @@
                                 </prototypes>
                             </tableView>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="6xh-Hu-coF" firstAttribute="trailing" secondItem="Le4-0g-rcl" secondAttribute="trailing" id="4ru-eH-dgj"/>
@@ -304,8 +321,10 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="W6t-La-kOU">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <animations/>
                             </imageView>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="W6t-La-kOU" firstAttribute="leading" secondItem="CVx-vR-Uy8" secondAttribute="leadingMargin" constant="-16" id="05t-cN-PiK"/>
@@ -331,6 +350,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="kpU-cf-FSY">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -355,6 +375,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="mni-3r-FL2">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="IDCeldaBotonesGrupo" id="w2C-1d-DwV">
@@ -366,6 +387,7 @@
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8BC-0z-uDp">
                                                     <rect key="frame" x="8" y="8" width="172" height="27"/>
+                                                    <animations/>
                                                     <state key="normal" title="Crear nuevo grupo">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
@@ -375,11 +397,13 @@
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FeQ-MT-f8K">
                                                     <rect key="frame" x="188" y="8" width="172" height="27"/>
+                                                    <animations/>
                                                     <state key="normal" title="Ver invitaciones a grupos">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                 </button>
                                             </subviews>
+                                            <animations/>
                                             <constraints>
                                                 <constraint firstAttribute="centerX" secondItem="8BC-0z-uDp" secondAttribute="centerX" constant="206" id="1BX-jn-7Ng"/>
                                                 <constraint firstItem="8BC-0z-uDp" firstAttribute="centerY" secondItem="FeQ-MT-f8K" secondAttribute="centerY" id="3bw-sE-xe8"/>
@@ -415,6 +439,7 @@
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
+                                        <animations/>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="IDCeldaChatRoom" id="IIb-VW-FTh" customClass="CeldaChat" customModule="GuasapucNG" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="130" width="600" height="44"/>
@@ -425,6 +450,7 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nombre Grupo" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s8S-vW-KWn">
                                                     <rect key="frame" x="8" y="11" width="140" height="21"/>
+                                                    <animations/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="140" id="SEy-X2-ok1"/>
                                                     </constraints>
@@ -434,6 +460,7 @@
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ultimo mensaje del chat" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vma-Lk-6gs">
                                                     <rect key="frame" x="156" y="11" width="436" height="21"/>
+                                                    <animations/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="436" id="2zh-1u-FZ7"/>
                                                     </constraints>
@@ -447,6 +474,7 @@
                                                     </variation>
                                                 </label>
                                             </subviews>
+                                            <animations/>
                                             <constraints>
                                                 <constraint firstAttribute="trailingMargin" secondItem="Vma-Lk-6gs" secondAttribute="trailing" id="9gz-cj-ZAG"/>
                                                 <constraint firstItem="s8S-vW-KWn" firstAttribute="leading" secondItem="KUE-iW-FC7" secondAttribute="leadingMargin" id="G04-HP-axh"/>
@@ -461,6 +489,7 @@
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
+                                        <animations/>
                                         <connections>
                                             <outlet property="LabelNombreChat" destination="s8S-vW-KWn" id="k3v-Fg-dAU"/>
                                             <outlet property="LabelUltimoMensaje" destination="Vma-Lk-6gs" id="3On-Q1-0Oe"/>
@@ -469,6 +498,7 @@
                                 </prototypes>
                             </tableView>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Chats" image="ChatIcon" id="Mh2-DK-0MY"/>
@@ -507,11 +537,13 @@
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Escribe tu mensaje..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bfw-MY-VJp">
                                         <rect key="frame" x="8" y="6" width="492" height="30"/>
+                                        <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vUr-OG-Y2s">
                                         <rect key="frame" x="546" y="6" width="36" height="30"/>
+                                        <animations/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="36" id="1Bb-Zx-9vN"/>
                                         </constraints>
@@ -524,6 +556,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VnE-Xq-5hT">
                                         <rect key="frame" x="508" y="6" width="30" height="30"/>
+                                        <animations/>
                                         <state key="normal" image="ShareIcon">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -532,6 +565,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
+                                <animations/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="VnE-Xq-5hT" firstAttribute="top" secondItem="ctc-r0-Swa" secondAttribute="top" constant="6" id="3Yr-UH-Jui"/>
@@ -562,6 +596,7 @@
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="GDc-yi-bRo">
                                 <rect key="frame" x="0.0" y="64" width="600" height="445"/>
+                                <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="IDCeldaMensaje" id="3Il-6s-p8I" customClass="CeldaMensaje" customModule="GuasapucNG" customModuleProvider="target">
@@ -573,11 +608,13 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nlg-Ff-IJZ">
                                                     <rect key="frame" x="16" y="8" width="42" height="28"/>
+                                                    <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <animations/>
                                             <constraints>
                                                 <constraint firstItem="Nlg-Ff-IJZ" firstAttribute="leading" secondItem="swu-lu-Lgl" secondAttribute="leadingMargin" constant="8" id="51B-xy-2p4"/>
                                                 <constraint firstItem="Nlg-Ff-IJZ" firstAttribute="top" secondItem="swu-lu-Lgl" secondAttribute="topMargin" id="9sC-e1-M0V"/>
@@ -594,6 +631,7 @@
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
+                                        <animations/>
                                         <connections>
                                             <outlet property="LabelMensaje" destination="Nlg-Ff-IJZ" id="Ppb-dr-Swi"/>
                                         </connections>
@@ -601,6 +639,7 @@
                                 </prototypes>
                             </tableView>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="GDc-yi-bRo" firstAttribute="leading" secondItem="nus-WM-0v1" secondAttribute="leading" id="1mE-mD-F6R"/>
@@ -657,6 +696,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Q0q-tT-tJb">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -681,9 +721,11 @@
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="aJY-tR-qJ6">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <animations/>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rjJ-RV-qhW">
                                 <rect key="frame" x="16" y="521" width="30" height="30"/>
+                                <animations/>
                                 <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" backgroundImage="LocationIcon"/>
                                 <connections>
@@ -691,6 +733,7 @@
                                 </connections>
                             </button>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="aJY-tR-qJ6" firstAttribute="leading" secondItem="ZFv-bX-haE" secondAttribute="leadingMargin" constant="-16" id="0JE-HW-42k"/>
@@ -709,6 +752,7 @@
                             <switch key="customView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="VKo-J3-8yj">
                                 <rect key="frame" x="531" y="6" width="51" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
                                 <connections>
                                     <action selector="SetSharingLocation:" destination="NPJ-9X-5tA" eventType="valueChanged" id="QlC-AC-w1A"/>
                                 </connections>
@@ -740,6 +784,7 @@
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="kNA-S8-qlo">
                                         <rect key="frame" x="4" y="38" width="242" height="146"/>
+                                        <animations/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <prototypes>
                                             <tableViewCell contentMode="scaleToFill" restorationIdentifier="IDCeldaUsuarioAgregar" selectionStyle="default" indentationWidth="10" reuseIdentifier="IDCeldaUsuarioAgregarAGrupo" id="N5h-j2-E7k" customClass="CeldaUsuarioAgregarAGrupo" customModule="GuasapucNG" customModuleProvider="target">
@@ -751,12 +796,15 @@
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nombre" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wnt-3q-32r">
                                                             <rect key="frame" x="8" y="8" width="226" height="28"/>
+                                                            <animations/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
+                                                    <animations/>
                                                 </tableViewCellContentView>
+                                                <animations/>
                                                 <connections>
                                                     <outlet property="LabelNombre" destination="wnt-3q-32r" id="JtU-VP-0JP"/>
                                                 </connections>
@@ -765,6 +813,7 @@
                                     </tableView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e34-Mn-GhC">
                                         <rect key="frame" x="8" y="192" width="234" height="30"/>
+                                        <animations/>
                                         <state key="normal" title="Add user to group">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -774,6 +823,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="btR-mG-1Lt">
                                         <rect key="frame" x="8" y="230" width="234" height="30"/>
+                                        <animations/>
                                         <state key="normal" title="Create Group Chat">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -784,6 +834,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ns3-Ii-CLt">
                                         <rect key="frame" x="8" y="262" width="234" height="30"/>
+                                        <animations/>
                                         <state key="normal" title="Cancel">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -793,6 +844,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B8b-DX-cHo">
                                         <rect key="frame" x="216" y="8" width="30" height="30"/>
+                                        <animations/>
                                         <state key="normal" title="✓">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -802,10 +854,12 @@
                                     </button>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Group name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gz7-RA-m5g">
                                         <rect key="frame" x="8" y="8" width="200" height="30"/>
+                                        <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textField>
                                 </subviews>
+                                <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="ns3-Ii-CLt" firstAttribute="top" secondItem="btR-mG-1Lt" secondAttribute="bottom" constant="2" id="0fD-et-Q69"/>
@@ -847,6 +901,7 @@
                                 </variation>
                             </view>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="cER-Zm-QKO" firstAttribute="leading" secondItem="PFo-Kc-k4p" secondAttribute="leadingMargin" constant="120" id="1tk-ag-9TC"/>
@@ -915,6 +970,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="mXD-rR-ldy">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

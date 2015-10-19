@@ -1,3 +1,4 @@
+
 //
 //  ChatManager.swift
 //  GuasapucNG2
@@ -28,7 +29,7 @@ protocol ChatMessageListDelegate {
 public class ChatManager {
     weak var adbk : ABAddressBook!
     private var diccionarioNumeroPersonABRecord = Dictionary<String,ABRecord>()
-    var listaChats = [ChatRoom]()
+    var chatsList = [ChatRoom]()
     private var moc: NSManagedObjectContext!
     var chatRoomListDelegate: ChatRoomListDelegate?              //Vista de todos los chats
     var chatMessageListDelegate: ChatMessageListDelegate?       //Vista del ChatRoom que se esta mostrando actualmente
@@ -48,23 +49,22 @@ public class ChatManager {
         
         User.currentUser?.chatManager = self
         
-        logStuff()
+        //logStuff()
     }
     
     // MARK: - [DEVELOPING] Don't call this functions when deploying
     
     /// [DEVELOPING] Logs a lot of stuff.
     private func logStuff() {
-        return
         var nChatMessages = 0
-        for chat in listaChats {
+        for chat in chatsList {
             nChatMessages += chat.arrayMessage.count
         }
         let stringLog =
             [
                 "Comenzando logueo de cosas",
                 "Info usuario: \(User.currentUser!.description)",
-                "Nº de chatRooms: \(listaChats.count)",
+                "Nº de chatRooms: \(chatsList.count)",
                 "Nº de chatMessages: \(nChatMessages)"
             ].joinWithSeparator("\n")
         NSLog(stringLog)
@@ -76,10 +76,10 @@ public class ChatManager {
     func updateChats() {
         checkMoc()
         getChatRooms()
-        for chat in listaChats {
+        for chat in chatsList {
             updateChat(chat)
         }
-        logStuff()
+        //logStuff()
     }
     
     /// Updates everything of a chatRoom.
@@ -110,6 +110,10 @@ public class ChatManager {
         let request = CreateRequest.messagesInConversation(Int(chat.id))
         let task = NSURLSession.sharedSession().dataTaskWithRequest(request) { data, response, error in
         
+            if data == nil {
+                return
+            }
+            
             let jsonContainer = JSONObjectCreator(data: data!, type: JSONObject.TiposDeJSON.ChatMessage, error: error)
             
             for jsonObject in jsonContainer.arrayJSONObjects {
@@ -126,6 +130,10 @@ public class ChatManager {
         let request = CreateRequest.usersInConversation(chat.id.stringValue)
         let task = NSURLSession.sharedSession().dataTaskWithRequest(request) { data, response, error in
             
+            if data == nil {
+                return
+            }
+            
             let jsonContainer = JSONObjectCreator(data: data!, type: JSONObject.TiposDeJSON.MiembroChat, error: error)
             
             for jsonObject in jsonContainer.arrayJSONObjects {
@@ -140,26 +148,57 @@ public class ChatManager {
     
     // MARK: - Make updates when necessary
     
-    /// Checks the existance of a chat room. If it doesn't exist, it creates it and updates it. If exist, ignores
-    private func checkForChatRoom(jsonObject: JSONObject) {
+    /// Creates a new group chat room
+    func createNewChatRoomGroup(numbers: [String], title: String) {
+        let newChatRoom = ChatRoom.new(moc, _isGroup: true, _nameChat: title, _admin: User.currentUser!.number, _id: -1)
+        let request = CreateRequest.createGroupConversation(User.currentUser!.number, users: numbers, title: title)
+        let task = NSURLSession.sharedSession().dataTaskWithRequest(request) { data, response, error in
+            synced(self.chatsList, closure: {
+                let jsonContainer = JSONObjectCreator(data: data!, type: JSONObject.TiposDeJSON.NewChatRoom, error: error)
+                
+                for jsonObject in jsonContainer.arrayJSONObjects {
+                    dispatch_async(dispatch_get_main_queue(), {
+                        self.checkForChatRoom(jsonObject, newChatRoom: newChatRoom)
+                    })
+                }
+            })
+        }
+        task.resume()
+        //logStuff()
+    }
+    
+    /// Checks the existance of a chat room. If it doesn't exist, it updates it to have server info. If exist, ignores
+    private func checkForChatRoom(jsonObject: JSONObject, var newChatRoom: ChatRoom? = nil) {
         fetchChatRooms()
-        var newChatRoom: ChatRoom?
-        synced(listaChats, closure: {
-            if !self.listaChats.contains({chat in chat.id == jsonObject.id!}) {
-                newChatRoom = ChatRoom.new(self.moc, _isGroup: jsonObject.group!, _nombreChat: jsonObject.title!, _admin: jsonObject.admin!, _id: jsonObject.id!)
+        synced(chatsList, closure: {
+            if newChatRoom != nil && !self.chatsList.contains({chat in chat.id == jsonObject.id!}) {
+                // New chat created by User
+                newChatRoom!.id = jsonObject.id!
+                newChatRoom!.updatedAt = getDateFromString(jsonObject.created_at!)
+                saveDatabase()
+                self.addNewChatRoom(newChatRoom!)
+                self.getUsersOfChatRoom(newChatRoom!)
+            } else if !self.chatsList.contains({chat in chat.id == jsonObject.id!}) {
+                // New chat downloaded from server
+                newChatRoom = ChatRoom.new(self.moc, _isGroup: jsonObject.group!, _nameChat: jsonObject.title!, _admin: jsonObject.admin!, _id: jsonObject.id!)
                 newChatRoom!.updatedAt = NSDate(timeIntervalSince1970: 0)
                 saveDatabase()
-                self.listaChats.append(newChatRoom!)
-                self.listaChats.sortInPlace({ chat1, chat2 in return isDate1GreaterThanDate2(chat1.updatedAt, date2: chat2.updatedAt) })
-                if let delegate = self.chatRoomListDelegate {
-                    let indexPaths = [NSIndexPath(forRow: self.listaChats.indexOf(newChatRoom!)! + 1, inSection: 0)]
-                    delegate.table.insertRowsAtIndexPaths(indexPaths, withRowAnimation: UITableViewRowAnimation.Automatic)
-                }
-                self.getUsersOfChatRoom(newChatRoom!)
-                self.updateChat(newChatRoom!)
+                self.addNewChatRoom(newChatRoom!)
             }
         })
-        logStuff()
+        //logStuff()
+    }
+    
+    /// Adds a newChatRoom to the list of chat rooms
+    private func addNewChatRoom(newChatRoom: ChatRoom) {
+        self.chatsList.append(newChatRoom)
+        self.chatsList.sortInPlace({ chat1, chat2 in return isDate1GreaterThanDate2(chat1.updatedAt, date2: chat2.updatedAt) })
+        if let delegate = self.chatRoomListDelegate {
+            let indexPaths = [NSIndexPath(forRow: self.chatsList.indexOf(newChatRoom)! + 1, inSection: 0)]
+            delegate.table.insertRowsAtIndexPaths(indexPaths, withRowAnimation: UITableViewRowAnimation.Automatic)
+        }
+        self.getUsersOfChatRoom(newChatRoom)
+        self.updateChat(newChatRoom)
     }
     
     /// Checks the existance of a given chatMessage. If it doesn't exist, it creates it, adds it to its corresponding chatRoom and updates the chatRoom. If exists, ignores.
@@ -175,15 +214,15 @@ public class ChatManager {
                     delegate.table.insertRowsAtIndexPaths(indexPaths, withRowAnimation: UITableViewRowAnimation.Automatic)
                 }
                 if let delegate = self.chatRoomListDelegate {
-                    let indexPathBefore = NSIndexPath(forRow: self.listaChats.indexOf(chat)! + 1, inSection: 0)
+                    let indexPathBefore = NSIndexPath(forRow: self.chatsList.indexOf(chat)! + 1, inSection: 0)
                     self.fetchChatRooms()
-                    let indexPathAfter = NSIndexPath(forRow: self.listaChats.indexOf(chat)! + 1, inSection: 0)
+                    let indexPathAfter = NSIndexPath(forRow: self.chatsList.indexOf(chat)! + 1, inSection: 0)
                     delegate.table.moveRowAtIndexPath(indexPathBefore, toIndexPath: indexPathAfter)
                     delegate.table.reloadRowsAtIndexPaths([indexPathAfter], withRowAnimation: UITableViewRowAnimation.Automatic)
                 }
             }
         })
-        logStuff()
+        //logStuff()
     }
     
     // MARK: - Functions for views
@@ -191,18 +230,19 @@ public class ChatManager {
     /// Searchs for a chatRoom that isn't a group and has the number provided. If it doesn't exist, it creates it.
     func getChatRoomForNumber(number:String) -> ChatRoom {
         fetchChatRooms()
-        if listaChats.contains({ chat in chat.number == number }) {
-            return listaChats.filter({ chat in chat.number == number })[0]
+        if chatsList.contains({ chat in chat.number == number }) {
+            return chatsList.filter({ chat in chat.number == number })[0]
         } else {
-            synced(listaChats, closure: {
+            synced(chatsList, closure: {
+                let newChatRoom = ChatRoom.new(self.moc, _isGroup: false, _nameChat: self.getNameForContactNumber(number), _admin: User.currentUser!.number, _id: -1)
                 let request = CreateRequest.create2UserConversation(User.currentUser!.number, second: number, title: self.getNameForContactNumber(number))
                 let task = NSURLSession.sharedSession().dataTaskWithRequest(request) { data, response, error in
-                    synced(self.listaChats, closure: {
+                    synced(self.chatsList, closure: {
                         let jsonContainer = JSONObjectCreator(data: data!, type: JSONObject.TiposDeJSON.NewChatRoom, error: error)
                         
                         for jsonObject in jsonContainer.arrayJSONObjects {
                             dispatch_async(dispatch_get_main_queue(), {
-                                self.checkForChatRoom(jsonObject)
+                                self.checkForChatRoom(jsonObject, newChatRoom: newChatRoom)
                             })
                         }
                     })
@@ -216,22 +256,22 @@ public class ChatManager {
     // MARK: - Contacts managing
     
     /// Returns the Contact that matches the specified number. Creates a new one if it doesn't exist.
-    private func getContactForNumber(number: String) -> Contacto {
-        let fetchRequestContacto = NSFetchRequest(entityName: "Contacto")
-        let revisarNumero = NSPredicate(format: "numero == %@", number)
-        fetchRequestContacto.predicate = revisarNumero
-        if let fetchResultsContacto = (try? moc.executeFetchRequest(fetchRequestContacto)) as? [Contacto] {
-            if fetchResultsContacto.count == 0 {
-                let nombre = getNameForContactNumber(number)
-                let newContact = Contacto.new(moc, nombre: nombre, numero: number)
+    private func getContactForNumber(number: String) -> Contact {
+        let fetchRequestContact = NSFetchRequest(entityName: "Contact")
+        let revisarNumero = NSPredicate(format: "number == %@", number)
+        fetchRequestContact.predicate = revisarNumero
+        if let fetchResultsContact = (try? moc.executeFetchRequest(fetchRequestContact)) as? [Contact] {
+            if fetchResultsContact.count == 0 {
+                let name = getNameForContactNumber(number)
+                let newContact = Contact.new(moc, name: name, number: number)
                 return newContact
-            } else if fetchResultsContacto.count == 1{
-                return fetchResultsContacto[0]
+            } else if fetchResultsContact.count == 1{
+                return fetchResultsContact[0]
             } else {
-                NSLog("ERROR---\nTenemos dos contactos para el mismo numero")
+                NSLog("ERROR---\nTenemos dos contacts para el mismo number")
             }
         }
-        return [Contacto]()[0]
+        return [Contact]()[0]
     }
     
     public func getNameForContactNumber(number: String) -> String {
@@ -239,13 +279,13 @@ public class ChatManager {
             createArrayNumberName()
         }
         let person: ABRecord? = diccionarioNumeroPersonABRecord[number]
-        var nombre = ""
-        let nombreRaw = ABRecordCopyCompositeName(person)
-        if let nombreRawNotNil = nombreRaw {
-            nombre = nombreRawNotNil.takeRetainedValue() as String
+        var name = ""
+        let nameRaw = ABRecordCopyCompositeName(person)
+        if let nameRawNotNil = nameRaw {
+            name = nameRawNotNil.takeRetainedValue() as String
         }
-        nombre = nombre != "" ? nombre : number
-        return nombre
+        name = name != "" ? name : number
+        return name
     }
     
     private func createArrayNumberName() {
@@ -254,17 +294,17 @@ public class ChatManager {
         for personRecord in allPeople {
             let phones : ABMultiValueRef = ABRecordCopyValue(personRecord, kABPersonPhoneProperty).takeRetainedValue()
             if let copyArrayOfAllValues = ABMultiValueCopyArrayOfAllValues(phones) {
-                for numeroRaw in copyArrayOfAllValues.takeRetainedValue() as NSArray {
-                    let numeroRawString = numeroRaw as? String
-                    if numeroRawString == nil {
-                        NSLog("Error un numero es nil #007")
+                for numberRaw in copyArrayOfAllValues.takeRetainedValue() as NSArray {
+                    let numberRawString = numberRaw as? String
+                    if numberRawString == nil {
+                        NSLog("Error un number es nil #007")
                         return
                     }
-                    let numero = limpiarNumero(numeroRawString!)
-                    if diccionarioNumeroPersonABRecord.indexForKey(numero) != nil {
-                        NSLog("Hay un numero duplicado (en dos contactos)\nNumero: " + numero)
+                    let number = cleanNumber(numberRawString!)
+                    if diccionarioNumeroPersonABRecord.indexForKey(number) != nil {
+                        NSLog("Hay un number duplicado (en dos contacts)\nNumero: " + number)
                     } else {
-                        diccionarioNumeroPersonABRecord[numero] = personRecord as ABRecord
+                        diccionarioNumeroPersonABRecord[number] = personRecord as ABRecord
                     }}}}
     }
     
@@ -304,14 +344,14 @@ public class ChatManager {
         moc = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
     }
     
-    /// Updates listaChats with the latest fetch.
+    /// Updates chatsList with the latest fetch.
     private func fetchChatRooms() {
         let sortDescriptor = NSSortDescriptor(key: "updatedAt", ascending: false)
         let fetchRequest = NSFetchRequest(entityName: "ChatRoom")
         fetchRequest.sortDescriptors = [sortDescriptor]
         do {
             if let fetchResults = (try moc.executeFetchRequest(fetchRequest)) as? [ChatRoom] {
-                listaChats = fetchResults
+                chatsList = fetchResults
             }
         } catch {
             

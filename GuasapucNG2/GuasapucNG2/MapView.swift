@@ -42,10 +42,10 @@ class MapView: UIViewController, CLLocationManagerDelegate, NSStreamDelegate, Tc
     }
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        enviarLocalizacionAContactos()
+        enviarLocalizacionAContacts()
     }
     
-    func enviarLocalizacionAContactos() {
+    func enviarLocalizacionAContacts() {
         let loc = generarJSONLocalizacion()
         if clients.count == 0 || lastSentLocation == loc { return }
         NSLog("Enviando localizacion: %@", loc)

@@ -9,10 +9,17 @@
 import UIKit
 
 /// Returns a string transformed into a NSDate using the format "yyy-MM-dd'T'HH:mm:ss.SSS'Z'".
-func getDateFromString(str:String) -> NSDate {
+func getDateFromString(str: String) -> NSDate {
     let formatter = NSDateFormatter()
     formatter.dateFormat="yyy-MM-dd'T'HH:mm:ss.SSS'Z'"
     return formatter.dateFromString(str)!
+}
+
+/// Returns a NSDate transformed into a string using the format "yyy-MM-dd'T'HH:mm:ss.SSS'Z'".
+func getStringFromDate(date: NSDate) -> String {
+    let formatter = NSDateFormatter()
+    formatter.dateFormat="yyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+    return formatter.stringFromDate(date)
 }
 
 /// Compares to date and returns true if date1 > date2, returns false if not.
@@ -28,7 +35,7 @@ func synced(lock: AnyObject, closure: () -> ()) {
 }
 
 /// Cleans a string representing a number by deleting spaces and symbols.
-func limpiarNumero(num:String) -> String {
+func cleanNumber(num:String) -> String {
     var numLimpio = ""
     for letra in num.characters {
         if !(letra == "(" || letra == ")" || letra == "+" || letra == "-" || letra == " ") {

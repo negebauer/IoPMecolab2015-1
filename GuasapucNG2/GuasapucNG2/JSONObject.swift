@@ -9,7 +9,7 @@
 import UIKit
 
 /// Contains the information of each JSONObject
-class JSONObject : NSObject {
+class JSONObject {
     
     enum TiposDeJSON {
         case

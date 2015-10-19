@@ -1,385 +1,197 @@
-{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
+{\rtf1\ansi\ansicpg1252\cocoartf1404\cocoasubrtf110
 {\fonttbl\f0\fnil\fcharset0 HelveticaNeue;\f1\fswiss\fcharset0 Helvetica;\f2\fnil\fcharset0 Menlo-Regular;
 }
-{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red0\green0\blue0;\red56\green110\blue255;
-\red82\green0\blue83;\red249\green249\blue249;\red83\green85\blue2;\red16\green121\blue2;\red11\green84\blue83;
-}
+{\colortbl;\red255\green255\blue255;\red56\green110\blue255;\red82\green0\blue83;\red249\green249\blue249;
+\red83\green85\blue2;\red16\green121\blue2;\red11\green84\blue83;}
 {\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid1\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid1}}
 {\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}}
-\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+\viewkind0
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
 
-\f0\fs24 \cf2 De: "matte.andres" <matte.andres@gmail.com>\
+\f0\fs24 \cf0 De: "matte.andres" <matte.andres@gmail.com>\
 Asunto: API Guasap UC V1\
 Fecha: 25 de abril de 2015, 18:32:23 GMT-3\
 Para: iop-mecolab-2015-1@googlegroups.com\
-\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
 
-\f1 \cf2 \
-\pard\pardeftab720
-\cf3 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec3 Estimados,\'a0\
+\f1 \cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \expnd0\expndtw0\kerning0
+Estimados,\'a0\
 \
 Les comporto la primera versi\'f3n de la API.\
 \
-\pard\pardeftab720
+\pard\pardeftab720\partightenfactor0
 
-\b \cf3 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 C\'f3mo usarla
-\b0 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \
+\b \cf0 C\'f3mo usarla
+\b0 \
 
-\b \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \
+\b \
 1. Crear usuario
-\b0 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \
+\b0 \
 \
-Ingresar a\'a0{\field{\*\fldinst{HYPERLINK "http://guasapuc.herokuapp.com/users"}}{\fldrslt \cf4 \expnd0\expndtw0\kerning0
-\ul \ulc4 \outl0\strokewidth0 \strokec4 http://guasapuc.herokuapp.com/users}}\'a0y crear un nuevo usuario. Deben escoger un nombre, un n\'famero de tel\'e9fono y una password (ojal\'e1 una inventada para evitar problemas jaja). Se generar\'e1 autom\'e1ticamente un "token" o "api_key". Con este string aleatorio ustedes pueden interactuar con la API.\
+Ingresar a\'a0{\field{\*\fldinst{HYPERLINK "http://guasapuc.herokuapp.com/users"}}{\fldrslt \cf2 \ul \ulc2 http://guasapuc.herokuapp.com/users}}\'a0y crear un nuevo usuario. Deben escoger un name, un n\'famero de tel\'e9fono y una password (ojal\'e1 una inventada para evitar problemas jaja). Se generar\'e1 autom\'e1ticamente un "token" o "api_key". Con este string aleatorio ustedes pueden interactuar con la API.\
 \
 
-\b \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 2. Enviar un mensaje
-\b0 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \
+\b 2. Enviar un mensaje
+\b0 \
 \
 Para enviar un mensaje deben enviar un POST request como se indica a continuaci\'f3n:\
 \
-\pard\pardeftab720
-\cf3 \expnd0\expndtw0\kerning0
-\ul \ulc3 \outl0\strokewidth0 Link\expnd0\expndtw0\kerning0
-\ulnone \outl0\strokewidth0 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \ul \ulc0 Link\ulnone \
 \
-\pard\pardeftab720
+\pard\pardeftab720\partightenfactor0
 
-\b \cf3 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 http://guasapuc.herokuapp.com/api/messages
-\b0 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \
+\b \cf0 http://guasapuc.herokuapp.com/api/messages
+\b0 \
 \
-\pard\pardeftab720
-\cf3 \expnd0\expndtw0\kerning0
-\ul \ulc3 \outl0\strokewidth0 Headers\expnd0\expndtw0\kerning0
-\ulnone \outl0\strokewidth0 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \ul Headers\ulnone \
 \
-\pard\pardeftab720
+\pard\pardeftab720\partightenfactor0
 
-\f2 \cf5 \cb6 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec5 Authorization\cf3 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec3  \'a0 \'a0 \cf5 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec5 Token\cf3 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec3  token\cf7 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec7 =\cf8 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec8 "token su usuario (el que crearon) sin comillas"\cf3 \cb1 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec3 \
-\cf5 \cb6 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec5 Content\cf7 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec7 -\cf5 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec5 Type\cf3 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec3  \'a0 \'a0 \'a0application\cf7 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec7 /\cf3 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec3 json\cb1 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \
-\pard\pardeftab720
+\f2 \cf3 \cb4 Authorization\cf0  \'a0 \'a0 \cf3 Token\cf0  token\cf5 =\cf6 "token su usuario (el que crearon) sin comillas"\cf0 \cb1 \
+\cf3 \cb4 Content\cf5 -\cf3 Type\cf0  \'a0 \'a0 \'a0application\cf5 /\cf0 json\cb1 \
+\pard\pardeftab720\partightenfactor0
 
-\f1 \cf3 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \
+\f1 \cf0 \
 \
-\pard\pardeftab720
-\cf3 \expnd0\expndtw0\kerning0
-\ul \ulc3 \outl0\strokewidth0 Cuerpo\expnd0\expndtw0\kerning0
-\ulnone \outl0\strokewidth0 \
+\ul Cuerpo\ulnone \
 \
 JSON con el siguiente formato:\
 \
-\pard\pardeftab720
+\pard\pardeftab720\partightenfactor0
 
-\f2 \cf7 \cb6 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec7 \{\cf3 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec3  \cf8 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec8 "sender"\cf7 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec7 :\cf3 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec3  \cf8 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec8 "numero del que envia"\cf7 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec7 ,\cf3 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec3  \cf8 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec8 "recipient"\cf7 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec7 :\cf3 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec3  \cf8 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec8 "numero del receptor"\cf7 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec7 ,\cf3 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec3  \cf8 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec8 "content"\cf7 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec7 :\cf3 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec3  \cf8 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec8 " Mensaje "\cf7 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec7 \}\cf3 \cb1 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec3 \
-\pard\pardeftab720
+\f2 \cf5 \cb4 \{\cf0  \cf6 "sender"\cf5 :\cf0  \cf6 "number del que envia"\cf5 ,\cf0  \cf6 "recipient"\cf5 :\cf0  \cf6 "number del receptor"\cf5 ,\cf0  \cf6 "content"\cf5 :\cf0  \cf6 " Mensaje "\cf5 \}\cf0 \cb1 \
+\pard\pardeftab720\partightenfactor0
 
-\f1 \cf3 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \
+\f1 \cf0 \
 Ejemplo:\
 \
-\pard\pardeftab720
+\pard\pardeftab720\partightenfactor0
 
-\f2 \cf7 \cb6 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec7 \{\cf3 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec3  \cf8 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec8 "sender"\cf7 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec7 :\cf8 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec8 "56961567267"\cf7 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec7 ,\cf3 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec3  \cf8 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec8 "recipient"\cf7 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec7 :\cf8 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec8 "56912345678"\cf7 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec7 ,\cf3 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec3  \cf8 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec8 "content"\cf7 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec7 :\cf8 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec8 "Hola face"\cf7 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec7 \}\cf3 \cb1 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec3 \
-\pard\pardeftab720
+\f2 \cf5 \cb4 \{\cf0  \cf6 "sender"\cf5 :\cf6 "56961567267"\cf5 ,\cf0  \cf6 "recipient"\cf5 :\cf6 "56912345678"\cf5 ,\cf0  \cf6 "content"\cf5 :\cf6 "Hola face"\cf5 \}\cf0 \cb1 \
+\pard\pardeftab720\partightenfactor0
 
-\f1 \cf3 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \
+\f1 \cf0 \
 Les recomiendo probar hacer los requests con una aplicaci\'f3n para chrome llamada Postman.\
 \
 \
-\pard\pardeftab720
+\pard\pardeftab720\partightenfactor0
 
-\b \cf3 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 3. Obtener todos los mensajes de un n\'famero
-\b0 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \
+\b \cf0 3. Obtener todos los mensajes de un n\'famero
+\b0 \
 \
 Con esto se obtienen todos los mensajes de un n\'famero, enviados y recibidos. Se recibe un JSON array con los mensajes ordenados por fecha y con el siguiente formato:\
 \
-\pard\pardeftab720
+\pard\pardeftab720\partightenfactor0
 
-\f2 \cf7 \cb6 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec7 [\cf3 \cb1 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec3 \
-\pard\pardeftab720
-\cf3 \cb6 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \'a0 \'a0 \cf7 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec7 \{\cf3 \cb1 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec3 \
-\cb6 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \'a0 \'a0 \'a0 \'a0 \cf8 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec8 "id"\cf7 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec7 :\cf3 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec3  \cf9 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec9 7\cf7 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec7 ,\cf3 \cb1 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec3 \
-\cb6 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \'a0 \'a0 \'a0 \'a0 \cf8 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec8 "sender"\cf7 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec7 :\cf3 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec3  \cf8 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec8 "56961567267"\cf7 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec7 ,\cf3 \cb1 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec3 \
-\cb6 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \'a0 \'a0 \'a0 \'a0 \cf8 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec8 "recipient"\cf7 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec7 :\cf3 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec3  \cf8 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec8 "56974386952"\cf7 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec7 ,\cf3 \cb1 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec3 \
-\cb6 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \'a0 \'a0 \'a0 \'a0 \cf8 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec8 "content"\cf7 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec7 :\cf3 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec3  \cf8 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec8 "Hola face"\cf7 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec7 ,\cf3 \cb1 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec3 \
-\cb6 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \'a0 \'a0 \'a0 \'a0 \cf8 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec8 "created_at"\cf7 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec7 :\cf3 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec3  \cf8 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec8 "2015-04-25T20:53:32.998Z"\cf7 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec7 ,\cf3 \cb1 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec3 \
-\cb6 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \'a0 \'a0 \'a0 \'a0 \cf8 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec8 "url"\cf7 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec7 :\cf3 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec3  \cf8 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec8 "http://localhost:3000/messages/7.json"\cf3 \cb1 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec3 \
-\cb6 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \'a0 \'a0 \cf7 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec7 \}\cf3 \cb1 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec3 \
-\cb6 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \'a0 \'a0\cf7 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec7 ...\cf3 \cb1 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec3 \
-\cb6 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \'a0 \'a0\cf7 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec7 \{\cf3 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec3  \cf7 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec7 ....\cf3 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec3  \cf7 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec7 \}\cf3 \cb1 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec3 \
+\f2 \cf5 \cb4 [\cf0 \cb1 \
+\cb4 \'a0 \'a0 \cf5 \{\cf0 \cb1 \
+\cb4 \'a0 \'a0 \'a0 \'a0 \cf6 "id"\cf5 :\cf0  \cf7 7\cf5 ,\cf0 \cb1 \
+\cb4 \'a0 \'a0 \'a0 \'a0 \cf6 "sender"\cf5 :\cf0  \cf6 "56961567267"\cf5 ,\cf0 \cb1 \
+\cb4 \'a0 \'a0 \'a0 \'a0 \cf6 "recipient"\cf5 :\cf0  \cf6 "56974386952"\cf5 ,\cf0 \cb1 \
+\cb4 \'a0 \'a0 \'a0 \'a0 \cf6 "content"\cf5 :\cf0  \cf6 "Hola face"\cf5 ,\cf0 \cb1 \
+\cb4 \'a0 \'a0 \'a0 \'a0 \cf6 "created_at"\cf5 :\cf0  \cf6 "2015-04-25T20:53:32.998Z"\cf5 ,\cf0 \cb1 \
+\cb4 \'a0 \'a0 \'a0 \'a0 \cf6 "url"\cf5 :\cf0  \cf6 "http://localhost:3000/messages/7.json"\cf0 \cb1 \
+\cb4 \'a0 \'a0 \cf5 \}\cf0 \cb1 \
+\cb4 \'a0 \'a0\cf5 ...\cf0 \cb1 \
+\cb4 \'a0 \'a0\cf5 \{\cf0  \cf5 ....\cf0  \cf5 \}\cf0 \cb1 \
 \
 \
-\pard\pardeftab720
-\cf7 \cb6 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec7 ]\cf3 \cb1 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec3 \
-\pard\pardeftab720
+\cf5 \cb4 ]\cf0 \cb1 \
+\pard\pardeftab720\partightenfactor0
 
-\f1 \cf3 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \
+\f1 \cf0 \
 \
 Deben utilizar un GET request con el siguiente formato:\
 \
-\pard\pardeftab720
-\cf3 \expnd0\expndtw0\kerning0
-\ul \ulc3 \outl0\strokewidth0 Link\expnd0\expndtw0\kerning0
-\ulnone \outl0\strokewidth0 \
+\ul Link\ulnone \
 \
-\pard\pardeftab720
+\pard\pardeftab720\partightenfactor0
 
-\b \cf3 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 http://guasapuc.herokuapp.com/api/messages.json?phone_number=NUMERO_TELEFONO
-\b0 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \
+\b \cf0 http://guasapuc.herokuapp.com/api/messages.json?phone_number=NUMERO_TELEFONO
+\b0 \
 \
 Por ejemplo:\
 \
 http://guasapuc.herokuapp.com/api/messages.json?phone_number=56961567267\
 \
-\pard\pardeftab720
-\cf3 \expnd0\expndtw0\kerning0
-\ul \ulc3 \outl0\strokewidth0 Headers\expnd0\expndtw0\kerning0
-\ulnone \outl0\strokewidth0 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \ul Headers\ulnone \
 \
-\pard\pardeftab720
+\pard\pardeftab720\partightenfactor0
 
-\f2 \cf5 \cb6 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec5 Authorization\cf3 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec3  \'a0 \'a0 \'a0 \cf5 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec5 Token\cf3 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec3  token\cf7 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec7 =\cf8 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec8 "token su usuario (el que crearon) sin comillas"\cf3 \cb1 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec3 \
-\pard\pardeftab720
+\f2 \cf3 \cb4 Authorization\cf0  \'a0 \'a0 \'a0 \cf3 Token\cf0  token\cf5 =\cf6 "token su usuario (el que crearon) sin comillas"\cf0 \cb1 \
+\pard\pardeftab720\partightenfactor0
 
-\f1 \cf3 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \
+\f1 \cf0 \
 \
 \
-\pard\pardeftab720
+\pard\pardeftab720\partightenfactor0
 
-\b \cf3 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 4. Obtener todos los mensajes de una conversaci\'f3n
-\b0 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \
+\b \cf0 4. Obtener todos los mensajes de una conversaci\'f3n
+\b0 \
 
-\b \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \
-\pard\pardeftab720
+\b \
+\pard\pardeftab720\partightenfactor0
 
-\b0 \cf3 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 Pueden obtener todos los mensajes que hay entre dos n\'fameros de tel\'e9fono. Se obtiene un JSON Array con el mismo formato descrito en el punto 3.\
+\b0 \cf0 Pueden obtener todos los mensajes que hay entre dos n\'fameros de tel\'e9fono. Se obtiene un JSON Array con el mismo formato descrito en el punto 3.\
 Deben usar GET con el siguiente formato:\
 \
-\pard\pardeftab720
-\cf3 \expnd0\expndtw0\kerning0
-\ul \ulc3 \outl0\strokewidth0 Link\expnd0\expndtw0\kerning0
-\ulnone \outl0\strokewidth0 \
+\ul Link\ulnone \
 \
-\pard\pardeftab720
+\pard\pardeftab720\partightenfactor0
 
-\b \cf3 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 http://guasapuc.herokuapp.com/api/messages.json?phone_first=NUMERO_UNO&phone_second=NUMERO_DOS\
-\pard\pardeftab720
+\b \cf0 http://guasapuc.herokuapp.com/api/messages.json?phone_first=NUMERO_UNO&phone_second=NUMERO_DOS\
+\pard\pardeftab720\partightenfactor0
 
-\b0 \cf3 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \
+\b0 \cf0 \
 \
 Por ejemplo:\'a0\
 http://guasapuc.herokuapp.com/api/messages.json?phone_first=56961567267&phone_second=56912345678\
 \
-\pard\pardeftab720
-\cf3 \expnd0\expndtw0\kerning0
-\ul \ulc3 \outl0\strokewidth0 Headers\expnd0\expndtw0\kerning0
-\ulnone \outl0\strokewidth0 \
+\ul Headers\ulnone \
 \
 \
-\pard\pardeftab720
+\pard\pardeftab720\partightenfactor0
 
-\f2 \cf5 \cb6 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec5 Authorization\cf3 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec3  \'a0 \'a0 \'a0 \cf5 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec5 Token\cf3 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec3  token\cf7 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec7 =\cf8 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec8 "token su usuario (el que crearon) sin comillas"\cf3 \cb1 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec3 \
-\pard\pardeftab720
+\f2 \cf3 \cb4 Authorization\cf0  \'a0 \'a0 \'a0 \cf3 Token\cf0  token\cf5 =\cf6 "token su usuario (el que crearon) sin comillas"\cf0 \cb1 \
+\pard\pardeftab720\partightenfactor0
 
-\f1 \cf3 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \
+\f1 \cf0 \
 \
 \
-\pard\pardeftab720
+\pard\pardeftab720\partightenfactor0
 
-\b \cf3 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 Varios
-\b0 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \
-\pard\tx220\tx720\pardeftab720
-\ls1\ilvl0\cf3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec3 No agreguen el '+' al principio del numero de\'a0tel\'e9fono\
-\ls1\ilvl0\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec3 Si ingresan a cualquiera de las rutas de la API no podr\'e1n ya que se necesita el token\
-\ls1\ilvl0\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec3 Pueden ir viendo como se agregan sus mensajes o ir agregando sus mensajes para probar en\'a0{\field{\*\fldinst{HYPERLINK "http://guasapuc.herokuapp.com/messages"}}{\fldrslt \cf4 \expnd0\expndtw0\kerning0
-\ul \ulc4 \outl0\strokewidth0 \strokec4 http://guasapuc.herokuapp.com/messages}}\
-\ls1\ilvl0\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec3 No podr\'e1n agregar mensajes en que el n\'famero del receptor o del emisor no exista, si quieren usan usuarios falsos de prueba o usan cualquiera de los n\'fameros de ustedes.\
-\ls1\ilvl0\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec3 A implementar a futuro est\'e1 loguearse a trav\'e9s de la API\
-\pard\pardeftab720\sl340
-\cf3 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 Por ahora eso es lo que se me ocurre, cualquier cosa lo pongo abajo.\'a0\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \
-\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 Si encuentran alg\'fan problema, tienen feedback o cualquier cosa, escriban ac\'e1 :)\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \
-\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \
-Saludos,\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \
-\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \
-Andr\'e9s\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \
-\pard\pardeftab720\sa240
-\cf3 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \
-\pard\pardeftab720
-\cf3 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 -- \
+\b \cf0 Varios
+\b0 \
+\pard\tx220\tx720\pardeftab720\partightenfactor0
+\ls1\ilvl0\cf0 \kerning1\expnd0\expndtw0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+No agreguen el '+' al principio del number de\'a0tel\'e9fono\
+\ls1\ilvl0\kerning1\expnd0\expndtw0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+Si ingresan a cualquiera de las rutas de la API no podr\'e1n ya que se necesita el token\
+\ls1\ilvl0\kerning1\expnd0\expndtw0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+Pueden ir viendo como se agregan sus mensajes o ir agregando sus mensajes para probar en\'a0{\field{\*\fldinst{HYPERLINK "http://guasapuc.herokuapp.com/messages"}}{\fldrslt \cf2 \ul \ulc2 http://guasapuc.herokuapp.com/messages}}\
+\ls1\ilvl0\kerning1\expnd0\expndtw0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+No podr\'e1n agregar mensajes en que el n\'famero del receptor o del emisor no exista, si quieren usan usuarios falsos de prueba o usan cualquiera de los n\'fameros de ustedes.\
+\ls1\ilvl0\kerning1\expnd0\expndtw0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+A implementar a futuro est\'e1 loguearse a trav\'e9s de la API\
+\pard\pardeftab720\sl340\partightenfactor0
+\cf0 Por ahora eso es lo que se me ocurre, cualquier cosa lo pongo abajo.\'a0\
+Si encuentran alg\'fan problema, tienen feedback o cualquier cosa, escriban ac\'e1 :)\
+\
+Saludos,\
+\
+Andr\'e9s\
+\pard\pardeftab720\sa240\partightenfactor0
+\cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf0 -- \
 You received this message because you are subscribed to the Google Groups "IoP Mecolab 2015-1" group.\
-To unsubscribe from this group and stop receiving emails from it, send an email to {\field{\*\fldinst{HYPERLINK "mailto:iop-mecolab-2015-1+unsubscribe@googlegroups.com"}}{\fldrslt \cf4 \expnd0\expndtw0\kerning0
-\ul \ulc4 \outl0\strokewidth0 \strokec4 iop-mecolab-2015-1+unsubscribe@googlegroups.com}}.\
-To post to this group, send email to {\field{\*\fldinst{HYPERLINK "mailto:iop-mecolab-2015-1@googlegroups.com"}}{\fldrslt \cf4 \expnd0\expndtw0\kerning0
-\ul \ulc4 \outl0\strokewidth0 \strokec4 iop-mecolab-2015-1@googlegroups.com}}.\
-To view this discussion on the web visit {\field{\*\fldinst{HYPERLINK "https://groups.google.com/d/msgid/iop-mecolab-2015-1/0e97a963-8015-45a2-9225-936d8349c4bf%40googlegroups.com?utm_medium=email&utm_source=footer"}}{\fldrslt \cf4 \expnd0\expndtw0\kerning0
-\ul \ulc4 \outl0\strokewidth0 \strokec4 https://groups.google.com/d/msgid/iop-mecolab-2015-1/0e97a963-8015-45a2-9225-936d8349c4bf%40googlegroups.com}}.\
-For more options, visit {\field{\*\fldinst{HYPERLINK "https://groups.google.com/d/optout"}}{\fldrslt \cf4 \expnd0\expndtw0\kerning0
-\ul \ulc4 \outl0\strokewidth0 \strokec4 https://groups.google.com/d/optout}}.\
+To unsubscribe from this group and stop receiving emails from it, send an email to {\field{\*\fldinst{HYPERLINK "mailto:iop-mecolab-2015-1+unsubscribe@googlegroups.com"}}{\fldrslt \cf2 \ul \ulc2 iop-mecolab-2015-1+unsubscribe@googlegroups.com}}.\
+To post to this group, send email to {\field{\*\fldinst{HYPERLINK "mailto:iop-mecolab-2015-1@googlegroups.com"}}{\fldrslt \cf2 \ul \ulc2 iop-mecolab-2015-1@googlegroups.com}}.\
+To view this discussion on the web visit {\field{\*\fldinst{HYPERLINK "https://groups.google.com/d/msgid/iop-mecolab-2015-1/0e97a963-8015-45a2-9225-936d8349c4bf%40googlegroups.com?utm_medium=email&utm_source=footer"}}{\fldrslt \cf2 \ul \ulc2 https://groups.google.com/d/msgid/iop-mecolab-2015-1/0e97a963-8015-45a2-9225-936d8349c4bf%40googlegroups.com}}.\
+For more options, visit {\field{\*\fldinst{HYPERLINK "https://groups.google.com/d/optout"}}{\fldrslt \cf2 \ul \ulc2 https://groups.google.com/d/optout}}.\
 }
